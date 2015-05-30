@@ -43,26 +43,26 @@ This, and many other things, should be clearer if we may consider two ellipsoids
 
 In the general case of distinct principal axes of the moment of inertia tensor that we are considering these two ellipsoids will be different shapes. The energy ellipsoid's maximum and minimum lengths will be along the first and third axes respecitvely, whereas the momental ellipsoid will bulge the other way, with the third axis being the longest and the first shortest.
 
-A specific example may help. The Swan Vesta matchbox is particularly well suited to angular momentum problems because of its dimensions which are:
-
-\begin{center}
-  \begin{tabular}{l l}
-    height & 17.4mm \\
-    width & 47.68mm \\
-    depth & 79.37mm \\
-  \end{tabular}
-\end{center}
-
-Assuming a mass of roughly $16g$ and a thickness of the box of mm this would give us a moment of inertia tensor (in $\textup{kgcm}^2$) of
-
-$$
-I=
-\begin{pmatrix}
-  1279 & 0 & 0 \\
-  0 & 1788 & 0 \\
-  0 & 0 & 2122 \\
-\end{pmatrix}
-$$
+%A specific example may help. The Swan Vesta matchbox is particularly well suited to angular momentum problems because of its dimensions which are:
+%
+%\begin{center}
+%  \begin{tabular}{l l}
+%    height & 17.4mm \\
+%    width & 47.68mm \\
+%    depth & 79.37mm \\
+%  \end{tabular}
+%\end{center}
+%
+%Assuming a mass of roughly $16g$ and a thickness of the box of mm this would give us a moment of inertia tensor (in $\textup{kgcm}^2$) of
+%
+%$$
+%I=
+%\begin{pmatrix}
+%  1279 & 0 & 0 \\
+%  0 & 1788 & 0 \\
+%  0 & 0 & 2122 \\
+%\end{pmatrix}
+%$$
 
 By setting $\omega_1=1$ and $\omega_2=\omega_3=0$ in (\ref{eq:momental_ellipsoid}) we can find the maximum value of the moment of inertia for fixed kinetic energy $T$ and a similar operation find the mimimum:
 
@@ -82,9 +82,25 @@ To help visualise this, we will work with the energy ellipsoid (though exactly t
 
 Because $I_1$ is smaller than both $I_2$ and $I_3$ the coefficients of $\omega_1$ and $\omega_2$ are both positive. The RHS is also positive because $L^2 > I_1T$. This is the equation of an ellipse.
 
-\begin{tikzpicture}
-  \draw (2, 2) ellipse (5cm and 2cm);
-\end{tikzpicture}
+
+\begin{center}
+  \begin{tikzpicture}%[yscale=1.8]%[scale=3]
+    \input{e1}
+    %\draw [black] (0, 0) ellipse (4.472cm and 2.697cm);
+    %\draw [blue] (0, 0) ellipse (0.000cm and 0.000cm);
+    %\draw [blue] (0, 0) ellipse (1.936cm and 0.640cm);
+    %\draw [blue] (0, 0) ellipse (2.887cm and 0.953cm);
+    %\draw [blue] (0, 0) ellipse (3.708cm and 1.225cm);
+    %\draw [blue] (0, 0) ellipse (4.472cm and 1.477cm);
+    %\begin{scope}
+    %  \clip(0, 0) ellipse(4.472cm and 2.697cm);
+    %  \draw [green] (0, 0) ellipse (5.431cm and 1.794cm);
+    %  \draw [green] (0, 0) ellipse (6.360cm and 2.100cm);
+    %  \draw [green] (0, 0) ellipse (7.269cm and 2.401cm);
+    %  \draw [green] (0, 0) ellipse (8.165cm and 2.697cm);
+    %\end{scope}
+  \end{tikzpicture}
+\end{center}
 
 \section{Dynamics of the polhode}
 
