@@ -22,54 +22,63 @@ def pgf_setup(plot_status=PLOT_NOPLOT):
     elif plot_status==PLOT_PDF:
         matplotlib.use('pdf')
 
-def ellipse(I1=1.0, I2=3.0, I3=5.0, T=100.0, nellipses=10):
+# density 689 
+SWAN_VESTA_BOX=[0.016760206663199998, 29.37, 47.6, 17.4, 1.0] # mass, dimensions, thickness
 
+def mi_rec_prism(m, h, d, w): # b, a, c
+    return [
+        m * (h**2 + w**2) / 12,
+        m * (h**2 + d**2) / 12,
+        m * (d**2 + w**2) / 12]
 
-    # energy ellipsoid projected down
+def mi_hollow_rec_prism(m, h, d, w, thickness):
+    outer=mi_rec_prism(m, h, d, w)
+    inner=mi_rec_prism(m, h - thickness, d - thickness, w - thickness)
+    return [a - b for a, b in zip(outer, inner)]
+        
 
-    width=2*math.sqrt(T/I2)
-    height=2*math.sqrt(T/I3)
+def ellipsoid_projection(ax, A, B, n):
+    '''Projects the ellipsoid defined by A\dot x = B onto 
+    the plane normal to direction n0 into the plane n1, n2.'''
 
-    plt.figure()
-    ax = plt.gca()
+    width=2*math.sqrt(B/A[n[1] - 1])
+    height=2*math.sqrt(B/A[n[2] - 1])
+
+    print("Plotting ellipse {} x {}".format(width, height))
+
     ellipse = Ellipse(xy=(0,0), width=width, height=height, 
                         fc='None', lw=2)
     ax.add_patch(ellipse)
-    plt.plot([width/2,width/2], [-height/2, height/2], 'k-', lw=2)
 
-    # intersection contours
+    return(width, height)
 
-    rhs_min=0           # LL = I1 * T
-    rhs_max=T*(I3 - I1) # LL = I3 * T
-    #rhs=LL - I1*T
+def ellipse(I=[1.0, 3.0, 5.0], T=100.0):
 
-    print("Energy eccentricity", math.sqrt(1 - I1/I3))
-    print("Angular momentum eccentricity", math.sqrt(1 - (I2**2 - I1*I2)/(I3**2 - I1*I3)))
-    print("Minimum angular momentum", I1*T)
-    print("Maximum angular momentum", I3*T)
+    plt.figure()
 
-    color=iter(cm.rainbow(np.linspace(0, 1, nellipses)))
-    for rhs in np.linspace(rhs_min, rhs_max, num=10):
+    ax=plt.gca()
+    # energy ellipsoid from 1 onto 2, 3
+    (width, height) = ellipsoid_projection(ax, I, T, [1, 2, 3])
+    plt.axis('scaled')
 
-        #print(rhs, LL, I1, I1*T)
+    [I1, I2, I3]=I
+    for LL in np.linspace(I1*T, I2*T, num=5):
+
+        rhs=LL - I1*T
         width=2*math.sqrt(rhs/(I2**2 - I1*I2))
         height=2*math.sqrt(rhs/(I3**2 - I1*I3))
-
-        c=next(color)
-        LL=rhs + I1*T
-        print(LL, width, height)
         ellipse = Ellipse(xy=(0,0), width=width, height=height, 
-                        edgecolor=c, fc='None', lw=2)
+                        edgecolor="blue", fc='None', lw=2)
         ax.add_patch(ellipse)
-
-    #ax.set_xlim(0, 200)
+#
+#    #ax.set_xlim(0, 200)
     #ax.set_ylim(0, 200)
-    ax.relim()
-    ax.autoscale_view(tight=False)
 
-    plt.legend(range(0,10))
+    #ax.relim()
+    #ax.autoscale_view(tight=False)
+
+    #plt.legend(range(0,10))
     plt.show()
-
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description="Make plots")
@@ -87,4 +96,6 @@ if __name__=="__main__":
 
     import matplotlib.pyplot as plt
 
-    ellipse()
+    matchbox=[0.1279, 0.1788, 0.2122]
+    ellipse(matchbox, T=2*math.pi*0.1279) # realistic rotation
+    

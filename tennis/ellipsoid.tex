@@ -43,6 +43,27 @@ This, and many other things, should be clearer if we may consider two ellipsoids
 
 In the general case of distinct principal axes of the moment of inertia tensor that we are considering these two ellipsoids will be different shapes. The energy ellipsoid's maximum and minimum lengths will be along the first and third axes respecitvely, whereas the momental ellipsoid will bulge the other way, with the third axis being the longest and the first shortest.
 
+A specific example may help. The Swan Vesta matchbox is particularly well suited to angular momentum problems because of its dimensions which are:
+
+\begin{center}
+  \begin{tabular}{l l}
+    height & 17.4mm \\
+    width & 47.68mm \\
+    depth & 79.37mm \\
+  \end{tabular}
+\end{center}
+
+Assuming a mass of roughly $16g$ and a thickness of the box of mm this would give us a moment of inertia tensor (in $\textup{kgcm}^2$) of
+
+$$
+I=
+\begin{pmatrix}
+  1279 & 0 & 0 \\
+  0 & 1788 & 0 \\
+  0 & 0 & 2122 \\
+\end{pmatrix}
+$$
+
 By setting $\omega_1=1$ and $\omega_2=\omega_3=0$ in (\ref{eq:momental_ellipsoid}) we can find the maximum value of the moment of inertia for fixed kinetic energy $T$ and a similar operation find the mimimum:
 
 \begin{eqnarray*}
