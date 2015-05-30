@@ -2,6 +2,7 @@
 \usepackage{mathtools}
 \usepackage{bm}
 \usepackage{tikz}
+\usepackage{float}
 \setlength{\parindent}{0cm}
 \setlength{\parskip}{12pt plus4mm minus3mm}
 
@@ -77,30 +78,27 @@ We shall consider only the situation where there is no external turning force (t
 To help visualise this, we will work with the energy ellipsoid (though exactly the same approach would work for the momental ellipsoid). Consider the projection of the energy ellipsoid onto the plane normal to the first principal axis. The path of the particle can be obtained by eliminating $\omega_1$ from the ellipsoid equations by subtracting $I_1(\ref{eq:energy_ellipsoid})$ from $(\ref{eq:momental_ellipsoid})$.
 
 \begin{align}
-  (I_2^2 - I_1I_2)\omega_2^2 + (I_3^2-I_1I_3)\omega_3^2 & = L^2 - I_1T
+  (I_2^2 - I_1I_2)\omega_2^2 + (I_3^2-I_1I_3)\omega_3^2 & = L^2 - I_1T\label{eq:momell23}
 \end{align}
 
 Because $I_1$ is smaller than both $I_2$ and $I_3$ the coefficients of $\omega_1$ and $\omega_2$ are both positive. The RHS is also positive because $L^2 > I_1T$. This is the equation of an ellipse.
 
+\begin{figure}[H]
+  
+  \begin{center}
+    \begin{tikzpicture}%[yscale=1.8]%[scale=3]
+      \input{e1}
+    \end{tikzpicture}
+  \end{center}
+  \caption{Projection normal to the first axis}
+  \label{fig:proj1}
+\end{figure}
 
-\begin{center}
-  \begin{tikzpicture}%[yscale=1.8]%[scale=3]
-    \input{e1}
-    %\draw [black] (0, 0) ellipse (4.472cm and 2.697cm);
-    %\draw [blue] (0, 0) ellipse (0.000cm and 0.000cm);
-    %\draw [blue] (0, 0) ellipse (1.936cm and 0.640cm);
-    %\draw [blue] (0, 0) ellipse (2.887cm and 0.953cm);
-    %\draw [blue] (0, 0) ellipse (3.708cm and 1.225cm);
-    %\draw [blue] (0, 0) ellipse (4.472cm and 1.477cm);
-    %\begin{scope}
-    %  \clip(0, 0) ellipse(4.472cm and 2.697cm);
-    %  \draw [green] (0, 0) ellipse (5.431cm and 1.794cm);
-    %  \draw [green] (0, 0) ellipse (6.360cm and 2.100cm);
-    %  \draw [green] (0, 0) ellipse (7.269cm and 2.401cm);
-    %  \draw [green] (0, 0) ellipse (8.165cm and 2.697cm);
-    %\end{scope}
-  \end{tikzpicture}
-\end{center}
+Figure \ref{fig:proj1} shows in black the projection of the energy ellipsoid onto the plane normal to $\bm{n_1}$. The coloured ellipses are projections of angular momentum contour lines. 
+
+The blue lines represent angular momentum $I\leq I_2T$. At exactly $L=I_2T$ the axis of rotation would be entirely about $\bm{n_2}$ ($\bm{\omega}^T=(0, 1, 0)$). These contour lines may be entirely projected within the ``shadow'' of the energy ellipsoid. 
+
+The red lines represent angular momentum $I > I_2T$. Here the contours pass ``behind'' the ellipsoid. Only an arc of an ellipse is projected. The motion of the polhode would appear (in projection) to move backwards and forwards along the arc.
 
 \section{Dynamics of the polhode}
 
@@ -165,7 +163,7 @@ Then equation \ref{eq:fullode} becomes:
 
 This is a straightforward ODE to transform into an integral, giving us:
 \begin{align}
-  t + C &=\frac{(I_1^2 - I_1I_3)(L^2 - I_2T)}{(L^2 - I_3T)(I_1^2 - I_1I_2)}\sqrt{\frac{(L^2 - I_2T)(L^2 - I_3T)}{I_1(I_3^2 - I_2I_3)(I_2^2 - I_2I_3)}}\int\frac{1}{\sqrt{ 1 - y^2}\sqrt{ 1 - k^2y^2}}
+  t + C &=\frac{(I_1^2 - I_1I_3)(L^2 - I_2T)}{(L^2 - I_3T)(I_1^2 - I_1I_2)}\sqrt{\frac{(L^2 - I_2T)(L^2 - I_3T)}{I_1(I_3^2 - I_2I_3)(I_2^2 - I_2I_3)}}\int\frac{dy}{\sqrt{ 1 - y^2}\sqrt{ 1 - k^2y^2}}
 \end{align}
 
 \end{document}
