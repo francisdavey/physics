@@ -3,6 +3,7 @@ import math
 
 import matplotlib
 import numpy as np
+from scipy.special import ellipj
 from matplotlib.patches import Ellipse
 from matplotlib.pyplot import cm
 
@@ -104,6 +105,16 @@ def ellipse(I=[1.0, 3.0, 5.0], T=100.0):
     #plt.legend(range(0,10))
     # plt.show()
 
+def modulus(I, T, L):
+
+    [I1, I2, I3]=I
+    ksquared=((I3*T - L**2)*(I2 - I1))/((L**2 - I2*T)*(I3 - I1))
+    #print(ksquared)
+    if ksquared > 0:
+        return("real", math.sqrt(ksquared))
+    else:
+        return("imaginary", math.sqrt(-ksquared))
+
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description="Make plots")
     parser.add_argument('-s', '--screen', action="store_true")
@@ -125,5 +136,41 @@ if __name__=="__main__":
     
 
     I = [1.0, 4.0, 11.0]
-    T = 20.0
-    ellipse(I, T)
+    T = 10.0
+    #ellipse(I, T)
+
+    [I1, I2, I3]=I
+    A=I2 - I1
+    B=I3 - I2
+    C=I3 - I1
+    
+    N=np.linspace(math.sqrt(I1*T), math.sqrt(I3*T), 20)
+    for (lnumber, L) in enumerate(N):
+        (ktype, k)=modulus(I, T, L)
+        outfile=open("L{}.dat".format(lnumber), "w")
+        outfile.write("t\t omega1 \t omega2 \t omega3\n")
+        print("#"*32)
+        print("Sequence={}, L={}, ktype={}".format(lnumber, L, ktype))
+        U=I3*T-L**2
+        V=L**2 - I2*T
+        if V > 0:
+            for t in np.linspace(0, 0.1, 50):
+                argument=-t*math.sqrt(C*V/I1*I2*I3)
+                if not int(k - 1)==1:
+                    (sn, cn, dn, ph) = ellipj(argument, k)
+                else:
+                    sn=np.tanh(argument)
+                    cs=np.cosh(argument)
+                    if int(cs - 1)==0:
+                        print("********zero cosh for {}".format(argument))
+                        cn=0
+                        dn=0
+                    else:
+                        cn=1/cs
+                        dn=1/cs
+                #print(U, I1, C)
+                omega1=math.sqrt(U/I1*C)*sn
+                omega2=math.sqrt(U/I2*B)*cn
+                omega3=math.sqrt(U/I3*B)*dn
+                print("{}\t{}".format(t, omega1))
+                outfile.write("{}\t{}\t{}\t{}\n".format(t, omega1, omega2, omega3))
