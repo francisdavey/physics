@@ -1,0 +1,72 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\chapter{Elliptic Functions and integrals}
+\prerequisites{complex analysis}
+\section{Introduction}
+
+The fact that sine and cosine are periodic, with period $2\pi$ should be familiar to you. That fact turns out to be enormously useful all over mathematics. Wherever anything periodic turns up such as waves or relationships between circular and linear motion turns up we found it useful. 
+
+But it turns out that sine and cosine are very interesting when viewed from the point of view of complex numbers. In one sense, they are both aspects of the exponential function, the most famous transcendental function. In another sense they are the hyperbolic functions sine and cosine $\sinh$ and $\cosh$ ``rotated'' through $\pi/2$.
+
+But sine and cosine are periodic in one direction - parallel to the real line. What about functions that have two independent periods? Such functions are known as ``elliptic functions''.
+
+By ``independent'' periods, I mean ``linearly independent''. Sine has a period of $2\pi$ but also of $4\pi, 6\pi, 8\pi, \ldots$ but the additional periodos aren't very interesting. They are all real and so, if considered as 2D vectors in the complex plane, they all point in the same direction. 
+
+To put it formally, an elliptic function is one with two non-zero\footnote{All functions have a ``period'' of zero} periods $\omega_1$ and $\omega_2$ such that there is no real number $r$ with $\omega_1=r\omega_2$. 
+
+Just this amount of information (and no more) allows us to deduce lots of properties that elliptic functions must have. That is where I will start. There are then three ways to get to concrete examples of elliptic functions, all of which I shall try to do;
+
+\begin{itemize}
+\item We could discover them by realising that functions we already know about, the Jacobi elliptic functions are elliptic functions (the clue is in the name, but proving it requires some work). In fact what we will start with Jacobi elliptic functions and discover elliptic integrals.
+\item Then we will realise that elliptic integrals define elliptic functions.
+\item As a different tactic, we start from the definition of elliptic function and build a function from scratch that matches that definition. This is the approach of Weierstrass.
+\end{itemize}
+
+Elliptic things include:
+\begin{itemize}
+\item Elliptic Functions
+\item Elliptic Integrals
+\item Elliptic Curves
+\end{itemize}
+
+There is an odd history to these names. Elliptic integrals were discovered first\footnote{is this true?}. Elliptic functions were then defined in terms of elliptic integrals and their properties derived from the integrals. Viewed from the perspective of complex analysis, elliptic curves are the curves associated with elliptic functions, so they inherited the name, even though they are not in fact ellipses.
+
+We have, so far, taken a different approach. We met Jacobi Elliptic functions to help us solve some problems with ellipses and non-linear differential equations. 
+
+\section{Jacobi Elliptic Functions and Integrals}
+
+Point $P$ has position $(a \cos(\phi), b \sin(\phi))$. Point $P'$ is vertically above $P$ and is known as the ``corresponding point''. It has position, $(a \cos(\phi), a \sin(\phi))$. First we obtain a useful formula relating $\alpha$ and $\phi$.
+
+\begin{flalign}
+& & \tan \alpha & = \frac{b}{a} \tan \phi \shorteqnote{elementary trigonometry} \label{eq:alphaphi}\\ 
+& & \tan^2 \alpha & = \frac{b^2}{a^2}\tan^2 \phi \shorteqnote{squaring}\\
+& & \sec^2\alpha & = 1 + \frac{b^2}{a^2} (\sec^2\phi - 1) \shorteqnote{using trig identities} \\ 
+& & \sec^2\alpha & = (1 - \frac{b^2}{a^2}) + \frac{b^2}{a^2} (\sec^2\phi - 1) \shorteqnote{rearranging} \\
+& & \sec^2\alpha & =  k^2 + \frac{b^2}{a^2} (\sec^2\phi - 1)\shorteqnote{substituting definition of k} \label{eq:alphaphifinal}\\ 
+\end{flalign}
+
+Next we need a formula defining the differential of $\alpha$ in terms of $\phi$.
+
+\begin{flalign}
+& & \sec^2 \alpha \mathop{d\alpha} & = \frac{b}{a} \sec^2\phi \mathop{d\phi} \shorteqnote{differentiating (\ref{eq:alphaphi})} \\
+& & \mathop{d\alpha} & = \frac{b}{a}\frac{\sec^2\phi}{\sec^2\alpha}\mathop{d\phi} \\
+& & & = \frac{b}{a}\frac{\sec^2\phi}{k^2 + \frac{b^2}{a^2} (\sec^2\phi - 1)}\mathop{d\phi}  \shorteqnote{substituting (\ref{eq:alphaphifinal})}\\
+& & & = \frac{b}{a}\frac{\mathop{d\phi}}{k^2\cos^2\phi + \frac{b^2}{a^2}}  \shorteqnote{multiply through by $cos^2\phi$}\\
+& & & = \frac{b}{a}\frac{\mathop{d\phi}}{(1 - k^2\sin^2\phi)}  \shorteqnote{multiply through by $cos^2\phi$}\\
+\end{flalign}
+
+Now to calculate the arc length, we start with an easy formula in $\alpha$ and then transform it into an integral involving $\phi$.
+
+\begin{flalign}
+   \mathop{ds} & = \int r\mathop{d\alpha} \\
+   & =\int \sqrt{a^2\cos^2\phi + b^2\sin^2\phi}\mathop{d\alpha} \\
+   & =\int a\sqrt{1 - k^2\sin^2\phi}\mathop{d\alpha} \\
+   & =\int  \frac{b}{a}\frac{a\sqrt{1 - k^2\sin^2\phi}}{(1 - k^2\sin^2\phi)}\mathop{d\phi}  \\
+ & =\int  b\frac{\mathop{d\phi}}{\sqrt{1 - k^2\sin^2\phi}}  \\
+\end{flalign}
+
+\section{End notes}
+\theendnotes
+\setcounter{endnote}{0}
+
+\end{document}

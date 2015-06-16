@@ -1,0 +1,16 @@
+\documentclass[12pt,leqno]{book}
+\usepackage{subfiles}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{endnotes}
+\usetikzlibrary{shapes, angles, quotes, positioning}
+
+\newcommand{\shorteqnote}[1]{ &  & \text{\small\llap{#1}}}
+\newcommand{\prerequisites}[1]{\fbox{Prerequisites: {\bf #1}}}
+
+\begin{document}
+\subfile{elementary_trigonometry}
+\subfile{elementary_elliptic}
+\subfile{elliptic}
+\end{document}

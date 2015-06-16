@@ -74,14 +74,19 @@ def ellipse(I=[1.0, 3.0, 5.0], T=100.0):
     (mainwidth, mainheight) = ellipsoid_projection(out, I, T, [1, 2, 3])
     plt.axis('scaled')
 
+    divisions=6
     [I1, I2, I3]=I
-    for L in np.linspace(math.sqrt(I1*T), math.sqrt(I2*T), num=5):
+    for (i, L) in enumerate(np.linspace(math.sqrt(I1*T), math.sqrt(I2*T), num=divisions)):
 
         LL=L**2
         rhs=LL - I1*T
         width=2*math.sqrt(rhs/(I2**2 - I1*I2))
         height=2*math.sqrt(rhs/(I3**2 - I1*I3))
-        plot_ellipse(out, width, height, colour="blue")
+        if i==divisions-1:
+            colour="green"
+        else:
+            colour="blue"
+        plot_ellipse(out, width, height, colour=colour)
     
     output(out, r"\begin{scope}")
     output(out, r"\clip (0, 0) ellipse ({mainwidth:.3f}cm and {mainheight:.3f}cm);".format(**locals()))
@@ -104,6 +109,63 @@ def ellipse(I=[1.0, 3.0, 5.0], T=100.0):
 
     #plt.legend(range(0,10))
     # plt.show()
+
+def make_data(I, T):
+    [I1, I2, I3]=I
+    A=I2 - I1
+    B=I3 - I2
+    C=I3 - I1
+
+
+    N=np.linspace(math.sqrt(I1*T), math.sqrt(I3*T), 20)
+    for (lnumber, L) in enumerate(N):
+        (ktype, k)=modulus(I, T, L)
+        outfile=open("L{}.dat".format(lnumber), "w")
+        outfile.write("t\t omega1 \t omega2 \t omega3\n")
+        #print("#"*32)
+        #print("Sequence={}, L={}, ktype={}".format(lnumber, L, ktype))
+        U=I3*T-L**2
+        V=L**2 - I2*T
+        if V > 0:
+            for t in np.linspace(0, 0.1, 50):
+                argument=-t*math.sqrt(C*V/I1*I2*I3)
+                if not int(k - 1)==1:
+                    (sn, cn, dn, ph) = ellipj(argument, k)
+                else:
+                    sn=np.tanh(argument)
+                    cs=np.cosh(argument)
+                    if int(cs - 1)==0:
+                        print("********zero cosh for V={V}, t={t}, argument={argument}".format(**locals()))
+                        cn=0
+                        dn=0
+                    else:
+                        cn=1/cs
+                        dn=1/cs
+                #print(U, I1, C)
+                omega1=math.sqrt(U/I1*C)*sn
+                omega2=math.sqrt(U/I2*B)*cn
+                omega3=math.sqrt(U/I3*B)*dn
+                #print("{}\t{}".format(t, omega1))
+                outfile.write("{}\t{}\t{}\t{}\n".format(t, omega1, omega2, omega3))
+    
+
+def hyperbola(I, T):
+    [I1, I2, I3]=I
+    
+    s='''
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={$\omega_2$},
+        ylabel={$\omega_1$},
+        xmin={omega2_min},xmax={omega2_max},
+        ymin=-5,ymax=5]
+        \addplot [red,thick,domain=-2:2] ({sinh(x)}, {cosh(x)});
+        \addplot [red,thick,domain=-2:2] ({sinh(x)}, {-cosh(x)});
+        \addplot[green,dashed] expression {x};
+        \addplot[green,dashed] expression {-x};
+    \end{axis}
+    \end{tikzpicture}
+    '''
 
 def modulus(I, T, L):
 
@@ -137,40 +199,7 @@ if __name__=="__main__":
 
     I = [1.0, 4.0, 11.0]
     T = 10.0
-    #ellipse(I, T)
-
-    [I1, I2, I3]=I
-    A=I2 - I1
-    B=I3 - I2
-    C=I3 - I1
+    ellipse(I, T)
+    hyperbola(I, T)
     
-    N=np.linspace(math.sqrt(I1*T), math.sqrt(I3*T), 20)
-    for (lnumber, L) in enumerate(N):
-        (ktype, k)=modulus(I, T, L)
-        outfile=open("L{}.dat".format(lnumber), "w")
-        outfile.write("t\t omega1 \t omega2 \t omega3\n")
-        print("#"*32)
-        print("Sequence={}, L={}, ktype={}".format(lnumber, L, ktype))
-        U=I3*T-L**2
-        V=L**2 - I2*T
-        if V > 0:
-            for t in np.linspace(0, 0.1, 50):
-                argument=-t*math.sqrt(C*V/I1*I2*I3)
-                if not int(k - 1)==1:
-                    (sn, cn, dn, ph) = ellipj(argument, k)
-                else:
-                    sn=np.tanh(argument)
-                    cs=np.cosh(argument)
-                    if int(cs - 1)==0:
-                        print("********zero cosh for {}".format(argument))
-                        cn=0
-                        dn=0
-                    else:
-                        cn=1/cs
-                        dn=1/cs
-                #print(U, I1, C)
-                omega1=math.sqrt(U/I1*C)*sn
-                omega2=math.sqrt(U/I2*B)*cn
-                omega3=math.sqrt(U/I3*B)*dn
-                print("{}\t{}".format(t, omega1))
-                outfile.write("{}\t{}\t{}\t{}\n".format(t, omega1, omega2, omega3))
+    #make_data(I, T)

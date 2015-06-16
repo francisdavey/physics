@@ -73,10 +73,17 @@ By setting $\omega_1=1$ and $\omega_2=\omega_3=0$ in (\ref{eq:momental_ellipsoid
 \begin{eqnarray*}
   I_1T \leq L^2 \leq I_3 T \\
   L^2=I_1T & \textrm{at} & \mathbf{\omega}=(\sqrt{\frac{T}{I_1}}, 0, 0) \\
-  L^2=I_3T & \textrm{at} & \mathbf{\omega}=(0, 0, \sqrt{\frac{T}{I_3}}) \\
+  L^2=I_3T & \textrm{at} & \mathbf{\omega}=(0, 0, \sqrt{\frac{T}{I_3}}) \label{eq:maxlvalue}\\
 \end{eqnarray*}
 
 We shall consider only the situation where there is no external turning force (torque) and no loss of energy (dissipation) both $L^2$ and $T$ are constants. The polhode is constrained to move on the intersection of the two ellipsoids, which will be a single 1-dimensional path in the general case.
+
+\section{Visualising the valid paths}
+
+\pgfmathsetmacro{\I}{1.0}
+\pgfmathsetmacro{\J}{4.0}
+\pgfmathsetmacro{\K}{11.0}
+\pgfmathsetmacro{\T}{20.0}
 
 To help visualise this, we will work with the energy ellipsoid (though exactly the same approach would work for the momental ellipsoid). Consider the projection of the energy ellipsoid onto the plane normal to the first principal axis. The path of the particle can be obtained by eliminating $\omega_1$ from the ellipsoid equations by subtracting $I_1(\ref{eq:energy_ellipsoid})$ from $(\ref{eq:momental_ellipsoid})$.
 
@@ -89,7 +96,7 @@ Because $I_1$ is smaller than both $I_2$ and $I_3$ the coefficients of $\omega_1
 \begin{figure}[H]
   
   \begin{center}
-    \begin{tikzpicture}%[yscale=1.8]%[scale=3]
+    \begin{tikzpicture}[scale=1.4]%[yscale=1.8]%[scale=3]
       \input{e1}
     \end{tikzpicture}
   \end{center}
@@ -97,9 +104,10 @@ Because $I_1$ is smaller than both $I_2$ and $I_3$ the coefficients of $\omega_1
   \label{fig:proj1}
 \end{figure}
 
+
 Figure \ref{fig:proj1} shows in black the projection of the energy ellipsoid onto the plane normal to $\bm{n_1}$. The coloured ellipses are projections of angular momentum contour lines. 
 
-The blue lines represent angular momentum $L^2\leq I_2T$. At exactly $L^2=I_2T$ the axis of rotation would be entirely about $\bm{n_2}$ ($\bm{\omega}^T=(0, 1, 0)$). These contour lines may be entirely projected within the ``shadow'' of the energy ellipsoid. 
+The blue lines represent angular momentum $L^2\leq I_2T$. The green lines represents angular moment at exactly $L^2=I_2T$. At this point ... the axis of rotation would be entirely about $\bm{n_2}$ ($\bm{\omega}^T=(0, 1, 0)$). These contour lines may be entirely projected within the ``shadow'' of the energy ellipsoid. 
 
 The red lines represent angular momentum $I > I_2T$. Here the contours pass ``behind'' the ellipsoid. Only an arc of an ellipse is projected. The motion of the polhode would appear (in projection) to move backwards and forwards along the arc.
 
@@ -112,15 +120,17 @@ Using the same technique to project from $\bm{n_2}$ tells a different story. Eli
 Here $L^2 - I_2T$ and $I_3^2-I_2I_3$ are still positive but $I_1^2 - I_1I_2$ is negative. This is the equation of a hyperbola unless $L^2=I_2T$ in which case it represents two intersecting lines.
 
 \begin{tikzpicture}
+\pgfmathsetmacro{\Imax}{sqrt(\T/\I)}
+\pgfmathsetmacro{\Kmax}{sqrt(\T/\K)}
     \begin{axis}[
         xlabel={$\omega_2$},
         ylabel={$\omega_1$},
-        xmin=-5,xmax=5,
-        ymin=-5,ymax=5]
-        \addplot [red,thick,domain=-2:2] ({sinh(x)}, {cosh(x)});
-        \addplot [red,thick,domain=-2:2] ({sinh(x)}, {-cosh(x)});
-        \addplot[red,dashed] expression {x};
-        \addplot[red,dashed] expression {-x};
+        xmin=-\Imax,xmax=\Imax,
+        ymin=-\Kmax,ymax=\Kmax]
+        \addplot [red,thick,domain=-\Imax:\Imax] ({sinh(x)}, {cosh(x)});
+        \addplot [red,thick,domain=-\Kmax:\Kmax] ({sinh(x)}, {-cosh(x)});
+        \addplot[green,dashed] expression {x};
+        \addplot[green,dashed] expression {-x};
     \end{axis}
 \end{tikzpicture}
 
@@ -130,9 +140,13 @@ Euler's equations for the rotation of the object in this co-ordinate system are:
 
 \begin{align}
   I_1\dot{\omega_1}& =(I_2 - I_3)\omega_2\omega_3 \label{eq:euler1} \\
-  I_2\dot{\omega_2}& =(I_3 - I_1)\omega_2\omega_3 \\
-  I_3\dot{\omega_3}& =(I_1 - I_2)\omega_2\omega_3 
+  I_2\dot{\omega_2}& =(I_3 - I_1)\omega_1\omega_3 \\
+  I_3\dot{\omega_3}& =(I_1 - I_2)\omega_1\omega_2 
 \end{align}
+
+At $\omega_1=\omega_2=0$, $\omega_3=\sqrt(\frac{T}{I_3})$ and $\dot\omega_3=0$, representing a constant motion about the $\bm{n_3}$ axis with angular momentum $\sqrt{I_3T}$ (by equation \ref{eq:maxlvalue}). There are two further equilibria, representing motion about the other two axes.
+
+
 
 We can use equations \ref{eq:momental_ellipsoid} and \ref{eq:energy_ellipsoid} to express two of the components of $\boldsymbol{\omega}$ in terms of the third.
 
@@ -183,7 +197,15 @@ And using the same arguments starting with subtracting $I_3$ times equation (\re
   \omega_2 &=\sqrt{\frac{U - I_1C\omega_1^2}{I_2B}}
 \end{align}
 
-Inserting both of these into the first of Euler's equations (equation \ref{eq:euler1}) gives us:
+Euler's equations now become:
+
+\begin{align}
+  I_1\dot{\omega_1}& = -B\omega_2\omega_3 \label{eq:euler1} \\
+  I_2\dot{\omega_2}& = C\omega_1\omega_3 \\
+  I_3\dot{\omega_3}& = -A\omega_1\omega_2 
+\end{align}
+
+Inserting the definitions of $\omega_2, \omega_3$ in terms of $\omega_1$ into the first of Euler's equations gives us:
 
 \begin{equation}
   I_1\dot{\omega_1} = -B\sqrt{\frac{U-I_1C\omega_1^2}{I_2B}}\sqrt{\frac{V-I_1A\omega^2}{I_3B}}
@@ -221,10 +243,6 @@ The variable $k$ will be important in what follows. It is a dimensionless value 
 %\end{tikzpicture}
 
 \begin{tikzpicture}
-  \pgfmathsetmacro{\I}{1.0}
-  \pgfmathsetmacro{\J}{4.0}
-  \pgfmathsetmacro{\K}{11.0}
-  \pgfmathsetmacro{\T}{20.0}
 
   \begin{axis}[
 %    title=$k$ and $y$,
