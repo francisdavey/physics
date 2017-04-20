@@ -1,0 +1,149 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section{Elementary Elliptic Functions}
+
+\subsection{Introduction}
+
+This is advertising: elliptic functions are a class of function that turn up in many places in mathematics and physics. To a mathematician, they are very beautiful: to a physicist they are also potentially useful. 
+
+The full definition of elliptic functions requires complex numbers.\endnote{If you do know about complex numbers, you should know about the complex plane. An ``elliptic function'' is one which is periodic in two different directions in the complex plane. Elliptic functions are ``doubly periodic'' by contrast with trigonometrical functions like sine and cosine which are singly periodic.} However, one important subclass of elliptic functions known as the ``Jacobi elliptic functions'' (named after Carl Gustav Jakob Jacobi) can be explained quite simply with some geometry.
+
+Roughly speaking, Jacobi elliptic functions do for ellipses what trigonometrical functions like sine and cosine do for circles. In the same way that all periodic functions are, in some sense, made of sines and cosines (see Fourier Series). For our purposes ellipses are slightly wonky circles and so Jacobi elliptic functions will seem like slightly wonky trigonometrical functions. A lot more clever stuff can be found in the article on advanced Elliptic functions.
+
+\subsection{The Jacobi Elliptic Functions}
+When we defined the elementary trigonometrical functions, we drew a picture which related the $x$ and $y$ positions of a rotating point (the end of a mechanical arm, or a planet rotating in a circular orbit) to the angle the point moved through, as illustrated in figure \ref{fig:eetrigrecall}.
+
+\begin{figure}[H]
+  \label{fig:eetrigrecall}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (3.2, 2.4); %(1.6, 1.2);
+    \coordinate (hhtop) at (6, 2.4);
+    \coordinate (A) at (4, 0);
+    \coordinate (B) at (0, 4);
+    \coordinate (C) at (-4, 0);
+    \coordinate (D) at (0, -4);
+
+    \fill (O) circle [radius=3pt];
+    \fill (P) circle [radius=3pt];
+    \fill (A) circle [radius=3pt];
+    
+    \draw (-6,0) -- (C) -- (O) node [below left]{O} -- (A) node [above right] {A} -- (6,0);
+    \draw [<->] (6,0) -- node [right] {$R\sin\theta$}(hhtop);
+    \draw (O) -- node [above] {$R$} (P) node [above right]{P};
+    \draw [dotted] (P) -- (hhtop);
+    \draw (O) circle (4);
+    \draw [dotted] (O) -- (0, -6);
+    \draw [dotted] (A) -- (4, -6);
+    \draw [<->] (0, -6) -- node [below] {$R\cos\theta$} (4, -6);
+
+    \pic [draw, ->, "$\theta$", ultra thick, angle eccentricity=1.5, angle radius=1.5cm] {angle = A--O--P};
+
+  \end{tikzpicture}
+  \caption{The definition of sine and cosine}
+\end{figure}
+
+Drawing a similar picture for an ellipse is not quite so easy. For a point P (representing, perhaps, a planet in a circular orbit) moving around a cricle, the angle through which is has moved $\theta$ is always proportional to the length of the arc along which it has travelled. $$\mathop{arc}(AP)=R\theta$$.
+
+It doesn't really matter whether we think about the arc or the angle, they are both essentially the same thing. For a unit circle, they are identical except that the angle is dimensionless.
+
+For an ellipse distance $OP$ changes as $P$ goes around the ellipse. This means that the relationship between the arc $AP$ and the angle through which $P$ has turned becomes a more complicated one. It turns out to be easier to start with the arc length $AP$ rather than the angle $\theta$.
+
+In the field of elliptic functions the arc length is usually written $u$. It is in terms of this arc length that we define our first elliptic functions as illustrated in figure (\ref{fig:jacobidefine}).
+
+
+\begin{figure}
+  \label{fig:jacobidefine}
+  \begin{tikzpicture}
+    \coordinate (pointO) at (0, 0);
+    \coordinate (pointP) at (2, 2.1651);
+ %   \coordinate (pointPdash) at (2, 3.7417 );
+    \coordinate (pointA) at (4, 0);
+    
+    \fill (pointO) circle [radius=2pt];
+    \fill (pointP) circle [radius=2pt];
+ %   \fill (pointPdash) circle [radius=2pt];
+    \fill (pointA) circle [radius=2pt];
+
+    \draw (pointO) ellipse (4 and 2.5);
+  %  \draw (pointO) circle (4);
+    \draw (pointO) node [below left] {O} -- (pointP) node[above right]{P};
+  %  \draw (pointO) -- (pointPdash) node[above right]{P'};
+
+    \node at ($(0.2, 0.2) + (30:4 and 2.5)$) {$u$};
+
+  %  \pic [draw, ->, "$\phi$", angle eccentricity=1.5, angle radius=1.3cm] {angle = pointA--pointO--pointPdash};
+  %    \pic [draw, ->, "$\alpha$", angle eccentricity=1.5, angle radius=1.5cm] {angle = pointA--pointO--pointP};
+
+    \draw [->] (0, -4) -- (0,0) -- node [left] {$b$} (0, 2.5) -- (0, 6) node (yaxis) [above] {$y$}; 
+    \draw [->] (-6, 0) -- (0, 0) -- node [below] {$a$}  (pointA) node[above right]{A} -- (6, 0) node (xaxis) [right] {$x$};
+    %\draw [dashed] (4, -4) -- (4, 0);
+    %\draw [dashed] (-6, 2.5) -- (0, 2.5); %node [below] {$a$} 
+
+  \end{tikzpicture}
+  \caption{The ellipse}
+
+\end{figure}
+
+
+\subsection{Parametrising the ellipse}
+
+Recalling that a circle of radius $R$ may be parametrised using sine and cosine by $(Rcos(\phi), Rsin(\phi))$. Can we do something like that with an ellipse, such as the one depicted in figure \ref{fig:ellipse}, with semi-minor axis $a$ and semi-major axis $b$? To keep the mathematics simple, let us use Cartesian co-ordinates with an origin at the centre of the ellipse.
+
+\begin{figure}[H]
+  \label{fig:ellipse}
+  \begin{tikzpicture}
+    \draw (0, 0) ellipse (4 and 2.5);
+    \draw [->] (0, -4) -- (0,0) -- node [left] {$b$} (0, 2.5) -- (0, 4) node (yaxis) [above] {$y$}; 
+    \draw [->] (-6, 0) -- (0, 0) -- node [below] {$a$}  (4, 0) -- (6, 0) node (xaxis) [right] {$x$};
+    %\draw [dashed] (4, -4) -- (4, 0);
+    %\draw [dashed] (-6, 2.5) -- (0, 2.5); %node [below] {$a$} 
+
+  \end{tikzpicture}
+  \caption{Our typical ellipse}
+  
+\end{figure}
+
+Recall from the section on conic sections that such an ellipse is defined by the formula:
+$$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$$
+A little bit of algebra (and recalling some trigonometrical identities) then gives us a parametrisation for our ellipse:
+$$(a\cos(\phi), b\sin(\phi)$$
+It is tempting to think there must be a right angle-triangle with ... But what is $\phi$?
+
+\begin{figure}
+  \label{fig:eccentricanomaly}
+  \begin{tikzpicture}
+    \coordinate (pointO) at (0, 0);
+    \coordinate (pointP) at (2, 2.1651);
+    \coordinate (pointPdash) at (2, 3.7417 );
+    \coordinate (pointA) at (4, 0);
+    
+    \fill (pointO) circle [radius=2pt];
+    \fill (pointP) circle [radius=2pt];
+    \fill (pointPdash) circle [radius=2pt];
+    \fill (pointA) circle [radius=2pt];
+
+    \draw (pointO) ellipse (4 and 2.5);
+    \draw (pointO) circle (4);
+    \draw (pointO) node [below left] {O} -- (pointP) node[above right]{P};
+    \draw (pointO) -- (pointPdash) node[above right]{P'};
+
+    \pic [draw, ->, "$\phi$", angle eccentricity=1.5, angle radius=1.3cm] {angle = pointA--pointO--pointPdash};
+    \pic [draw, ->, "$\alpha$", angle eccentricity=1.5] {angle = pointA--pointO--pointP};
+
+    \draw [->] (0, -4) -- (0,0) -- node [left] {$b$} (0, 2.5) -- (0, 6) node (yaxis) [above] {$y$}; 
+    \draw [->] (-6, 0) -- (0, 0) -- node [below] {$a$}  (pointA) node[above right]{A} -- (6, 0) node (xaxis) [right] {$x$};
+    %\draw [dashed] (4, -4) -- (4, 0);
+    %\draw [dashed] (-6, 2.5) -- (0, 2.5); %node [below] {$a$} 
+
+  \end{tikzpicture}
+  \caption{The ellipse}
+
+\end{figure}
+
+\section{End notes}
+\theendnotes
+\setcounter{endnote}{0}
+
+\end{document}

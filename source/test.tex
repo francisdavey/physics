@@ -1,0 +1,80 @@
+%htlatex elementary_elliptic.tex "ht5mjlatex.cfg, charset=utf-8" " -cunihtf -utf8"
+%htlatex elementary_elliptic.tex "xhtml, jsmath" "-cmozhtf"
+%\documentclass[dvisvgm, leqno]{book}
+
+\documentclass[leqno]{book}
+\usepackage{subfiles}
+\usepackage{mathtools}
+\def\pgfsysdriver{pgfsys-tex4ht.def}
+%\def\pgfsysdriver{pgfsys-dvisvgm.def}
+%/pgf/tex4ht node/escape=true
+\usepackage{tikz}
+\usetikzlibrary{shapes, angles, quotes}
+
+\newcommand{\shorteqnote}[1]{ &  & \text{\small\llap{#1}}}
+
+\begin{document}
+%\pgfkeys{/pgf/tex4ht node/escape=true}
+\section{The Ellipse}
+In Cartesian coordinates, the equation:
+$$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$$
+defines the ellipse depicted in figure \ref{fig:ellipse}.
+\begin{figure}
+  \label{fig:ellipse}
+  \begin{tikzpicture}
+    \draw (0, 0) ellipse (4 and 2.5);
+    \draw [->] (0, -4) -- (0,0) -- node [left] {$b$} (0, 2.5) -- (0, 4) node (yaxis) [above] {$y$}; 
+    \draw [->] (-6, 0) -- (0, 0) -- node [below] {$a$}  (4, 0) -- (6, 0) node (xaxis) [right] {$x$};
+    %\draw [dashed] (4, -4) -- (4, 0);
+    %\draw [dashed] (-6, 2.5) -- (0, 2.5); %node [below] {$a$} 
+
+  \end{tikzpicture}
+  \caption{The ellipse}
+  
+\end{figure}
+
+Recalling that a circle of radius $R$ may be parametrised using sine and cosine by $(Rcos(\phi), Rsin(\phi))$
+
+\begin{figure}
+  \label{fig:eccentricanomaly}
+  \begin{tikzpicture}
+    \coordinate (pointO) at (0, 0);
+    \coordinate (pointP) at (2, 2.1651);
+    \coordinate (pointPdash) at (2, 3.7417 );
+    \coordinate (pointA) at (4, 0);
+    
+    \fill (pointO) circle [radius=2pt];
+    \fill (pointP) circle [radius=2pt];
+    \fill (pointPdash) circle [radius=2pt];
+    \fill (pointA) circle [radius=2pt];
+
+    \draw (pointO) ellipse (4 and 2.5);
+    \draw (pointO) circle (4);
+    \draw (pointO) node [below left] {O} -- (pointP) node[above right]{P};
+    \draw (pointO) -- (pointPdash) node[above right]{P'};
+
+    \pic [draw, ->, "$\phi$", angle eccentricity=1.5, angle radius=1.3cm] {angle = pointA--pointO--pointPdash};
+    \pic [draw, ->, "$\alpha$", angle eccentricity=1.5] {angle = pointA--pointO--pointP};
+
+    \draw [->] (0, -4) -- (0,0) -- node [left] {$b$} (0, 2.5) -- (0, 6) node (yaxis) [above] {$y$}; 
+    \draw [->] (-6, 0) -- (0, 0) -- node [below] {$a$}  (pointA) node[above right]{A} -- (6, 0) node (xaxis) [right] {$x$};
+    %\draw [dashed] (4, -4) -- (4, 0);
+    %\draw [dashed] (-6, 2.5) -- (0, 2.5); %node [below] {$a$} 
+
+  \end{tikzpicture}
+  \caption{The ellipse}
+
+\end{figure}
+
+Point $P$ has position $(a \cos(\phi), b \sin(\phi))$. Point $P'$ is vertically above $P$ and is known as the ``corresponding point''. It has position, $(a \cos(\phi), a \sin(\phi))$.
+
+\begin{flalign}
+& & \tan \alpha & = \frac{b}{a} \tan \phi \shorteqnote{elementary trigonometry}\\
+& & \sec^2 \alpha d\alpha & = \frac{b}{a} \sec^2\phi d\phi \shorteqnote{differentiating}
+\end{flalign}
+
+% \\
+% {differentiating} \\
+
+
+\end{document}
