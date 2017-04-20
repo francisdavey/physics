@@ -1,1 +1,0 @@
-The Bumper Fun Book of Physics is a long-term project to create a different style of introduction to physics than is available in most places online or in text books. A full discussion can be found in the introduction.
