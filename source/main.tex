@@ -1,16 +1,22 @@
-\documentclass[12pt,leqno]{book}
+\documentclass[12pt, a4paper]{memoir}
 \usepackage{subfiles}
 \usepackage{mathtools}
 \usepackage{float}
 \usepackage{tikz}
 \usepackage{endnotes}
-\usetikzlibrary{shapes, angles, quotes, positioning}
+\usetikzlibrary{shapes, angles, quotes, positioning, calc}
 
 \newcommand{\shorteqnote}[1]{ &  & \text{\small\llap{#1}}}
-\newcommand{\prerequisites}[1]{\fbox{Prerequisites: {\bf #1}}}
+\newcommand{\prerequisites}[1]{\fbox{Prerequisites: {\textbf #1}}}
+\setlength{\parindent}{0em}
 
 \begin{document}
-\subfile{elementary_trigonometry}
-\subfile{elementary_elliptic}
-\subfile{elliptic}
+\book{Easy Concepts}
+\subfile{easy}
+\book{Grown-up Physics}
+\subfile{grown_up}
+\book{Advanced Physics}
+\part{General Relativity}
+\part{Cosmology}
+\book{Cutting-Edge Physics?}
 \end{document}
