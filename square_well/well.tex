@@ -1,0 +1,31 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{pgfplots}
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{12pt plus4mm minus3mm}
+
+\usepgfplotslibrary{units}
+
+\begin{document}
+We consider a one-dimensional box, also known as an infinite square well. Intuitively, the particle is constrained to be in a box $[-L/2, L/2]$ of width $L$. In some treatments the box is $[0, L]$. The physics is the same, but the detailed algebra is different.
+
+``Constrained'' could mean that when the particle hits the wall it is absorbed or reflected. There might be other possibilities since we are working in quatum mechanics where concepts such as ``reflected'' may be problematic. At this point many treatments introduce somewhat magical boundary conditions. 
+
+\section{propagator}
+To keep our assumptions clear, let us begin by solving the problem using path integrals. In this presentation, it is clear what ``reflected'' means for a path. Indeed we can make the mathematics much simpler by a ``method of images''.
+
+Instead of a single square box, we would have an infinite numbers of copies of the box alternately reflected. The position $x$ in the box containing the origin would be mirrored by $L - x$ in the next box to the right and $-L -x$ to the left. Thus all the points $x-4L, x-2L, x, x+2L, x+4L$ and $-3L-x, -L-x, L-x, 3L-x$ are equivalent, representing a point reached by a different number of reflections in the walls.
+
+This allows us to take the free particle Feynmann propagator:
+
+$$K(x,t) = \frac{m}{2\pi i\hbar(t_b - t_a)}^{1/2}\exp{\frac{imx^2}{2\hbar t}}$$
+
+and adapt it to the proapagator for the well $K_{well}$:
+
+$$K_{WELL}(x, t) = \sum
+
+
+\end{document}
