@@ -8,6 +8,14 @@
 \setlength{\parskip}{12pt plus4mm minus3mm}
 
 \usepgfplotslibrary{units}
+\pgfplotsset{compat=1.17}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
 
 \begin{document}
 We consider a one-dimensional box, also known as an infinite square well. Intuitively, the particle is constrained to be in a box $[-L/2, L/2]$ of width $L$. In some treatments the box is $[0, L]$. The physics is the same, but the detailed algebra is different.
@@ -25,7 +33,41 @@ $$K(x,t) = \frac{m}{2\pi i\hbar(t_b - t_a)}^{1/2}\exp{\frac{imx^2}{2\hbar t}}$$
 
 and adapt it to the proapagator for the well $K_{well}$:
 
-$$K_{WELL}(x, t) = \sum
+$$K_{WELL}(x, t) = \sum$$
 
+\section{Operator formalism}
+\begin{definition}[Hermitian Operator]
+  An operator is {\emph Hermitian} if
+  \begin{align*}
+    <f|Lg> &= <Lf |g> \\
+\int_{a}^{b}v^{*}Ludx &= \int_{a}^{b}(Lv)^{*}udx
+  \end{align*}
+
+\end{definition}
+An alternative approach is first to define the {\emph Hermitian adjoint}. Given two vector spaces $H$ and $J$ equipped with inner products (?is this a true bilinear form or sesquilinear?), and a linear operator $L:H\rightarrow J$ then the adjoint of $L$ is an operator that maps from $J$ to $H$ with an additional restriction as follows:
+
+Given $f$ in $H$ and $g$ in $J$, then:
+
+\begin{align*}
+  L:H&\rightarrow G \\
+ H&\leftarrow G:L^{*}\\
+L(f)\cdot g \text{ (in H)} &= f\cdot L^{*}(g) \text{ (in G)} 
+\end{align*}
+
+A Hermitian operator is then an operator taking that space to itself which is its own Hermitian adjoint. The inner product is usually not written this way in quantum mechanics, but the $A\cdot B$ notation is the least cluttered.
+
+Being Hermitian on the kinds of Hilbert space used in quantum mechanics is affected by the way the operator behaves at boundaries. In other words it must be a lgobal property. There is a theory of extending operators to being Hermitian operators when they might otherwise fail.
+
+For example in the square well as described the operator $\hat{p} = -i\hbar \partial$ is not Hermitian, but if we define $\Delta(x)=\delta(x + L) - \delta(x - L)$ then we get a Hermitian operator. See Daniel F. Styer - quantum revivals v classical, also Bonneau, Farant and Valent.
+
+\begin{align*}
+  -i\hbar\int_{-L}^{L}\phi^{*}(-i\hbar(\partial - \Delta)\psi)dx &= -\hbar^2 \int_{-L}^{L}\phi^{*}(\partial - \Delta)\psi)dx \\
+& = -\hbar^2 \int_{-L}^{L}\phi^{*}\partial\psi dx - \int_{-L}^{L}\phi^{*}\Delta\psi dx \\
+\intertext{Integrating the first term by parts and integrating out the delta functions in the second term}
+& = \left[\phi^{*}\psi\right]_{-L}^{L} - \int_{-L}^{L}(\partial\phi^{*})\psi dx - \left[\phi^{*}\psi\right]_{-L}^{L} \\
+\intertext{The first and last terms then cancel, leaving us with the desired result}
+
+&=-i\hbar\int_{-L}^{L}(\partial\phi^{*})\psi dx
+\end{align*}
 
 \end{document}
