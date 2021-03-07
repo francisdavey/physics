@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}[section]
+\begin{document}
+\begin{theorem}
+\label{gaussian_value}
+  $$G = \int_{-\infty}^{\infty}e^{-\frac{1}{2}x^2}dx = \sqrt{2\pi}$$
+\end{theorem}
+\begin{proof}
+  \begin{align*}
+    G^2 &= \left(\int_{-\infty}^{\infty}e^{-\frac{1}{2}x^2}dx\right)\int_{-\infty}^{\infty}e^{-\frac{1}{2}y^2}dy \\
+&=  \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(x^2 + y^2)}dxdy  \\
+\intertext{Substitute $r=x^2+y^2$, $r\sin\theta=y$, $r\cos\theta=x$, hence $dxdy=rdrd\theta$}
+G^2 &=\int_{0}^{2\pi}\int_{0}^{\infty}e^{-\frac{1}{2}r^2}rdrd\theta \\
+&=\left[\theta\int_{0}^{\infty}re^{-\frac{1}{2}r^2}dr\right]_{\theta=0}^{\theta=2\pi} \\
+&= 2\pi\left[-e^{-\frac{1}{2}r^2}\right]_{0}^{\infty} \\
+&= 2\pi
+  \end{align*}
+Hence $G = \sqrt{2\pi}$
+\end{proof}
+
+\begin{theorem}
+For $a^2$ real and positive.
+  $$I = \int_{-\infty}^{\infty}e^{-a^2x^2 + bx + c}dx = \frac{\sqrt{\pi}}{a}e^{c + \frac{b^2}{4a^2}}$$
+\end{theorem}
+\begin{proof}
+First, ``complete the square'' in the exponent by defining $r$, $s$ and $t$ by the equation:
+$$ -a^2x^2 + bx + c = -\frac{(rx + s)^2}{2} + t$$
+This gives us:
+  \begin{align*}
+    -r^2 &= -2a^2 &\Rightarrow r&=a\sqrt{2} \\
+-rs &= b &\Rightarrow s&=\frac{-b}{a\sqrt{2}} \\
+t - \frac{s^2}{2} &= c &\Rightarrow t&= \frac{b^2}{4a^2}
+  \end{align*}
+Using the completed square in the integral $I$:
+\begin{align}
+  I & = \int_{-\infty}^{\infty}e^{-\frac{(rx + s)^2}{2}+t}dx \\
+&= e^t\int_{-\infty}^{\infty}e^{-\frac{(rx + s)^2}{2}}dx \\
+\intertext{By assumption $a$ is real and positive, hence $r$ is also real and positive. We can therefore substitute $y = rx + s$ without changing the limits of the integration. With this substitution $\frac{dy}{r} = dx$.}
+& = e^t\int_{-\infty}^{\infty}e^{-\frac{y^2}{2}}\frac{dy}{r} \\
+&= \frac{e^t}{r}\int_{-\infty}^{\infty}e^{-\frac{y^2}{2}}dy \\
+\intertext{Applying theorem \ref{gaussian_value} we have}
+&= \frac{\sqrt{2\pi}}{r}e^t \\
+\intertext{Subsituting in for $r$ and $t$}
+&= \frac{\sqrt{\pi}}{a}e^{c+\frac{b^2}{4a^2}}
+\end{align}
+\end{proof}
+\end{document}
