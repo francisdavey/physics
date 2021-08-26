@@ -2,3 +2,8 @@
 *.aux
 *.log
 *.out
+*.dvi
+*.pyc
+test*
+sympy/*
+dump.rdb

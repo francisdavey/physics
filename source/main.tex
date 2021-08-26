@@ -2,22 +2,39 @@
 \usepackage{subfiles}
 \usepackage{mathtools}
 \usepackage{float}
-\def\pgfsysdriver{pgfsys-tex4ht.def}
+%\def\pgfsysdriver{pgfsys-tex4ht.def}
 \usepackage{tikz}
 \usepackage{endnotes}
+%\usepackage{parskip}
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
+
+%If lots of plots maybe. See https://www.overleaf.com/learn/latex/pgfplots_package#2D_plots
+%\usepgfplotslibrary{external}
+%\tikzexternalize
+
 \usetikzlibrary{shapes, angles, quotes, positioning, calc}
 
 \newcommand{\shorteqnote}[1]{ &  & \text{\small\llap{#1}}}
 \newcommand{\prerequisites}[1]{\fbox{Prerequisites: {\textbf #1}}}
+
 \setlength{\parindent}{0em}
+\setlength{\parskip}{10pt plus 1pt minus 1pt}
+
+\newcommand{\morelater}[0]{more on this later}
+\usepackage{subfiles}
 
 \begin{document}
 \book{Easy Concepts}
 \subfile{easy}
+\subfile{relativity}
 \book{Grown-up Physics}
 \subfile{grown_up}
 \book{Advanced Physics}
 \part{General Relativity}
 \part{Cosmology}
 \book{Cutting-Edge Physics?}
+\part{Reference}
+\subfile{reference_material}
 \end{document}
