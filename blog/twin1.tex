@@ -2,23 +2,34 @@
 \usepackage{graphicx}
 %\graphicspath{ { images/} }
 \graphicspath{ {/Users/francisdavey/src/physics/blog/images/}}
+\usepackage{amsmath}
+\usepackage{tikz}
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
+%htlatex twin1.tex "xhtml,html5,mathjax,charset=utf-8" " -cunihtf -utf8"
+%https://www.12000.org/my_notes/faq/LATEX/layout/
+
 \begin{document}
 \section*{Setting the scene}
-In 1971, four atomic clocks were placed on board commercial airliners and flown around the world. First, twice in the Eastward diretion and then twice in the Westwardy direction. After each trip, the clocks were compared with the time on reference clokcs that did not take the trip. On the Eastward journey, all the clocks ran slow, while going Westward, they all ran fast.
+Imagine you are walking in the mountains and, knowing the importance of taking regular rest breaks, you stop for a while and look out over the scenery. Being of a scientific mind you might wonder two things: how far is it you have come and how much higher are you now than when you started?
 
-In 1971, this was not a surprising result to physicists. (?when) Einstein had predicted, in his theory of Special Relativity, that the time shown by a clock would be affected by the path it took through space and time -- indeed was a measure of that path(?). But it is a surprise to many people when they first hear about it.
+In order to work out the answer to the first question accurately, you have to know exactly what route you took from start to finish, whereas the second question requires only that you know your altitude at the start and end of your journey. Quantities which require only that you know the difference between start and end are obviously rather convenient and turn up many times in mathematics and physicsts. Mathematicians give them a special name: exact (?Q is this the best name).
 
-Prior to Einstein, the prevailing view was that clocks (something about exactness).
+It is easy to see that height climbed is exact, whereas distance travelled is not. For much of history it was thought that time was exact. For our mountaineer to work out for how long they have been travelling, all they need to do is know their start and end times. But in Albert Einstein deduced that it was not. Time was more like distance than altitude.
+
+This result has been experimentally deduced many times. For example, in 1971, four atomic clocks were placed on board commercial airliners and flown around the world. First, twice in the Eastward diretion and then twice in the Westwardy direction. After each trip, the clocks were compared with the time on reference clokcs that did not take the trip. On the Eastward journey, all the clocks ran slow, while going Westward, they all ran fast.
+
+The degree to which a ``moving clock'' (in other words one that is moving relative to you) ``appears'' to slow down is $\sqrt{1 - \frac{v^2}{c^2}}$ where $v$ is the relative velocity and $c$ the speed of light in vacuum.
 
 This behaviour of clocks, when they move, is often expressed in the words:
 
 \framebox[0.8\linewidth][c]{Moving clocks run slow}
 
 But this phrase is at least as often criticised for being misleading or plainly wrong. To see why, we should go back to a fundamental idea propoposed by Galileo: relativity.
+
+\includegraphics[width=0.4\linewidth]{genoese_carrack}
 
 Galileo imagined an experimentalist carrying out their researches in the cabin of a boat. One imagines a large Captain's cabin of the kind seen in romantic descriptions of life in the 18th century navy or as an 18th century pirate. The significant feature is that you cannot see outside. You have no way to know how fast you are travelling. Galileo proposed that no experiment you could carry out inside the cabin would allow you to know the speed with which you were moving.
 
@@ -32,28 +43,38 @@ What more careful explainers of the special theory of relativity say is somethin
 
 The word ``appear'' here is doing a lot of have to do a lot of heavy lifting. It very much does not mean, what it seems to mean. In the next post, I shall unpack what ``appear'' means. But first let us look at the problem of the lack of symmetry between clocks as explained.
 
-Classic statement of the twin paradox.
+\section{Classic statement of the twin paradox}.
 
-The twin paradox involves separating two clocks. The classic statement involves two twins, I think in order to indicate that this is not some artefact of strange atomic clocks (how do they work exactly?) but also because people have a certain familiarity with twins. If this paradox works with the human body, that seems somehow to bring it more home.
+Let us start by imagining two clocks: one goes on journey and returns to its starting point; the other clock stays where it is. As we have explained, there clock that went on a journey goes slower than the clock that stayed behind. This is a fairly startling idea on its own, contradicting as it does many years of philosophy, but a surprise is not a paradox.
 
-Let us call the twins A and B. A stays at base on Earth, but the twin B sets off for a distant star in a spaceship travelling at 80\% the speed of light. A year later, the twin turns around and returns at the same speed. Special relativity predicts that B will be younger -- in fact 60\% the age of A.
+The twin paradox plays with the path-dependence of clocks in the context of relativity to create a number of seeming contradictions. Strictly speaking a ``paradox'' is a contradiction - two things that cannot both be true -- whereas here the contradictory points are only seem to be contradictions.
 
-But, if movement is relative, is A not entitled to say ``I did not move, my sister B did. She travelled away from  me at a relative speed of 80\% the speed of light and then turned around and returned''. A's point of view is surely at least as valid as B.
+Instead of clocks, let us imagine twins. One stays back at base on Earth - let us call them ``B'' for ``base'' and the other travels to a nearby star system before returning -- let us call them ``A'' for ``astronaut''. Why twins? Well, one of the things we are going to want to do is consider what the world looks like from the point of view of each clock. It is easier to imagine that there are people on the journey able to make observations - clocks not being known for their intelligence.
 
-What's more if ``relatively moving clocks appear to run slow'' then A will see B's clock running slow and B will see A's clock running slow. How can that be the case? At some point B must see A's clock run fast in order for it to end up ahead, when does that happen? Where, in other words, does the extra time on A's clock come from, or if you prefer, where does the missing time on B's clock go?
+Twins also seem to be popular because the human body, in aging, is a natural clock. An effect that works on people somehow, I imagine, personalises it.
 
-Well, ``appear'' does not mean what it seems to mean and a full explanation is left to the next blog post, though hopefully some of the problems with it will become clear in this one. But it is entirely fair to ask what each astronaut actually does see, which we will in a moment.
+If A sets off at a speed of 80\% the speed of light relative to the Earth and travels out for 5 years according to the clock back at base, turning around and returning to Earth at the same relative speed, A's clock will be found to be 60\% as fast as B's. A will have aged 6 years, while B has aged 10. The relationship is $\sqrt(1 - \frac{v^2}{c^2})$ where $v$ is the velocity and $c$ is the speed of light. We picked 80\% of course because the numbers came out nicely.
 
-There is a fairly mundane (non-exactness).
+Now it seems to me that there are actually three different things about this story that cause people to scratch their heads - some of them immediately and others after thinking about it for a while. All, or any of these, could be the ``paradox''.
 
-As it happens, the problem of symmetry in the twin paradox has nothing to do with special relativity. This point is very rarely explained clearly in discussions of the paradox. That failure in turn seems to cause a lot of confusion. I have read attempts to explain what is going on in terms of general relativity, or the fact that one of the astronauts B must accelerate but A does not and that it is in the moments of acceleration that we will see the time getting lost (or being found as the case may be).
+First, we might say that this story is all about A moving relative to B at 80\% the speed of light. But surely, if relativity is correct, B is moving relative to A at 80\% of the speed of light throughout. Surely then B's clock ought to be slower than A's, which is a contradiction.
 
-So, we will attack this paradox in stages. First, let us imagine a world where Newton's laws apply and Galilean relativity is the only relativity available.
+This is typically met with two responses: first to say that time is not exact. You can't just think about where you start and where you end, but the journey you took. A's journey is different from B's and so their clock is different. You might as well object that two people walking in the mountains as we imagined at the start of this post and who covered different differences on the ground would be entitled to object that each could imagine the other one was moving further.
 
-\section*{Aircraft with a faulty clock}
-In order to firmly anchor ourselves in a non-relativistic world, let us carry out a slightly different thought experiment in which there are two aviators: A and B. A remains back at base, while B sets off in an aircraft. Newton's laws apply. Our only concession to the more usual twin paradox is that we will have to stretch our imagination somewhat. The aviators are, for now at least, only interested in one another, so that B does not try to look at the ground running under her feet, the air through which she is flying and so on. Spaceships are easier in that we can, to a great extent, ingore all that.
+Another answer is to say that relativity applies only between observers (XX make an earlier note of observer) who do not accelerate. A must have accelerated when they turned around. So that ends the argument. ...
 
-Note: reference to air and ether here, perhaps go back and say something about this with the water earlier?
+These arguments can risk sounding as if they are saying ``well, it is just like that''. Many students want to see exactly what happens - don't worry, we will will look very carefully at that, which in turn leads to another question.
+
+While A is travelling away - and yet again when they are returning - A is an inertial (XX metion this) observer. They are entitled, under the rules we have explained above, to say that B's clock runs slower than theirs. If moving clocks appear to run slow, then A can see B's clock appearing to run slow for most of the journey, yet at the end of the journey A can see their clock actually recorded less time.
+
+Where did the time go? Does it realy just vanish (or appear) at the moment of turn around as the ``it is all about acceleration'' explanation has it.  And how can that seeming asymmetry work? Surely at some point A must think B's clock is running fast or something is very wrong.
+
+So we have three things to explain: why exactly can't A turn the story around and talk about it from their point of view? How can both A and B think the other's clock is slow and where did the time go? What is very rarely explained in courses on special relativity is that none of these three seemingly paradoxical questions have all that much to do with special relativity. The asymmetry between A and B, and indeed something very like the twin paradox, can be described in an entirely Newtonian universe. Doing so has one big advantage: you do not need to worry about there being some mysterious relativistic effects going on that you don't yet understand. It can't (for example) be because accelerating objects must be dealt with using general relativity (a popular idea at one stage).
+
+\section*{The Galilean Twin Paradox}
+
+So, we will attack this paradox in stages. First, let us imagine a world where Newton's laws apply and Galilean relativity is the only relativity available. 
+
 
 Do we use Sonar here? Light is more useful because of the theoretical underpinnings. We use just two assumptions.
 \begin{itemize}
@@ -76,7 +97,53 @@ Regardless of the state of her clock, B will see A's light pulses arriving more 
 % What B "sees", what A "sees". Doppler effect.
 % Applying Doppler effect, now what happens if we assume slow clock?
 
+\includegraphics[width=5cm]{relative_velocity_b}
+\begin{align*}
+  (t - a) c & =  av \\
+  t & = a(1 + \beta) \\
+(b - t)c & =  bv \\
+t & = b(1 - \beta) \\
+a(1 + \beta) & = b(1 - \beta) \\
+\beta(a + b) & = b - a \\
+\beta & = \frac{b - a}{b + a} 
+\end{align*}
+
+Thus the relative velocity as a fraction of $c$ can be computed without reference to whether or not A's clock is slow.
+
 % Symmetry, even though we know that there is an asymmetry. This is at the root of the twin paradox. There is a fundamental symmetry
+
+Applying the Doppler effect.
+
+\begin{tikzpicture}
+  \coordinate (A) at (0,0);
+  \draw (A) -- +(0, 3) coordinate (B);
+  \draw (A) -- (2, 3) node[pos=0.666] (sa) {} node[pos=1,above] {A};
+  \draw (-0.5, 1) node[left] {$t_B$} -- (0.5, 1);
+  \draw (sa) -- +(-0.5, 0) -- +(0.5, 0) node[right] {$s_B$};
+  %\draw (sa) -- +(0.5, 0);
+\end{tikzpicture}
+\begin{equation*}
+  \begin{aligned}[c]
+    s_Bv &=(s_B - t_B)c \\
+s_B (1 - \beta) &=t_B \\
+s_B & = \frac{t_B}{1 - \beta} 
+  \end{aligned}
+  \begin{aligned}[c]
+    t_B' v&= (s_B'-t_B')c \\
+    t_B'(v + c) &= s_B'c \\
+t_B'&=\frac{s_B'}{a+\beta} 
+  \end{aligned}
+%t_B'&=&\frac{k}{1-\beta^2}
+\end{equation*}
+Combining the two gives us:
+\begin{align*}
+  t_B'&=\frac{kS_B}{1 + \beta} \\
+&=\frac{kt_B}{1-\beta^2}
+\end{align*}
+
+If $k > 1 - \beta^2$ then B's clock will appear to run slow for A, even though A's clock is in fact running slow. If $k = \sqrt{1 - \beta^2}$ then A and B will each see the other's clock running slow at exactly the same rate.
+
+Here we see that even in the Newtonian world, provided the moving clock runs slow at exactly the right rate, we have the asymmetry of the Twin Paradox.
 
 % End note: not assuming that speed of light is the same for all observers.
 
@@ -92,10 +159,24 @@ Regardless of the state of her clock, B will see A's light pulses arriving more 
 \section*{Moving clocks run slow world}
 % Lorentz transformation
 % Not relativity
+Could observe using other laws of physics.
 % Rods not clocks
 \section*{extras}
 
 % Hafele experiment
 % http://www.personal.psu.edu/rq9/HOW/Atomic_Clocks_Predictions.pdf
+
+\subsection*{Using Sonar}
+To really make the point that the conceptual problems of the twin paradox can appear in the Galilean/Newtonian world, I had considered telling the story of the twins using sonar rather than radar.
+
+In this version, A is an aviator who leaves behind her twin B who stays back at base. A is now only able to use sonar to determine the distance and relative speed of B. In order for this to work we would have to assume that the speed of sound was uniform and isotropic, for example by assuming that air pressure, temperature and so on were uniform throughout the experiment.
+
+The problem is that this is a harder thought experiment to imagine. While the emptiness of space is strictly speaking not empty at all even in the classical world, let alone when one considers the quantum vacuum, it is easier to imagine than for an aeroplane. It is also the case that either there is no ether to detect or if it exists we cannot direclty observe it, yet it is fairly easy for an aeroplane to detect their air speed (moving air being something we are deliberately not thinking about).
+
+But sound waves also travel with a speed which is source independent and given the right conditions have isotroptic and uniform velocity (query: what does isotropic mean precisely). An aviator using sonar in the same way as radar and who has a slow clock will see all the same behavoiur as their faster moving counterpart up to and including the Lorentz transformation. 
+
+
+Note: reference to air and ether here, perhaps go back and say something about this with the water earlier?
+
 
 \end{document}
