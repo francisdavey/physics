@@ -29,6 +29,7 @@ This behaviour of clocks, when they move, is often expressed in the words:
 
 But this phrase is at least as often criticised for being misleading or plainly wrong. To see why, we should go back to a fundamental idea propoposed by Galileo: relativity.
 
+\section{Galileo's ship and relativity}
 \includegraphics[width=0.4\linewidth]{genoese_carrack}
 
 Galileo imagined an experimentalist carrying out their researches in the cabin of a boat. One imagines a large Captain's cabin of the kind seen in romantic descriptions of life in the 18th century navy or as an 18th century pirate. The significant feature is that you cannot see outside. You have no way to know how fast you are travelling. Galileo proposed that no experiment you could carry out inside the cabin would allow you to know the speed with which you were moving.
@@ -43,7 +44,7 @@ What more careful explainers of the special theory of relativity say is somethin
 
 The word ``appear'' here is doing a lot of have to do a lot of heavy lifting. It very much does not mean, what it seems to mean. In the next post, I shall unpack what ``appear'' means. But first let us look at the problem of the lack of symmetry between clocks as explained.
 
-\section{Classic statement of the twin paradox}.
+\section*{Classic statement of the twin paradox}.
 
 Let us start by imagining two clocks: one goes on journey and returns to its starting point; the other clock stays where it is. As we have explained, there clock that went on a journey goes slower than the clock that stayed behind. This is a fairly startling idea on its own, contradicting as it does many years of philosophy, but a surprise is not a paradox.
 
@@ -73,18 +74,15 @@ So we have three things to explain: why exactly can't A turn the story around an
 
 \section*{The Galilean Twin Paradox}
 
-So, we will attack this paradox in stages. First, let us imagine a world where Newton's laws apply and Galilean relativity is the only relativity available. 
-
-
-Do we use Sonar here? Light is more useful because of the theoretical underpinnings. We use just two assumptions.
+So, we will attack this paradox in stages. First, let us imagine a world where Newton's laws apply and Galilean relativity is the only relativity available. We make two assumptions about the physical behaviour of light (by which we mean all electromagnetic energy, including radio waves):
 \begin{itemize}
 \item The speed with which light travels does not depend on how fast the source of the light is moving.
 \item The speed of light does not depend on the direction.
 \end{itemize}
 
-Both these assumptions agree with experiment (which ones?) and the theory of electromagnetism. Sound does not quite work this way becuase the pressure of the air, its humidity etc cause the speed of sound to vary. So let us imagine an entirely featureless, flat, world with uniform air pressure, so that sound obeys these principles too. We will call the speed of sound or light in these circumstances $c$ (it's just a number).
+Both these assumptions agree with experiment (which ones?) and the theory of electromagnetism. We are not assuming that the speed of light is identical for every observer.
 
-A and B communicate via sound waves. We will assume (contrary to nature) that the speed of sound does not vary. In fact it does with air pressure, humidity and so on. (check this).
+
 
 % Slow clock outward journey
 So, what does each astronaut see at the start of B's journey? Rather than trying to imagine each continuously viewing each other's clock with a telescope or other means of distance viewing, let each astronaut send out a ``tick'' every second from their clock in the form of a radio (light) pulse.
@@ -116,19 +114,40 @@ Applying the Doppler effect.
 
 \begin{tikzpicture}
   \coordinate (A) at (0,0);
-  \draw (A) -- +(0, 3) coordinate (B);
+  \draw (A) -- +(0, 3) node[pos=1,above] {B};
   \draw (A) -- (2, 3) node[pos=0.666] (sa) {} node[pos=1,above] {A};
   \draw (-0.5, 1) node[left] {$t_B$} -- (0.5, 1);
   \draw (sa) -- +(-0.5, 0) -- +(0.5, 0) node[right] {$s_B$};
   %\draw (sa) -- +(0.5, 0);
+\coordinate (RO) at (8,0);
+  \draw (RO) -- +(0, 3) node[pos=1,above] {A};
+  \draw (RO) -- +(-2, 3) node[pos=0.666] (tb) {} node[pos=1,above] {B};
+  \draw (7.5, 1)  -- (8.5, 1) node[pos=1, right] {$s_A$};
+  \draw (tb) -- +(-0.5, 0) -- +(0.5, 0) node[pos=0, left] {$t_A$};
 \end{tikzpicture}
+
 \begin{equation*}
   \begin{aligned}[c]
+    \begin{tikzpicture}
+      \coordinate (A) at (0,0);
+      \draw (A) -- +(0, 3) node[pos=1,above] {B};
+      \draw (A) -- (2, 3) node[pos=0.666] (sa) {} node[pos=1,above] {A};
+      \draw (-0.5, 1) node[left] {$t_B$} -- (0.5, 1);
+      \draw (sa) -- +(-0.5, 0) -- +(0.5, 0) node[right] {$s_B$};
+    \end{tikzpicture}\\
+%\intertext{B's picture from the base}
     s_Bv &=(s_B - t_B)c \\
 s_B (1 - \beta) &=t_B \\
 s_B & = \frac{t_B}{1 - \beta} 
   \end{aligned}
   \begin{aligned}[c]
+    \begin{tikzpicture}
+      \coordinate (RO) at (8,0);
+      \draw (RO) -- +(0, 3) node[pos=1,above] {A};
+      \draw (RO) -- +(-2, 3) node[pos=0.666] (tb) {} node[pos=1,above] {B};
+      \draw (7.5, 1)  -- (8.5, 1) node[pos=1, right] {$s_B'$};
+      \draw (tb) -- +(-0.5, 0) -- +(0.5, 0) node[pos=0, left] {$t_B'$};
+    \end{tikzpicture} \\
     t_B' v&= (s_B'-t_B')c \\
     t_B'(v + c) &= s_B'c \\
 t_B'&=\frac{s_B'}{a+\beta} 
@@ -145,13 +164,25 @@ If $k > 1 - \beta^2$ then B's clock will appear to run slow for A, even though A
 
 Here we see that even in the Newtonian world, provided the moving clock runs slow at exactly the right rate, we have the asymmetry of the Twin Paradox.
 
-% End note: not assuming that speed of light is the same for all observers.
+Having a slow clock will mean mistiming the speed of light.
 
 % Would like to jump in right now and apply to twin paradox.
 % Whole setup.
 % Twin paradox a bit more difficult because we don't know relative velocity for most of the trip. Use of radar does not work.
 
-% Clock paradox (three clocks paradox). Radar stations. Convenient. Overlap problem (but we don't mind for now). Can now work out relative velocity and dedice timing of other clock by application.
+A can use this system of radar to work out both the time and distance of an event (define event), by sending a radar beam to it and then receiving one back. This will give the Lorentz Transformation.
+
+(demonstrate Lorentz transformation or leave until extras)
+
+In the twin paradox, A does not know the relative velocity so easily throughout the journey because for a part of the journey, radar sent from A on its outer journey, will be received by it on its return journey. Similarly it cannot use a system of radar to find the location of distant objects and so cannot reason about B.
+
+If A uses radar nonetheless, it discovers:
+
+(relative velocity)
+
+(space-time diagram)
+
+An alternative approach is to  Clock paradox (three clocks paradox). Radar stations. Convenient. Overlap problem (but we don't mind for now). Can now work out relative velocity and dedice timing of other clock by application.
 
 % Out - short. In - long. ??? HOw does this resolve PROBLEM.
 
@@ -175,6 +206,7 @@ The problem is that this is a harder thought experiment to imagine. While the em
 
 But sound waves also travel with a speed which is source independent and given the right conditions have isotroptic and uniform velocity (query: what does isotropic mean precisely). An aviator using sonar in the same way as radar and who has a slow clock will see all the same behavoiur as their faster moving counterpart up to and including the Lorentz transformation. 
 
+Sound does not quite work this way becuase the pressure of the air, its humidity etc cause the speed of sound to vary. So let us imagine an entirely featureless, flat, world with uniform air pressure, so that sound obeys these principles too. We will call the speed of sound or light in these circumstances $c$ (it's just a number).
 
 Note: reference to air and ether here, perhaps go back and say something about this with the water earlier?
 
