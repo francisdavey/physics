@@ -1,4 +1,4 @@
-\documentclass{report}
+\documentclass[a4paper]{report}
 \usepackage{graphicx}
 %\graphicspath{ { images/} }
 \graphicspath{ {/Users/francisdavey/src/physics/blog/images/}}
@@ -13,24 +13,47 @@
 
 \begin{document}
 \section*{Setting the scene}
-Imagine you are walking in the mountains and, knowing the importance of taking regular rest breaks, you stop for a while and look out over the scenery. Being of a scientific mind you might wonder two things: how far is it you have come and how much higher are you now than when you started?
+\subsection*{The strange behavour of clocks}
+Imagine two people are walking in the mountains. They set off from the same base camp. One goes fairly directly to their destination (shown in green) and the other takes a more scenic route (shown in red). While resting at the end, they compare notes and wonder: how high they have climbed above their base camp and how far did they each travel?
 
-In order to work out the answer to the first question accurately, you have to know exactly what route you took from start to finish, whereas the second question requires only that you know your altitude at the start and end of your journey. Quantities which require only that you know the difference between start and end are obviously rather convenient and turn up many times in mathematics and physicsts. Mathematicians give them a special name: exact (?Q is this the best name).
+\includegraphics[width=0.5\linewidth]{mountain}
 
-It is easy to see that height climbed is exact, whereas distance travelled is not. For much of history it was thought that time was exact. For our mountaineer to work out for how long they have been travelling, all they need to do is know their start and end times. But in Albert Einstein deduced that it was not. Time was more like distance than altitude.
+To work out how much higher they are than when they started, all they need to know is wo numbers: the altitude at the start point and at the finish. They can consult a map and substract one from the other to find out how high they have climbed. The answer will be the same for the two travellers because their start and end points are the same. 
+How far each has travelled is a different matter. To know that requires knowledge of much more than the start and finish positions, but the whole route. As a child, we would work this sort of thing out by laying pieces of string out on a map as best we could and then straightening them up and measuring them with a ruler. 
 
-This result has been experimentally deduced many times. For example, in 1971, four atomic clocks were placed on board commercial airliners and flown around the world. First, twice in the Eastward diretion and then twice in the Westwardy direction. After each trip, the clocks were compared with the time on reference clokcs that did not take the trip. On the Eastward journey, all the clocks ran slow, while going Westward, they all ran fast.
+We could say altitude climbed is ``path independent'' and distance travelled is ``path dependent''. In mathematical physics, many quantities are either one thing or the other. Realising that something is path independent is often very important, for example  because it makes it easier to compute. 
 
-The degree to which a ``moving clock'' (in other words one that is moving relative to you) ``appears'' to slow down is $\sqrt{1 - \frac{v^2}{c^2}}$ where $v$ is the relative velocity and $c$ the speed of light in vacuum.
+Another example of something that the climbers will assume is path independent is the duration of their journey. To compute this, so they might think, all they need to know is two things: when they set off; and when they arrived. They can use clocks at the start or destination, or look at their watches (a wearable device for displaying the current time). In particular, if they start and end at the same time, their journies took exactly the same length of time. In other words, the passage of time is path independent.
 
-This behaviour of clocks, when they move, is often expressed in the words:
+So at least it was thought for most of human history. Our ancestors were roughly right. For people wandering around in the mountains, catching trains or driving around the countryside, ``time is path independent'' is approximately true. It is not, however, exactly correct. 
+
+%later
+Towards the end of the nineteenth century, a number of physicists started to suspect that time was not as straightforward as it looked. The credit for proving that time is path dependent goes to Albert Einstein in 1905. As we shall see later in the series, Einstein could be understood as saying something more like ``time might as well be path dependent for all we know''.
+
+Theory is all very well, but we are now quite sure because of a series of experiments, example Ives-Sitwell. In 1971, four atomic clocks were placed on board commercial airliners and flown around the world. First, twice in the Eastward diretion and then twice in the Westwardy direction. After each trip, the clocks were compared with the time on reference clokcs that did not take the trip. On the Eastward journey, all the clocks ran slow, while going Westward, they all ran fast.
+
+I mention Einstein and the theoreticians because I am telling the story almost backwards. The odd behaviour of clocks -- time dilation as it is sometimes called -- comes nearer the end of the story of relativity. You could start with the theory of electrodynamics and deduce the behaviour of clocks from it. But I think it is easier to see what happens if we start here. 
+
+How does it depend on path? It turns out that all that matters is the velocity along the path - the acceleration and so on does not seem to matter.
+
+To put some numbers in here, if we take, say, a particle in a particle accelerator and see how its velocity affects how quickly it decays, the factor by which it lives long - or if you like its internal clock slows down - is $\sqrt{1 - \frac{v^2}{c^2}}$ where $v$ is the relative velocity and $c$ is the number $299,792,458ms^-1$ or very close to three hundred million metres a second. In order for us to see any of this effect on clocks we need velocities close to this.
+
+$c$ also happens to be the speed of light in a vacuum. In fact that is how it is usually described or defined. But that assumes we know what light is and what it means to say it is travelling in a vacuum. 
+
+To see more about the nature of these numbers, see the extras.
+
+In many popular accounts of relativity for the general public, and I am afraid to say in some more formal situations such as textbooks for university level students, This behaviour of clocks is often expressed roughly as:
 
 \framebox[0.8\linewidth][c]{Moving clocks run slow}
 
-But this phrase is at least as often criticised for being misleading or plainly wrong. To see why, we should go back to a fundamental idea propoposed by Galileo: relativity.
+It is, at least, nice and easy: work out how fast a clock is moving and that will tell you how slow it is running. You could say something like: the fast a clock moves in space, the slower it moves in time, or something like that.
 
-\section{Galileo's ship and relativity}
+However, more sensitive physicists react to this sort of summary with the expression that someone who has just put a lemon in their mouth might have. What is setting their teeth on edge is the rather glib way we are talking about ``moving clocks''. They might say ``moving relative to what''? To really appreciate what they are objecting to, we need to think about an old an important idea known as ``relativity'' and the first person to realy write about it was none other than Galileo Galilii. The second part of our story.
+
+\section*{Galileo's ship}
 \includegraphics[width=0.4\linewidth]{genoese_carrack}
+% Can we find a painting
+%Could we/should we do a diagram
 
 Galileo imagined an experimentalist carrying out their researches in the cabin of a boat. One imagines a large Captain's cabin of the kind seen in romantic descriptions of life in the 18th century navy or as an 18th century pirate. The significant feature is that you cannot see outside. You have no way to know how fast you are travelling. Galileo proposed that no experiment you could carry out inside the cabin would allow you to know the speed with which you were moving.
 
