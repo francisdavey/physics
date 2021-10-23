@@ -1,0 +1,22 @@
+\documentclass[12pt, a4paper]{report}
+\usepackage{tikz}
+\usetikzlibrary{graphs, graphdrawing}
+\usegdlibrary{layered}
+
+\begin{description}[style=nextline]
+  
+\end{description}
+\item [
+\begin{document}
+
+\tikz \graph [layered layout]
+{
+C1 -> {C2, C4, C5},
+C2 ->[densely dashed] {C4, C5},
+C3 ->[densely dashed] {C4, C5},
+C5 -> {C7, C8},
+C4 -> C8,
+C7 -> C8
+};
+
+\end{document}
