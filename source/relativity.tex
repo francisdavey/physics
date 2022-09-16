@@ -1,0 +1,38 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+\section{The physics}
+\subsection{Our scientists}
+Set up situation.
+
+Train drivers passing by each other. Really very fast trains. Actually had better be spaceships. With velocity $v$. Velocity could be measured in anything so we may need a conversion factor.
+
+\subsection{Length contraction}
+Each sees the other's measuring rods shrunk along the axis of movement by a factor of $\sqrt{1-\frac{v^2}{c^2}}$. This shrinkage factor is so important that it has its own name $\beta$ (it is also much easier to write $\beta$ in what follows. Here $c$ stands for a conversion factor $299792458ms^{-1}$, which makes $\frac{v^2}{c^2}$ dimensionless. It did not matter what we used. What $c$ means will make sense in a moment (forward ref).
+
+(Fitzgerald contraction)
+
+Note that because $\beta$ depends on $v^2$ it is the same for positive and negativ velocities. In other words both scientists see the same shrinkage of the other. You very occasionally hear it said ``rods contract if you move faster'' but that {\emph sounds} like it would be one-sided. How can both scientists think the other one's rod is contracting, who is right (neither?), what is going on. We aren't seeing the whole picture.
+
+As velocity increases and gets closer to $c$ then $\beta$ tends to zero. (see graph). 
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $v$,
+    ylabel = {$\beta=\sqrt{1-v^2/c^2}$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=0:1, 
+    samples=100, 
+]
+{sqrt(1 - x^2)};
+\end{axis}
+\end{tikzpicture}
+\subsection{Time dilation}
+In 1971, four atomic clocks were flown around the world: two Westwards and two Eastwards. On their return they were compared with two clocks that had been left at the US Naval Observatory. The Eastward clocks -- flying with the rotation of the Earth had lost about 59ns (59 x $10^-9$s). By contrast the Westward clocks -- flying against the rotation of the Earth had gained about 273 nanoseconds and so, on average, had run faster.
+
+The second discrepancy the two scientists notice is one of time. 
+
+
+\end{document}

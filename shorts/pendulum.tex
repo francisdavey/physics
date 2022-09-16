@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{tikz}
+\newtheorem{theorem}{Theorem}[section]
+\begin{document}
+Consider a simple pendulum of length $l$ at angle $\theta$ from the vertical (see illustration). The pendulum is massless, but has a mass $m$ at the end. We assume that we are working on scales at which the force due to gravity is a constant  $g$.  
+
+\begin{figure}[h]
+
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \fill (O) circle [radius=3pt];
+    \draw (O) circle (4);
+  \end{tikzpicture}
+  
+  \caption{The pendulum apparatus}
+  
+\end{figure}
+
+\begin{theorem}
+  \begin{align}
+    E_{K} &= \frac{m}{2}l^2\dot{\theta}^2 \\
+    E_{P} &= l(1 - cos(\theta))mg \\
+\intertext{Equating the two gives us a differential equation for $\theta$}
+\dot{\theta}^2 & =  \frac{g}{l}(1 - cos(\theta)) \\
+\dot{\theta} &= \sqrt{\frac{g}{l}(1 - cos(\theta))}
+  \end{align}
+\end{theorem}
+\end{document}

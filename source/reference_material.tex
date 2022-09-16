@@ -1,0 +1,187 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section{The Circle}
+\section{Circular Functions (trigonometry)}
+\begin{figure}[H]
+  \label{fig:rfmtrigrecall}
+  \begin{tikzpicture}
+    \coordinate (O) at (0,0);
+    \coordinate (P) at (3.2, 2.4); %(1.6, 1.2);
+    \coordinate (hhtop) at (6, 2.4);
+    \coordinate (A) at (4, 0);
+    \coordinate (B) at (0, 4);
+    \coordinate (C) at (-4, 0);
+    \coordinate (D) at (0, -4);
+
+    \fill (O) circle [radius=3pt];
+    \fill (P) circle [radius=3pt];
+    \fill (A) circle [radius=3pt];
+    
+    \draw (-6,0) -- (C) -- (O) node [below left]{O} -- (A) node [above right] {A} -- (6,0);
+    \draw [<->] (6,0) -- node [right] {$R\sin\theta$}(hhtop);
+    \draw (O) -- node [above] {$R$} (P) node [above right]{P};
+    \draw [dotted] (P) -- (hhtop);
+    \draw (O) circle (4);
+    \draw [dotted] (O) -- (0, -6);
+    \draw [dotted] (A) -- (4, -6);
+    \draw [<->] (0, -6) -- node [below] {$R\cos\theta$} (4, -6);
+
+    \pic [draw, ->, "$\theta$", ultra thick, angle eccentricity=1.5, angle radius=1.5cm] {angle = A--O--P};
+
+  \end{tikzpicture}
+  \caption{The definition of sine and cosine}
+\end{figure}
+
+Trigonometric functions may be written with or without parentheses $sin\theta$, $sin(\theta)$ and so on.
+
+\section{The Ellipse}
+\begin{figure}
+  \label{fig:ellipsedim}
+  \begin{tikzpicture}
+    % Center
+    \coordinate (pointC) at (0, 0);
+    \fill (pointC) circle [radius=2pt];
+    \draw (pointC) node [below left] {C};
+
+    % Foci
+    \coordinate (pointF1) at (4, 0);
+    \fill (pointF1) circle [radius=2pt];
+    \draw (pointF1) node [below] {$F_1$};
+    \coordinate (pointF2) at (-4, 0);
+    \fill (pointF2) circle [radius=2pt];
+    \draw (pointF2) node [below] {$F_2$};
+
+    % Vertex
+    \coordinate (pointV1) at (5, 0);
+    \fill (pointV1) circle [radius=2pt];
+    \draw (pointV1) node [right] {$V_1$};
+    \coordinate (pointV2) at (-5, 0);
+    \fill (pointV2) circle [radius=2pt];
+    \draw (pointV2) node [right] {$V_2$};
+    \coordinate (pointV3) at (0,3);
+    \fill (pointV3) circle [radius=2pt];
+    \draw (pointV3) node [right] {$V_3$};
+    \coordinate (pointV4) at (0,-3);
+    \fill (pointV4) circle [radius=2pt];
+    \draw (pointV4) node [right] {$V_4$};
+
+
+    % Ellipse
+    \draw (pointC) ellipse (5 and 3);
+
+
+    % Axes
+    \draw (pointV1) {[dotted] -- (pointF1)} -- (pointC) -- (0, 3);
+    \draw (pointV2) [dotted] -- (pointC) -- (pointV4);
+
+ 
+   % Axis label guidepoints
+    \coordinate (label1L) at (0, -3.5);
+    \coordinate (label1R) at (5, -3.5);
+
+    \coordinate (label2L) at (-5.5, 3);
+    \coordinate (label2R) at (-5.5, 0);
+
+   % Axis labels
+    \draw (pointV4) [dotted] -- (label1L);
+    \draw (pointV1) [dotted] -- (label1R);
+    \draw [<->] (label1L) -- (label1R) node [midway, below] (TextNode) {semi-major axis}; 
+
+    \draw (pointV3) [dotted] -- (label2L);
+    \draw (pointV2) [dotted] -- (label2R);
+    \draw [<->] (label2L) -- (label2R) node [midway, left] (TextNode) {semi-minor axis};
+
+  \end{tikzpicture}
+  \caption{Ellipse dimensions}
+\end{figure}
+
+The two foci are marked as $F_1$ and $F_2$. The two points at the ends of the majoraxis ($V_1$ and $V_2$) are sometimes refeerred to as ``vertices'' while the two points at the ends of the minor axis ($V_3$ and $V_4$) are referred to as ``co-vertices''.
+
+\begin{tabular}{|l|l|l|p{0.4\linewidth}|}
+  \hline
+  $CF_1=CF_2$ & linear eccentricity & $c$ & half-focal separation ($e$, $f$)\\
+$CV_1=CV_2$ & semi-major axis & $a$ \\
+$CV_3=CV_4$ & semi-minor axis & $b$ \\
+$\frac{c}{a}$ & eccentricity & $e$ & first eccentricity, mathematical eccentricity ($\epsilon$) \\
+\hline 
+\end{tabular}
+
+$$e=\sqrt{\frac{a^2 - b^2}{a^2}}$$
+$$c=\sqrt{a^2 - b^2}$$
+
+\begin{figure}
+  \begin{tikzpicture}
+    \coordinate (pointC) at (0, 0);
+    \fill (pointC) circle [radius=2pt];
+    \draw (pointC) node [below left] {C};
+
+    % Focus
+    \coordinate (pointF1) at (4, 0);
+    \fill (pointF1) circle [radius=2pt];
+    \draw (pointF1) node [below] {$F_1$};
+
+    % Vertex
+    \coordinate (pointV1) at (5, 0);
+    \fill (pointV1) circle [radius=2pt];
+    \draw (pointV1) node [right] {$V$};
+
+
+    % Ellipse
+    \draw (pointC) [red] ellipse (5 and 3);
+
+
+    % Axes
+    \draw (pointV1) {[dotted] -- (pointF1)} -- (pointC) -- (0, 3);
+    \draw (pointV2) [dotted] -- (pointC) -- (pointV4);
+
+
+    % Points
+    \coordinate (pointP) at (3, 2.4);
+    \fill (pointP) circle [radius=2pt];
+    \draw (pointP) node [above right] {P};
+
+    \coordinate (pointPdash) at (3, 4);
+    \fill (pointPdash) circle [radius=2pt];
+    \draw (pointPdash) node [above right] {P};
+
+
+    % Auxiliary circles
+    \draw (pointC) [blue] circle (5);
+    \draw (pointC) [green] circle (3);
+
+    % Eccentric anomaly
+    \draw (pointC) -- (pointPdash);
+    \pic [draw, ->, "$\phi$", ultra thick, angle eccentricity=1.5, angle radius=1.5cm] {angle = pointV1--pointC--pointPdash};
+
+    % True anomaly
+    \draw (pointF1) -- (pointP);
+    \pic [draw, ->, "$f$", ultra thick, angle eccentricity=1.5, angle radius=0.5cm] {angle = pointV1--pointF1--pointP};
+
+
+  \end{tikzpicture}
+  \caption{Ellipse angles}
+  
+\end{figure}
+
+The {\emph true anomaly} of a point $P$ on an ellipse is the angle between the major axis and the line from a focus to that point -- $\angle VCP$ in the diagram labelled $c$. The true anomaly is also written $\theta$ or $\nu$ in the literature. 
+
+The {\emph eccentric anomaly} is constructed by using an ``auxiliary'' circle of radius $a$. The point $P$ is projeted (?) ``up'' to the auxiliary circle onto point $P'$. The eccentric anomaly is then $\angle VCP'$, in other words the angle between the semi-major axis and the line connecting the centre to $P'$.
+
+\subsection{The standard ellipse}
+The standard ellipse is given by the cartesian coordinate formula:
+
+$$ \frac{x^2}{a^2} + \frac{y^2}{b^2}=1$$
+
+And has the following properties:
+
+\begin{tabular}{ll}
+  \text{Semi-major axis}  & $a$ \\
+\text{Semi-minor axis} & $b$ \\
+\text{Eccentricity} &  $\sqrt{\frac{a^2 - b^2}{a^2}}$ \\
+\text{General point} & $(a cos(\phi), b sin(\phi))$ \\
+
+\end{tabular}
+
+
+\end{document}

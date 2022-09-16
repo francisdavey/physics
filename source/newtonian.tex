@@ -1,0 +1,33 @@
+\documentclass[main.tex]{subfiles}
+\usepackage{mathtools}
+\begin{document}
+\chapter{Ellastic collisions}
+When two objects hit each other, all sorts of things might happen. Either or both object might be profoundly affected by the interaction as, for example, when a car hits a lamp post at high speed. Physical effects may be emitted such as in the form of sound waves, elctromagnetic radiation or heat.
+
+An ellastic collision is an idealised collision where none of these things happen. The objects remain unchanged and, in particular, no energy is emitted in the process. While this is idealised it is a rough approximation to the collisions of billiard balls - although a small amount of sound energy is emitted in the form of the sharp crack when they hit.
+
+Knowing that a collision is elastic makes things much easier because it means that there is an overall conservation of both energy and momentum. No energy is lost, for example in doing work to deform one object, and nothing is lost. This makes the ellastic collision of bodies a neat place to learn a little about Newtonian dyanmics. But even here there are going to be some subtlties.
+
+\section{One dimension}
+For the moment let us assume we are dealing with a kind of idealised billiard ball: a perfectly spherical rigid body and to make life as simple as possible work in one dimension.
+
+Suppose we know the particles' initial position and momentum, what do we know about their final momentum. Galilean invariance means that we can choose the point of impact as the origin. Working in one dimension means that the two bodies are then defined by two scalar momenta: $p_{in}$ and $q_{in}$, what we want to know is what are $p_{out}$ and $q_{out}$?
+
+Conservation of energy and momentum give us two equations:
+
+\begin{align}
+   p_{in} + q_{in} = p_{out} +q_{out} && \text{conservation of momenta} \label{eq:cm1}\\
+  \frac{p_{in}^2}{m_p} + \frac{q_{in}^2}{m_q} = \frac{p_{out}^2}{m_p} +\frac{q_{out}^2}{m_q} && \text{conservation of energy} \label{eq:ce1}
+\end{align}
+
+A good intuition to have is that this is all we need because we have two unknowns and two equations. The second equation is a quadratic which means that there might be two possible solutions, but we should be optimistic. Let us solve:
+
+\begin{align}
+  p_{out} = p_{in} + q_{in} - q_{out} \ \shortintertext{from equation \ref{eq:cm1}} \\
+  \frac{p_{in}^2}{m_p} + \frac{q_{in}^2}{m_q} = \frac{(p_{in} + q_{in} - q_{out} )^2}{m_p} +\frac{q_{out}^2}{m_q} \ \shortintertext{substituting into \ref{eq:ce1}} \\
+  \frac{p_{in}^2}{m_p} + \frac{q_{in}^2}{m_q} = \frac{p_{in}^2 + q_{in}^2 + q_{out}^2 + 2p_{in}q_{in} - 2p_{in}q_{out} - 2q_{in}q_{out}}{m_p} +\frac{q_{out}^2}{m_q} \ \shortintertext{simplifying} \\
+  0 = p_{in}q_{in}  - q_{in}q_{out} + m_p\frac{q_{out}^2}{m_q} \ \shortintertext{collecting terms and cancelling} \\
+  q_{out}=\frac{m_q(q_{in} \pm \sqrt{q_{in}^2 - 4p_{in}q_{in}\frac{m_p}{m_q}})}{2m_p} \ \shortintertext{general quadratic solution}
+\end{align}
+
+\end{document}
