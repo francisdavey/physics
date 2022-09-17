@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?> 
+<?xml-stylesheet href="main.css" type="text/css"?> 
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="338.69872pt" height="114.21097pt" viewBox="-17.44063 -57.10548 338.69872 114.21097 "> 
+<g transform="translate(0, 57.10548 ) scale(1,-1) translate(0,57.10548 )"> 
+    <g stroke="#000" fill="#000">
+ <g stroke-width="0.4">
+ <path d=" M 0.0 0.0 L 312.39514 0.0  " fill="none"/>
+ <g transform="translate(312.39514,0.0)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <path d=" M 0.0 -56.90549 L 0.0 56.4455  " fill="none"/>
+ <g transform="matrix(0.0,1.0,-1.0,0.0,0.0,56.4455)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <g stroke-dasharray="0.4,2.0" stroke-dashoffset="0.0">
+ <path d=" M 0.0 28.45274 L 312.85513 28.45274  " fill="none"/>
+ </g>
+ <g stroke-dasharray="0.4,2.0" stroke-dashoffset="0.0">
+ <path d=" M 0.0 -28.45274 L 312.85513 -28.45274  " fill="none"/>
+ </g>
+ <path d=" M 0.0 0.0 M 3.0 0.0 C 3.0 1.65688 1.65688 3.0 0.0 3.0 C -1.65688 3.0 -3.0 1.65688 -3.0 0.0 C -3.0 -1.65688 -1.65688 -3.0 0.0 -3.0 C 1.65688 -3.0 3.0 -1.65688 3.0 0.0 Z M 0.0 0.0  " stroke="none"/>
+ <path d=" M 44.69923 28.45274 M 47.69923 28.45274 C 47.69923 30.10962 46.35611 31.45274 44.69923 31.45274 C 43.04236 31.45274 41.69923 30.10962 41.69923 28.45274 C 41.69923 26.79587 43.04236 25.45274 44.69923 25.45274 C 46.35611 25.45274 47.69923 26.79587 47.69923 28.45274 Z M 44.69923 28.45274  " stroke="none"/>
+ <path d=" M 89.38718 0.0 M 92.38718 0.0 C 92.38718 1.65688 91.04405 3.0 89.38718 3.0 C 87.7303 3.0 86.38718 1.65688 86.38718 0.0 C 86.38718 -1.65688 87.7303 -3.0 89.38718 -3.0 C 91.04405 -3.0 92.38718 -1.65688 92.38718 0.0 Z M 89.38718 0.0  " stroke="none"/>
+ <path d=" M 134.08076 -28.45274 M 137.08076 -28.45274 C 137.08076 -26.79587 135.73764 -25.45274 134.08076 -25.45274 C 132.42389 -25.45274 131.08076 -26.79587 131.08076 -28.45274 C 131.08076 -30.10962 132.42389 -31.45274 134.08076 -31.45274 C 135.73764 -31.45274 137.08076 -30.10962 137.08076 -28.45274 Z M 134.08076 -28.45274  " stroke="none"/>
+ <path d=" M 178.77435 0.0 M 181.77435 0.0 C 181.77435 1.65688 180.43123 3.0 178.77435 3.0 C 177.11748 3.0 175.77435 1.65688 175.77435 0.0 C 175.77435 -1.65688 177.11748 -3.0 178.77435 -3.0 C 180.43123 -3.0 181.77435 -1.65688 181.77435 0.0 Z M 178.77435 0.0  " stroke="none"/>
+ <path d=" M 223.46796 28.45274 M 226.46796 28.45274 C 226.46796 30.10962 225.12483 31.45274 223.46796 31.45274 C 221.81108 31.45274 220.46796 30.10962 220.46796 28.45274 C 220.46796 26.79587 221.81108 25.45274 223.46796 25.45274 C 225.12483 25.45274 226.46796 26.79587 226.46796 28.45274 Z M 223.46796 28.45274  " stroke="none"/>
+ <path d=" M 268.16154 0.0 M 271.16154 0.0 C 271.16154 1.65688 269.81842 3.0 268.16154 3.0 C 266.50467 3.0 265.16154 1.65688 265.16154 0.0 C 265.16154 -1.65688 266.50467 -3.0 268.16154 -3.0 C 269.81842 -3.0 271.16154 -1.65688 271.16154 0.0 Z M 268.16154 0.0  " stroke="none"/>
+ <path d=" M 312.85513 -28.45274 M 315.85513 -28.45274 C 315.85513 -26.79587 314.51201 -25.45274 312.85513 -25.45274 C 311.19826 -25.45274 309.85513 -26.79587 309.85513 -28.45274 C 309.85513 -30.10962 311.19826 -31.45274 312.85513 -31.45274 C 314.51201 -31.45274 315.85513 -30.10962 315.85513 -28.45274 Z M 312.85513 -28.45274  " stroke="none"/>
+ <g stroke-width="1.6">
+ <path d=" M 0.0 0.0 C 14.57213 14.56761 28.51813 28.45274 44.69923 28.45274 C 60.87624 28.45274 74.81873 14.56763 89.38718 0.0 C 103.95746 -14.56761 117.9017 -28.45274 134.08076 -28.45274 C 150.25981 -28.45274 164.20406 -14.56763 178.77435 0.0 C 193.34464 14.56761 207.28888 28.45274 223.46796 28.45274 C 239.647 28.45274 253.59125 14.56763 268.16154 0.0 C 282.73183 -14.56761 296.67607 -28.45274 312.85513 -28.45274  " fill="none"/>
+ <g transform="translate(-13.52443,-12.91618)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.40411,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> A</g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(40.53886,33.16895)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.16037,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> B </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(94.10338,4.7162)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.24301,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> C </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(129.59401,-41.36893)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.48676,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> D</g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(183.49055,-12.91618)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.40411,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> A </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(219.30759,33.16895)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.16037,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> B </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(272.87775,4.7162)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.24301,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> C </g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(308.36838,-41.36893)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.48676,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> D</g> </g>
+ </text> 
+</g>
+ </g>
+ </g>
+ </g>
+ </g>
+ 
+                                                                                      </g> 
+</svg> 

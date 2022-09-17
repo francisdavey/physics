@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?> 
+<?xml-stylesheet href="main.css" type="text/css"?> 
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="401.887pt" height="228.02194pt" viewBox="-170.91646 -114.01097 401.887 228.02194 "> 
+<g transform="translate(0, 114.01097 ) scale(1,-1) translate(0,114.01097 )"> 
+                                            <g stroke="#000" fill="#000">
+ <g stroke-width="0.4">
+ <path d=" M 0.0 0.0 M 3.0 0.0 C 3.0 1.65688 1.65688 3.0 0.0 3.0 C -1.65688 3.0 -3.0 1.65688 -3.0 0.0 C -3.0 -1.65688 -1.65688 -3.0 0.0 -3.0 C 1.65688 -3.0 3.0 -1.65688 3.0 0.0 Z M 0.0 0.0  " stroke="none"/>
+ <path d=" M 91.04869 68.2864 M 94.04869 68.2864 C 94.04869 69.94328 92.70557 71.2864 91.04869 71.2864 C 89.39182 71.2864 88.04869 69.94328 88.04869 68.2864 C 88.04869 66.62953 89.39182 65.2864 91.04869 65.2864 C 92.70557 65.2864 94.04869 66.62953 94.04869 68.2864 Z M 91.04869 68.2864  " stroke="none"/>
+ <path d=" M -170.71646 0.0 L 0.0 0.0 L 170.71646 0.0  " fill="none"/>
+ <g transform="translate(-13.25499,-12.31618)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(4.5694,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> O</g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 170.71646 0.45999 L 170.71646 67.82642  " fill="none"/>
+ <g transform="matrix(0.0,-1.0,1.0,0.0,170.71646,0.45999)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <g transform="matrix(0.0,1.0,-1.0,0.0,170.71646,67.82642)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <g transform="translate(174.83266,31.1432)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(26.11084,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> how high?</g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M 0.0 0.0 L 91.04869 68.2864  " fill="none"/>
+ <g transform="translate(95.16489,72.4026)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(3.99718,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> P </g> </g>
+ </text> 
+</g>
+ </g>
+ <g stroke-dasharray="0.4,2.0" stroke-dashoffset="0.0">
+ <path d=" M 91.04869 68.2864 L 170.71646 68.2864  " fill="none"/>
+ </g>
+ <path d=" M 0.0 0.0 M 113.81097 0.0 C 113.81097 62.85687 62.85687 113.81097 0.0 113.81097 C -62.85687 113.81097 -113.81097 62.85687 -113.81097 0.0 C -113.81097 -62.85687 -62.85687 -113.81097 0.0 -113.81097 C 62.85687 -113.81097 113.81097 -62.85687 113.81097 0.0 Z M 0.0 0.0  " fill="none"/>
+ </g>
+ </g>
+ 
+                                                                                                       </g> 
+</svg> 

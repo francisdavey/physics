@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?> 
+<?xml-stylesheet href="main.css" type="text/css"?> 
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="356.34235pt" height="243.35431pt" viewBox="-170.91646 -114.01097 356.34235 243.35431 "> 
+<g transform="translate(0, 129.34334 ) scale(1,-1) translate(0,114.01097 )"> 
+                                            <g stroke="#000" fill="#000">
+ <g stroke-width="0.4">
+ <path d=" M 0.0 0.0 M 113.81097 0.0 C 113.81097 39.28554 62.85687 71.13185 0.0 71.13185 C -62.85687 71.13185 -113.81097 39.28554 -113.81097 0.0 C -113.81097 -39.28554 -62.85687 -71.13185 0.0 -71.13185 C 62.85687 -71.13185 113.81097 -39.28554 113.81097 0.0 Z M 0.0 0.0  " fill="none"/>
+ <path d=" M 0.0 -113.81097 L 0.0 0.0 L 0.0 71.13185 L 0.0 113.35098  " fill="none"/>
+ <g transform="matrix(0.0,1.0,-1.0,0.0,0.0,113.35098)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <g transform="translate(-9.11195,31.39926)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(2.49788,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> <tspan font-family="cmmi" font-size="12">b</tspan></g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(-3.07982,120.26048)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(3.07982,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> <tspan font-family="cmmi" font-size="12">y</tspan></g> </g>
+ </text> 
+</g>
+ </g>
+ <path d=" M -170.71646 0.0 L 0.0 0.0 L 113.81097 0.0 L 170.25647 0.0  " fill="none"/>
+ <g transform="translate(170.25647,0.0)">
+ <g stroke-width="0.31999">
+ <g stroke-dasharray="none" stroke-dashoffset="0.0">
+ <g stroke-linecap="round">
+ <g stroke-linejoin="round">
+ <path d=" M -1.19998 1.59998 C -1.09998 0.99998 0.0 0.09999 0.29999 0.0 C 0.0 -0.09999 -1.09998 -0.99998 -1.19998 -1.59998  " fill="none"/>
+ </g>
+ </g>
+ </g>
+ </g>
+  </g>
+ <g transform="translate(53.8215,-9.28285)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(3.08398,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> <tspan font-family="cmmi" font-size="12">a</tspan></g> </g>
+ </text> 
+</g>
+ </g>
+ <g transform="translate(174.83266,-2.58333)">
+ <g fill="#000">
+ <text style="stroke:none" transform="scale(1,-1) translate(3.33852,0)" text-anchor="middle"  font-size="12"> 
+<g fill="#000">
+ <g stroke="none"> <tspan font-family="cmmi" font-size="12">x</tspan></g> </g>
+ </text> 
+</g>
+ </g>
+ </g>
+ </g>
+ 
+                                                                             </g> 
+</svg> 
