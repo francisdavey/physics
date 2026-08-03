@@ -10,18 +10,22 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
 ---
 
 ## SPINE
+### Episode 1 - differentials
 
-- [ ] What does `y = x²` actually mean? (function vs curve vs graph — the seed
-      question; also sets up the later function/differential split) — status: idea
-- [ ] Variables in the Leibniz sense (not "a number that varies" but something
-      more precise — this is the concept the whole story hangs off) — status: idea
-- [ ] dy/dx as a genuine ratio of differentials (the hook / core claim of the
-      whole piece) — status: rough draft
-- [ ] Progression of variables / parameter dependence — what vanishes with
-      dy/dx and what doesn't (this is what makes higher order meaningful later) — status: idea
-- [ ] Why dy/dx isn't just "an ordinary fraction wearing a costume" — and where
-      it *does* behave like one (this is presumably the payoff moment of the
-      whole spine — worth being explicit about what's being defended) — status: idea
+- [ ] What does `y = x²` actually mean? (is it just an expression in which we insert y's and x's? No, usually we have a picture in mind (picture of it). For this curve we can read off values of y for x. Plotting a graph. Idea of a function. But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. Idea of a constraint. function  — the seed question also sets up the later function/differential split) — status: idea
+- [ ] Variables could just be these funny letters to which we assign values in the computer science sense. In the Leibniz sense (not "a number that varies". Start with a curve and see that any point on that curve has numbers associated with it — this is the concept the whole story hangs off. A variable could be defined on the whole plane or just in terms of that single curve. Like s. Still acts as a description of a curve or curves) — status: idea
+- [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon). Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story. Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter.
+- [ ] If they are functions how do we add/multiply them. Explain pulling back. We can now do any maths we want here. Remark: Very useful idea, used all over.
+- [ ] delta of a variable gives a difference. d of a variable gives another function of t. Using limits - refer to load bearing section on this. Now dx is a function also. A differential
+- [ ] dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece) — status: rough draft
+- [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
+- [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (aside this is a Krull Valuation, how interesting is that and do we need to say much about it here?)
+- [ ] Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
+- [ ] If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
+- [ ] Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) — status: idea
+- [ ] If we pick the progression of variables / parameter we can simplify expressions, but only to a certain extent.
+- [ ] That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
+- [ ] Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system — status: idea
 
 ## LOAD-BEARING
 
@@ -38,18 +42,19 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
       "what type is y" objection) — status: idea
 
 ## DIGRESSION
-
+- [ ] Formalisation: Co-germs, co-germ differentials
+- [ ] Why 1-forms don't work (no access to higher derivatives), why forms really don't work (even if integrable, you can make a foliation and then convert all forms to scalars via Hodge duality and then take a d of them, but you need parametrisation for all that - is this true? Can it be fleshed out. Note: it was my original model but it may illustrate why you can't get away from the parameter).
 - [ ] Curvature via second order — hook: "what does the *next* term buy you,
-      geometrically?" — status: idea
-- [ ] Hardy on growth-rate infinitesimals (early 20th c. calculus texts
-      defining infinitesimals as classes of function by growth rate) — hook:
-      "safe," makes minimal ontological demands — status: idea
+      geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically — status: idea
+- [ ] A bonus point is that things like ds =dx^2 +dy^2 are natural and in SR you can just do tau = (similar) and derive d tau/dt = gamma (or 1/gamma) directly again just using algebra. All type checks nicely.
+
+- [ ] Hardy on growth-rate infinitesimals (early 20th c. calculus texts defining infinitesimals as classes of function by growth rate) — hook: how do we have infinitely short sides without having infinitesimal numbers? "safe," makes minimal ontological demands  — status: idea
 - [ ] Robinson / nonstandard analysis — hook: still needed — status: idea
-- [ ] Nilpotents, and Grothendieck's desire for a "double point" — hook: a
-      genuinely motivating picture for why algebraic geometry wants nilpotents
-      at all — status: idea
-- [ ] Small-delta notation for inexact differentials → brief discussion of
-      exactness — hook: still needed — status: idea
+- [ ] Nilpotents, and Grothendieck's desire for a "double point" — hook: a genuinely motivating picture for why algebraic geometry wants nilpotents at all — status: idea
+- [ ] Once we explore "things like ds" we realise we can do inexact differentials, but we didn't know what they were.
+- [ ] Explain exactness simply via thing like potentials and voltage. This leads to small-delta notation
+- [ ] Small-delta notation for inexact differentials → brief discussion of exactness — hook: still needed — status: idea
+- [ ] Bigger digression: thermodynamics. dU=delta q + delta W (how you can guess an exact differential exists if you now something about an inexact one - in this case W along adiabatic paths)
 - [ ] Exactness → homology (resist going further than a taste) — hook: still
       needed, and a place to explicitly signal "you can stop here" — status: idea
 
@@ -63,7 +68,7 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
   load-bearing for something later (e.g. if parametrised curves / speed in
   the tangent bundle ever enters, à la Burke)?
 - How much of the infinitesimals material (Hardy / Robinson / nilpotents) is
-  one digression with three branches, vs three separate digressions?
+  one digression with three branches, vs three separate digressions? I wonder if there isn't an "infinitesimals" story - a sort of episode three, which can be motivated directly by the question of how is a curve a polygon. OR an alternative is that we can insert the function growth rate definition very early because it so natural; was widely used; and as a digression or further digression it is the basis of lots of O(x) type notation.
 
 ## PARKING LOT (unsorted — anything new goes here first, sort later)
 
