@@ -2,7 +2,7 @@
 
 Working document. Flat list first, sequencing decided later.
 Categories: 
-SPINE (must be walked in order, no hand-waving) 
+SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)
 LOAD-BEARING (not on spine, but later spine material won't land without it) 
 DIGRESSION (optional, needs its own hook, reader can skip and rejoin with nothing lost).
 
@@ -20,20 +20,32 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
 Headline: "dy/dx is a fraction".
 - [ ] Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
 - [ ] Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
-- [ ] What does `y = x²` actually mean? (is it just an expression in which we insert y's and x's? No, usually we have a picture in mind (picture of it). For this curve we can read off values of y for x. Plotting a graph. Idea of a function. But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. Idea of a constraint. function  — the seed question also sets up the later function/differential split) — status: idea
-- [ ] Variables could just be these funny letters to which we assign values in the computer science sense. In the Leibniz sense (not "a number that varies". Start with a curve and see that any point on that curve has numbers associated with it — this is the concept the whole story hangs off. A variable could be defined on the whole plane or just in terms of that single curve. Like s. Still acts as a description of a curve or curves) — status: idea
-- [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon). Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story. Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter.
-- [ ] If they are functions how do we add/multiply them. Explain pulling back. We can now do any maths we want here. Remark: Very useful idea, used all over.
-- [ ] delta of a variable gives a difference. d of a variable gives another function of t. Using limits - refer to load bearing section on this. Now dx is a function also. A differential
-- [ ] dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece) — status: rough draft
+- [ ] What does `y = x²` actually mean?
+-- Sketch (1) Is it just an expression in which we insert y's and x's? No, usually we have a picture in mind. PICTURE (graph of equation) For this curve we can read off values of y for x. This is essentially what a "function" is, when our teachers said "y is a function of x" they had this in mind. "Plotting a graph". 
+-- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [REMARK: partial functions are an idea as are "multi-valued" functions]
+-- (3) Important to us because Leibniz wasn't thinking about functions. That came later.
+-- (4) Better understood as a constraint or set of conditions a curve must follow.
+- [ ] "Variables" (segue: what are they x and the y before asking dx dy - they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
+-- sketch: (1) Variables could just be these funny letters to which we assign values in the computer science sense.
+-- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps constrast x and y (functions on the plane) with s (only defined on a curve). 
+- [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon).
+- [ ] Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story.
+- [ ] Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter. It is much easier to present the theory as x(t) dx(t) than in any other way, so we need this marker somewhere. Parametrization is really much the same as having really small sides we are just saying that the reals do the job.
+- [ ] Idea of pulling back. We can do maths with functions. Eg we can multiply, add, divie, square root etc any "variable" because it is a function to the reals we can pull back. Very useful idea, used all over mathematics now..
+- [ ] delta of a variable gives a difference. Since we are thinking of curves as polygons, delta is well defined.
+- [ ] Transition to "dx" in the same way. It computes x(t + epsilon) -x over epsilon in the limit. This is another function of t. We are using limits - refer to load bearing section on this. Now dx is a function also.
+- [ ] Can repeat for df for any "variable".
+- [ ] Name: a differential
+- [ ] Pulling it together: dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece) — status: rough draft
 - [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
-- [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (aside this is a Krull Valuation, how interesting is that and do we need to say much about it here?)
+- [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL this is a Krull Valuation, how interesting is that and do we need to say much about it here?)
 - [ ] Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
 - [ ] If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
 - [ ] Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) — status: idea
 - [ ] If we pick the progression of variables / parameter we can simplify expressions, but only to a certain extent.
 - [ ] That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
-- [ ] Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system — status: idea
+- [ ] Conclusion: Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system — status: idea
+- [ ] FORMALISATION: Co-germs, co-germ differentials
 
 ## LOAD-BEARING
 
@@ -50,7 +62,7 @@ Headline: "dy/dx is a fraction".
       "what type is y" objection) — status: idea
 
 ## DIGRESSION
-- [ ] Formalisation: Co-germs, co-germ differentials
+
 - [ ] Why 1-forms don't work (no access to higher derivatives), why forms really don't work (even if integrable, you can make a foliation and then convert all forms to scalars via Hodge duality and then take a d of them, but you need parametrisation for all that - is this true? Can it be fleshed out. Note: it was my original model but it may illustrate why you can't get away from the parameter).
 - [ ] Curvature via second order — hook: "what does the *next* term buy you,
       geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically — status: idea
