@@ -1,9 +1,15 @@
 # Leibniz / dy-dx Project — Inventory
 
 Working document. Flat list first, sequencing decided later.
-Categories: SPINE (must be walked in order, no hand-waving) /
-LOAD-BEARING (not on spine, but later spine material won't land without it) /
+Categories: 
+SPINE (must be walked in order, no hand-waving) 
+LOAD-BEARING (not on spine, but later spine material won't land without it) 
 DIGRESSION (optional, needs its own hook, reader can skip and rejoin with nothing lost).
+
+Thematic tags:
+FORMALISES: puts in formal mathematical terms, something that has been introduced or discussed. Given the "no hand waving" rules, ideas are likely to be introduced in a way that avoids unsoundness and that is quite rigorous, but it may lack formal language. But without FORMALISES points made may end up just being assertions, this delivers tightness. This can occur anywhere. It is most likely to occur as a DIGRESSION but it may be part of the SPINE, where a deliverable of the story or point of the story is to explain what something "really is" mathematically.
+
+PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.
 
 Status tags: idea | rough draft | drafted | needs rewrite | done
 
@@ -11,7 +17,9 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
 
 ## SPINE
 ### Episode 1 - differentials
-
+Headline: "dy/dx is a fraction".
+- [ ] Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
+- [ ] Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
 - [ ] What does `y = x²` actually mean? (is it just an expression in which we insert y's and x's? No, usually we have a picture in mind (picture of it). For this curve we can read off values of y for x. Plotting a graph. Idea of a function. But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. Idea of a constraint. function  — the seed question also sets up the later function/differential split) — status: idea
 - [ ] Variables could just be these funny letters to which we assign values in the computer science sense. In the Leibniz sense (not "a number that varies". Start with a curve and see that any point on that curve has numbers associated with it — this is the concept the whole story hangs off. A variable could be defined on the whole plane or just in terms of that single curve. Like s. Still acts as a description of a curve or curves) — status: idea
 - [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon). Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story. Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter.
