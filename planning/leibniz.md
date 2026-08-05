@@ -16,11 +16,11 @@ Status tags: idea | rough draft | drafted | needs rewrite | done
 ---
 
 ## SPINE
-### Episode 1 - differentials
+### Episode  - differentials
 Headline: "dy/dx is a fraction".
 - [ ] Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
 - [ ] Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
-- [ ] What does `y = x²` actually mean?
+- [ ] What do equations mean. Eg what does `y = x²` actually mean?
 -- Sketch (1) Is it just an expression in which we insert y's and x's? No, usually we have a picture in mind. PICTURE (graph of equation) For this curve we can read off values of y for x. This is essentially what a "function" is, when our teachers said "y is a function of x" they had this in mind. "Plotting a graph". 
 -- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [REMARK: partial functions are an idea as are "multi-valued" functions]
 -- (3) Important to us because Leibniz wasn't thinking about functions. That came later.
@@ -78,8 +78,6 @@ Headline: "dy/dx is a fraction".
 - [ ] Small-delta notation for inexact differentials → brief discussion of exactness — hook: still needed — status: idea
 - [ ] Bigger digression: thermodynamics. dU=delta q + delta W (how you can guess an exact differential exists if you now something about an inexact one - in this case W along adiabatic paths)
 - [ ] Exactness → homology (resist going further than a taste) — hook: still 0needed, and a place to explicitly signal "you can stop here" — status: idea
-- [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
-- [ ] Dimensional analysis can be done in more than one way. See Terrence Tau.   Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
 
 ## OPEN QUESTIONS (mine, not the reader's)
 
@@ -94,6 +92,27 @@ Headline: "dy/dx is a fraction".
   one digression with three branches, vs three separate digressions? I wonder if there isn't an "infinitesimals" story - a sort of episode three, which can be motivated directly by the question of how is a curve a polygon. OR an alternative is that we can insert the function growth rate definition very early because it so natural; was widely used; and as a digression or further digression it is the basis of lots of O(x) type notation.
 
 ## PARKING LOT (unsorted — anything new goes here first, sort later)
+== Dimensional analysis ==
+- How does this work.
+- What physicists do: have a series of "base dimensions" (dimensional axes?), eg MLT. Every expression has a "dimension" such as MLT^-1 for momentum. ("In physics, these are your chosen base dimensions (Mass, Length, Time). In algebraic geometry and representation theory, these axes are formally called the characters of the group, or simply the coordinate axes of the parameter space")
+- Formalising this parametrically, we have a *Weight Lattice* here Z^3 with points that might be (1, 1, -1) for momentum. If continuous we say weight space.
+- "variables" like x or v take a unit scaling and give a value.
+- The Target Field (or Value Ring): This is the immediate mathematical set where the single output number lands. For standard physics, this is simply the field of Real Numbers (\(\mathbb{R}\)) or Complex Numbers (\(\mathbb{C}\)). If you are dealing with infinitesimals (like in your Hardy field or Leibniz model), this would be a specialized field of fractions or germs.
+- The Configuration Space (or Ambient Lab Space): If you combine all your variables together (e.g., you have 5 variables: \(x_1, x_2, x_3, x_4, x_5\)), the values collectively live in a high-dimensional vector space, such as \(\mathbb{R}^{5}\). This is the "Lab Space" we discussed earlier.
+
+- An "algebraic torus" of values - sometimes called the "scale group" - the scale factors. Here it might be R^3_+ It is positive because you don't scale by zero (no inverse, so not a group) and negative is no good because units can't be negative. For scaling the units. A change of units is the action of an element of the scale group. Also: Structure Group and scaling torus.
+-  Def: "algebraic torus" means the multiplicative group of non-zero numbers (C or R)
+-  A toric ideal is the set of all equations of the form ... that are invariant under the scaling group
+-  vt-d=0 is a polynomial which defines a toric variety (a hypersurface in 3D).
+-  A toric variety is a "a geometric space that contains this scaling group as an open, dense piece" (?). "A Toric Variety is an algebraic variety (a shape defined by polynomial equations) that contains a coordinate scaling group (a torus) as a dense open set, such that the scaling group can act on the entire shape without breaking its geometric structure."
+-  Toric variety lives in Lab space (the things you can measure).
+-  Digression: how to make a toric variety from fans. A fan is a collection of cones drawn on a lattice.
+-  Subsection: torsors
+-  Group that has forgotten its identity element
+- Eg, Voltage, Energy, date, notes. You can't add these together, you can subtract them and get a torsor. You can add a torsor to one of these to get another one of these values. We could have used torsors for our values.
+- John Baez has a very good informal discussion: https://math.ucr.edu/home/baez/torsors.html
+- [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
+- [ ] Dimensional analysis can be done in more than one way. See Terrence Tao.   Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
 
 -
 
