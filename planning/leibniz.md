@@ -25,20 +25,22 @@ Headline: "dy/dx is a fraction".
 -- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [REMARK: partial functions are an idea as are "multi-valued" functions]
 -- (3) Important to us because Leibniz wasn't thinking about functions. That came later.
 -- (4) Better understood as a constraint or set of conditions a curve must follow.
-- [ ] "Variables" (segue: what are they x and the y before asking dx dy - they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
+- [ ] "Variables" (segue: before we can  talk about what dx and dy might be, we have to answer what x and y are. They obviously aren't just stand-ins for numbers because we can't meaningfully say one number "depends on" another, let alone is a "function of" another,  - answer: they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
 -- sketch: (1) Variables could just be these funny letters to which we assign values in the computer science sense.
--- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps constrast x and y (functions on the plane) with s (only defined on a curve). 
+-- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps constrast x and y (functions on the plane) with s (only defined on a curve).
+- [ ] Define how to perform arithmetic on variables. PORTAL:  idea of "pulling back", popular and  much used.
 - [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon).
 - [ ] Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story.
 - [ ] Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter. It is much easier to present the theory as x(t) dx(t) than in any other way, so we need this marker somewhere. Parametrization is really much the same as having really small sides we are just saying that the reals do the job.
-- [ ] Idea of pulling back. We can do maths with functions. Eg we can multiply, add, divie, square root etc any "variable" because it is a function to the reals we can pull back. Very useful idea, used all over mathematics now..
+, hence on x, dx.
 - [ ] delta of a variable gives a difference. Since we are thinking of curves as polygons, delta is well defined.
 - [ ] Transition to "dx" in the same way. It computes x(t + epsilon) -x over epsilon in the limit. This is another function of t. We are using limits - refer to load bearing section on this. Now dx is a function also.
 - [ ] Can repeat for df for any "variable".
 - [ ] Name: a differential
+- [ ] We can do arithmetic (any real maths we like) on differentials (since they are variables) via "pulling back" again.
 - [ ] Pulling it together: dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece) — status: rough draft
 - [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
-- [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL this is a Krull Valuation, how interesting is that and do we need to say much about it here?)
+- [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL to ? )
 - [ ] Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
 - [ ] If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
 - [ ] Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) — status: idea
@@ -77,7 +79,7 @@ Headline: "dy/dx is a fraction".
 - [ ] Bigger digression: thermodynamics. dU=delta q + delta W (how you can guess an exact differential exists if you now something about an inexact one - in this case W along adiabatic paths)
 - [ ] Exactness → homology (resist going further than a taste) — hook: still 0needed, and a place to explicitly signal "you can stop here" — status: idea
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
-- [ ] Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
+- [ ] Dimensional analysis can be done in more than one way. See Terrence Tau.   Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
 
 ## OPEN QUESTIONS (mine, not the reader's)
 
