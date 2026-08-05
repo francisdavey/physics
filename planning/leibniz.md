@@ -75,8 +75,9 @@ Headline: "dy/dx is a fraction".
 - [ ] Explain exactness simply via thing like potentials and voltage. This leads to small-delta notation
 - [ ] Small-delta notation for inexact differentials → brief discussion of exactness — hook: still needed — status: idea
 - [ ] Bigger digression: thermodynamics. dU=delta q + delta W (how you can guess an exact differential exists if you now something about an inexact one - in this case W along adiabatic paths)
-- [ ] Exactness → homology (resist going further than a taste) — hook: still
-      needed, and a place to explicitly signal "you can stop here" — status: idea
+- [ ] Exactness → homology (resist going further than a taste) — hook: still 0needed, and a place to explicitly signal "you can stop here" — status: idea
+- [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
+- [ ] Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
 
 ## OPEN QUESTIONS (mine, not the reader's)
 
