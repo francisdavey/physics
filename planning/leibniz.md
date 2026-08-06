@@ -50,14 +50,9 @@ Headline: "dy/dx is a fraction".
 - [ ] FORMALISATION: Co-germs, co-germ differentials
 
 ## LOAD-BEARING
-
-- [ ] Delta-method (school) definition, recapped precisely — only introduced
-      right before it's needed to contrast against the epsilon/Leibniz approach,
-      not at the very start — status: idea
-- [ ] Epsilon-style definition, f(x+ε) − f(x) — same deferral logic — status: idea
-- [ ] What a differential *is* when there's no obvious function lying around to
-      differentiate (this seems to be the crux load-bearing idea — it's the
-      thing that makes "variables" necessary rather than decorative) — status: idea
+- [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
+- [ ] The Limit approach to delta y/delta x (i.e. with delta x tending to zero). This is the school definition which (we hope) is familiar. It is very close to the epsilon-style definition, but does not absolutely require a functional dependence. It is perhaps more direct than defining df. You can see it on a picture. It is useful (because it explains what is going at school level) — status: idea
+- [ ] Limits - do we need an aside on limits, what they are. The best definition (I think) is Hintikka style. If I claim a limit, you can challenge by picking  an accuracy (delta) and I can pick (for a sequence) an N after which I am inside that accuracy.
 - [ ] Notation: is dy/dx a function of x? How do you indicate applying it —
       dy/dx(1)? dy/dx|_{x=1}? — and why plain dy/dx is fine most of the time
       *because of* the approach being taken (this resolves the friend's
@@ -92,25 +87,30 @@ Headline: "dy/dx is a fraction".
   one digression with three branches, vs three separate digressions? I wonder if there isn't an "infinitesimals" story - a sort of episode three, which can be motivated directly by the question of how is a curve a polygon. OR an alternative is that we can insert the function growth rate definition very early because it so natural; was widely used; and as a digression or further digression it is the basis of lots of O(x) type notation.
 
 ## PARKING LOT (unsorted — anything new goes here first, sort later)
-== Dimensional analysis ==
-- How does this work.
-- What physicists do: have a series of "base dimensions" (dimensional axes?), eg MLT. Every expression has a "dimension" such as MLT^-1 for momentum. ("In physics, these are your chosen base dimensions (Mass, Length, Time). In algebraic geometry and representation theory, these axes are formally called the characters of the group, or simply the coordinate axes of the parameter space")
-- Formalising this parametrically, we have a *Weight Lattice* here Z^3 with points that might be (1, 1, -1) for momentum. If continuous we say weight space.
-- "variables" like x or v take a unit scaling and give a value.
-- The Target Field (or Value Ring): This is the immediate mathematical set where the single output number lands. For standard physics, this is simply the field of Real Numbers (\(\mathbb{R}\)) or Complex Numbers (\(\mathbb{C}\)). If you are dealing with infinitesimals (like in your Hardy field or Leibniz model), this would be a specialized field of fractions or germs.
-- The Configuration Space (or Ambient Lab Space): If you combine all your variables together (e.g., you have 5 variables: \(x_1, x_2, x_3, x_4, x_5\)), the values collectively live in a high-dimensional vector space, such as \(\mathbb{R}^{5}\). This is the "Lab Space" we discussed earlier.
-
-- An "algebraic torus" of values - sometimes called the "scale group" - the scale factors. Here it might be R^3_+ It is positive because you don't scale by zero (no inverse, so not a group) and negative is no good because units can't be negative. For scaling the units. A change of units is the action of an element of the scale group. Also: Structure Group and scaling torus.
--  Def: "algebraic torus" means the multiplicative group of non-zero numbers (C or R)
--  A toric ideal is the set of all equations of the form ... that are invariant under the scaling group
+### Dimensional analysis
+Comment: Order of Infinity on the spine will be a sort of dimensional analysis. This chunk considers what dimensional analysis "really" is.  
+- How does this work?
+- What physicists do: have a series of "base dimensions" (dimensional axes?), eg MLT. Every expression has a "dimension" such as MLT^-1 for momentum. ("In physics, these are your chosen base dimensions (Mass, Length, Time). In algebraic geometry and representation theory, these axes are formally called the characters of the group, or simply the coordinate axes of the parameter space"). For the most part we just care about how many there are.
+- Formalising this parametrically, we have a *Weight Lattice* here Z^3 with points that might be (1, 1, -1) for momentum. If continuous we say _weight space_. 
+- Final values live in the "Target Field" or "Base Field" or Value Ring): This is the immediate mathematical set where the single output number lands. For standard physics, this is simply the field of Real Numbers (\(\mathbb{R}\)) or Complex Numbers (\(\mathbb{C}\)). If you are dealing with infinitesimals (like in your Hardy field or Leibniz model), this would be a specialized field of fractions or germs.
+- An "algebraic torus" of values - sometimes called the "scale group" - the scale factors. Here it might be R^3_+ It is positive because you don't scale by zero (no inverse, so not a group) and negative is no good because units can't be negative. For scaling the units. A change of units is the action of an element of the scale group. Also: Structure Group and scaling torus. Eg (1,2,1) means double the second dimension (in MLT that would be length).
+- Definition: "algebraic torus" means the multiplicative group of non-zero numbers (C or R)
+-  "variables" like x or v take an element of the scale group and give a value in the target field.
+-  Expressions involving variable are also functions of the same kind with operations pulled back from the target field. Eg x * v, would be s in scale group -> x(s)*v(s) 
+- The Configuration Space (or Ambient State Space): If you combine all your variables together (e.g., you have 5 variables: \(x_1, x_2, x_3, x_4, x_5\)), the values collectively live in a high-dimensional vector space, such as \(\mathbb{R}^{5}\). This is the "Lab Space" of things we might actually measure in the lab. You don't measure expressions you measure variables.
+-  A toric ideal is the set of all equations  that are invariant under the scaling group
 -  vt-d=0 is a polynomial which defines a toric variety (a hypersurface in 3D).
 -  A toric variety is a "a geometric space that contains this scaling group as an open, dense piece" (?). "A Toric Variety is an algebraic variety (a shape defined by polynomial equations) that contains a coordinate scaling group (a torus) as a dense open set, such that the scaling group can act on the entire shape without breaking its geometric structure."
--  Toric variety lives in Lab space (the things you can measure).
+-  Toric variety lives in the configuration space (the things you can measure).
 -  Digression: how to make a toric variety from fans. A fan is a collection of cones drawn on a lattice.
--  Subsection: torsors
+
+### torsors
+Needed or useful for dimensional analysis. Unclear whether we need it.
 -  Group that has forgotten its identity element
 - Eg, Voltage, Energy, date, notes. You can't add these together, you can subtract them and get a torsor. You can add a torsor to one of these to get another one of these values. We could have used torsors for our values.
 - John Baez has a very good informal discussion: https://math.ucr.edu/home/baez/torsors.html
+
+## Old Notes
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
 - [ ] Dimensional analysis can be done in more than one way. See Terrence Tao.   Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
 
