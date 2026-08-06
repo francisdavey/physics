@@ -2,14 +2,15 @@
 
 Working document. Flat list first, sequencing decided later.
 Categories: 
-SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)
-LOAD-BEARING (not on spine, but later spine material won't land without it) 
-DIGRESSION (optional, needs its own hook, reader can skip and rejoin with nothing lost).
+SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)  
+LOAD-BEARING (not on spine, but later spine material won't land without it)  
+DIGRESSION (optional, needs its own hook, reader can skip and rejoin with nothing lost).  
+PARKING LOT (very optional, for things I have discovered or thought about, that don't have any obvious place. They may be seeds for new articles or just reference for myself).
 
 Thematic tags:
-FORMALISES: puts in formal mathematical terms, something that has been introduced or discussed. Given the "no hand waving" rules, ideas are likely to be introduced in a way that avoids unsoundness and that is quite rigorous, but it may lack formal language. But without FORMALISES points made may end up just being assertions, this delivers tightness. This can occur anywhere. It is most likely to occur as a DIGRESSION but it may be part of the SPINE, where a deliverable of the story or point of the story is to explain what something "really is" mathematically.
+FORMALISES: puts in formal mathematical terms, something that has been introduced or discussed. Given the "no hand waving" rules, ideas are likely to be introduced in a way that avoids unsoundness and that is quite rigorous, but it may lack formal language. But without FORMALISES points made may end up just being assertions, this delivers tightness. This can occur anywhere. It is most likely to occur as a DIGRESSION but it may be part of the SPINE, where a deliverable of the story or point of the story is to explain what something "really is" mathematically.  
 
-PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.
+PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.  
 
 Status tags: idea | rough draft | drafted | needs rewrite | done
 
@@ -27,7 +28,7 @@ Headline: "dy/dx is a fraction".
 -- (4) Better understood as a constraint or set of conditions a curve must follow.
 - [ ] "Variables" (segue: before we can  talk about what dx and dy might be, we have to answer what x and y are. They obviously aren't just stand-ins for numbers because we can't meaningfully say one number "depends on" another, let alone is a "function of" another,  - answer: they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
 -- sketch: (1) Variables could just be these funny letters to which we assign values in the computer science sense.
--- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps constrast x and y (functions on the plane) with s (only defined on a curve).
+-- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps contrast x and y (functions on the plane) with s (only defined on a curve).
 - [ ] Define how to perform arithmetic on variables. PORTAL:  idea of "pulling back", popular and  much used.
 - [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon).
 - [ ] Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story.
@@ -98,7 +99,8 @@ Comment: Order of Infinity on the spine will be a sort of dimensional analysis. 
 -  "variables" like x or v take an element of the scale group and give a value in the target field.
 -  Expressions involving variable are also functions of the same kind with operations pulled back from the target field. Eg x * v, would be s in scale group -> x(s)*v(s) 
 - The Configuration Space (or Ambient State Space): If you combine all your variables together (e.g., you have 5 variables: \(x_1, x_2, x_3, x_4, x_5\)), the values collectively live in a high-dimensional vector space, such as \(\mathbb{R}^{5}\). This is the "Lab Space" of things we might actually measure in the lab. You don't measure expressions you measure variables.
--  A toric ideal is the set of all equations  that are invariant under the scaling group
+-  The toric ideal is the set of all polynomials that scale by a uniform factor under any element of the scaling group
+-  If I=toric ideal, The Variety Z(I) is the Toric Variety.
 -  vt-d=0 is a polynomial which defines a toric variety (a hypersurface in 3D).
 -  A toric variety is a "a geometric space that contains this scaling group as an open, dense piece" (?). "A Toric Variety is an algebraic variety (a shape defined by polynomial equations) that contains a coordinate scaling group (a torus) as a dense open set, such that the scaling group can act on the entire shape without breaking its geometric structure."
 -  Toric variety lives in the configuration space (the things you can measure).
