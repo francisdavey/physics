@@ -1,24 +1,24 @@
 # Leibniz / dy-dx Project — Inventory
 
 Working document. Flat list first, sequencing decided later.
-Categories: 
+Categories:  
 SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)  
 LOAD-BEARING (not on spine, but later spine material won't land without it)  
 DIGRESSION (optional, needs its own hook, reader can skip and rejoin with nothing lost).  
 PARKING LOT (very optional, for things I have discovered or thought about, that don't have any obvious place. They may be seeds for new articles or just reference for myself).
 
 Thematic tags:
-FORMALISES: puts in formal mathematical terms, something that has been introduced or discussed. Given the "no hand waving" rules, ideas are likely to be introduced in a way that avoids unsoundness and that is quite rigorous, but it may lack formal language. But without FORMALISES points made may end up just being assertions, this delivers tightness. This can occur anywhere. It is most likely to occur as a DIGRESSION but it may be part of the SPINE, where a deliverable of the story or point of the story is to explain what something "really is" mathematically.  
+FORMALISES: puts in formal mathematical terms, something that has been introduced or discussed. Given the "no hand waving" rules, ideas are likely to be introduced in a way that avoids unsoundness and that is quite rigorous, but it may lack formal language. But without FORMALISES points made may end up just being assertions, this delivers tightness. This can occur anywhere. It is most likely to occur as a DIGRESSION but it may be part of the SPINE, where a deliverable of the story or point of the story is to explain what something "really is" mathematically.    
 
-PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.  
+PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.    
 
-Status tags: idea | rough draft | drafted | needs rewrite | done
+Status tags: idea | rough draft | drafted | needs rewrite | done  
 
 ---
 
 ## SPINE
 ### Episode  - differentials
-Headline: "dy/dx is a fraction".
+Headline: "dy/dx is a fraction".  
 - [ ] Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
 - [ ] Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
 - [ ] What do equations mean. Eg what does `y = x²` actually mean?
@@ -89,7 +89,7 @@ Headline: "dy/dx is a fraction".
 
 ## PARKING LOT (unsorted — anything new goes here first, sort later)
 ### Dimensional analysis
-Comment: Order of Infinity on the spine will be a sort of dimensional analysis. This chunk considers what dimensional analysis "really" is.  
+Comment: Order of Infinity on the spine will be a sort of dimensional analysis. This chunk considers what dimensional analysis "really" is.    
 - How does this work?
 - What physicists do: have a series of "base dimensions" (dimensional axes?), eg MLT. Every expression has a "dimension" such as MLT^-1 for momentum. ("In physics, these are your chosen base dimensions (Mass, Length, Time). In algebraic geometry and representation theory, these axes are formally called the characters of the group, or simply the coordinate axes of the parameter space"). For the most part we just care about how many there are.
 - Formalising this parametrically, we have a *Weight Lattice* here Z^3 with points that might be (1, 1, -1) for momentum. If continuous we say _weight space_. 
@@ -101,8 +101,15 @@ Comment: Order of Infinity on the spine will be a sort of dimensional analysis. 
 - The Configuration Space (or Ambient State Space): If you combine all your variables together (e.g., you have 5 variables: \(x_1, x_2, x_3, x_4, x_5\)), the values collectively live in a high-dimensional vector space, such as \(\mathbb{R}^{5}\). This is the "Lab Space" of things we might actually measure in the lab. You don't measure expressions you measure variables.
 -  The toric ideal is the set of all polynomials that scale by a uniform factor under any element of the scaling group
 -  If I=toric ideal, The Variety Z(I) is the Toric Variety.
--  vt-d=0 is a polynomial which defines a toric variety (a hypersurface in 3D).
 -  A toric variety is a "a geometric space that contains this scaling group as an open, dense piece" (?). "A Toric Variety is an algebraic variety (a shape defined by polynomial equations) that contains a coordinate scaling group (a torus) as a dense open set, such that the scaling group can act on the entire shape without breaking its geometric structure."
+-- Zariski Open: In this topology, a set is "closed" if it is the boundary carved out by a polynomial equation (like a line or a surface). Therefore, an "open set" is just the entire space minus a few lower-dimensional polynomial lines or cuts.
+   A subset \(A\) is dense in \(X\) if every non-empty open set in \(X\) contains at least one point of \(A\).
+   A subset \(A\) is dense in \(X\) if the only closed set containing \(A\) is the entire space \(X\) itself.
+--  Let's look at your physics example: \(vt - d = 0\).If none of your variables are zero (\(v \neq 0, t \neq 0, d \neq 0\)), you can pick any value for \(v\) and \(t\), and \(d\) is instantly locked in by multiplication (\(d = vt\)).
+-- This "nonzero chunk" of the surface behaves exactly like a 2D scaling group—you can multiply \(v\) and \(t\) by any non-zero scale factor and cleanly glide across the surface. This is your algebraic torus.
+-- What happens if a variable is zero? If \(t = 0\), then \(d = 0\), and \(v\) can be absolutely anything. This forms a boundary line on the edge of your surface.
+-  The entire surface (the Toric Variety) is made of that smooth, non-zero scaling region (the dense open torus) plus the sharp boundary lines where things hit zero.
+
 -  Toric variety lives in the configuration space (the things you can measure).
 -  Digression: how to make a toric variety from fans. A fan is a collection of cones drawn on a lattice.
 
