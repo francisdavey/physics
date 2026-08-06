@@ -109,8 +109,6 @@ Comment: Order of Infinity on the spine will be a sort of dimensional analysis. 
 -- This "nonzero chunk" of the surface behaves exactly like a 2D scaling group—you can multiply \(v\) and \(t\) by any non-zero scale factor and cleanly glide across the surface. This is your algebraic torus.
 -- What happens if a variable is zero? If \(t = 0\), then \(d = 0\), and \(v\) can be absolutely anything. This forms a boundary line on the edge of your surface.
 -  The entire surface (the Toric Variety) is made of that smooth, non-zero scaling region (the dense open torus) plus the sharp boundary lines where things hit zero.
-
--  Toric variety lives in the configuration space (the things you can measure).
 -  Digression: how to make a toric variety from fans. A fan is a collection of cones drawn on a lattice.
 
 ### torsors
@@ -118,6 +116,15 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 -  Group that has forgotten its identity element
 - Eg, Voltage, Energy, date, notes. You can't add these together, you can subtract them and get a torsor. You can add a torsor to one of these to get another one of these values. We could have used torsors for our values.
 - John Baez has a very good informal discussion: https://math.ucr.edu/home/baez/torsors.html
+
+### Doing parametric dimensions for our story
+- Base dimension - The pacing of the curve (t). This is a torsor because t1+t2 is meaningless (can't add points)
+- Scale group Diff(R) - group of smooth changes of variable t=g(s)
+- Target field - R
+- Weight Lattice - Z (order of differential)
+- Toric Ideal => contact ideal. Formulas like dy -d'(x)dx
+- Toric Variety => Jet Variety
+- Resulting orbit space (quotienting) is intrinsic geometry.
 
 ## Old Notes
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
