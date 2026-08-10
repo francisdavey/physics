@@ -1,6 +1,8 @@
-# Leibniz / dy-dx Project — Inventory
+# Project: Leibniz / dy-dx Project
 
+## Document structure
 Working document. Flat list first, sequencing decided later.
+
 Categories:  
 SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)  
 LOAD-BEARING (not on spine, but later spine material won't land without it)  
@@ -12,36 +14,45 @@ FORMALISES: puts in formal mathematical terms, something that has been introduce
 
 PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.    
 
-Status tags: idea | rough draft | drafted | needs rewrite | done  
+Sketch: is a tag for some text that means we are expanding out an idea. This may be used in the final write-up, but helps feel out what is in my head.
+
+REMARK: tags tell are things said to myself. Sometimes these will include remarks on formalisation
+
+Caveat: is a place where what I am saying is not quite true. Those need to be flagged and paid off. Eg, if I say "functions have only one value" that is true - in a aense - for a definition of "function" but "multi-valued function" is often used. That can be formalised.
 
 ---
-
 ## SPINE
 ### Episode  - differentials
 Headline: "dy/dx is a fraction".  
-- [ ] Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
-- [ ] Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
-- [ ] What do equations mean. Eg what does `y = x²` actually mean?
+-  Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
+-  Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
+
+#### Step 1 - tell them what dx etc means.
+- What do equations mean. Eg what does `y = x²` actually mean?
 -- Sketch (1) Is it just an expression in which we insert y's and x's? No, usually we have a picture in mind. PICTURE (graph of equation) For this curve we can read off values of y for x. This is essentially what a "function" is, when our teachers said "y is a function of x" they had this in mind. "Plotting a graph". 
--- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [REMARK: partial functions are an idea as are "multi-valued" functions]
+-- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [Caveat: partial functions are an idea as are "multi-valued" functions]
 -- (3) Important to us because Leibniz wasn't thinking about functions. That came later.
 -- (4) Better understood as a constraint or set of conditions a curve must follow.
-- [ ] "Variables" (segue: before we can  talk about what dx and dy might be, we have to answer what x and y are. They obviously aren't just stand-ins for numbers because we can't meaningfully say one number "depends on" another, let alone is a "function of" another,  - answer: they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
+- "Variables" (segue: before we can  talk about what dx and dy might be, we have to answer what x and y are. They obviously aren't just stand-ins for numbers because we can't meaningfully say one number "depends on" another, let alone is a "function of" another,  - answer: they are "variables"). Introduce Leibniz's idea of a variable as something associated with a point on a curve.
 -- sketch: (1) Variables could just be these funny letters to which we assign values in the computer science sense.
--- (2) How Leibniz thought about them In the Leibniz sense (not "a number that varies"). Draw a curve with variables associated with it. Perhaps contrast x and y (functions on the plane) with s (only defined on a curve).
-- [ ] Define how to perform arithmetic on variables. PORTAL:  idea of "pulling back", popular and  much used.
-- [ ] Curves as polygons with infinitesimally small sides. Equivalently as an infinite series of points (the vertices of the polygon).
-- [ ] Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story.
-- [ ] Use parametrized curves. Intuition for similarity. Delivery elsewhere. Variables are then functions of t the parameter. It is much easier to present the theory as x(t) dx(t) than in any other way, so we need this marker somewhere. Parametrization is really much the same as having really small sides we are just saying that the reals do the job.
-, hence on x, dx.
-- [ ] delta of a variable gives a difference. Since we are thinking of curves as polygons, delta is well defined.
-- [ ] Transition to "dx" in the same way. It computes x(t + epsilon) -x over epsilon in the limit. This is another function of t. We are using limits - refer to load bearing section on this. Now dx is a function also.
-- [ ] Can repeat for df for any "variable".
-- [ ] Name: a differential
-- [ ] We can do arithmetic (any real maths we like) on differentials (since they are variables) via "pulling back" again.
-- [ ] Pulling it together: dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece) — status: rough draft
+  (2) Leibniz thought of them as things associated with points on a curve. They varied with the curve.
+-- (3) possibly: Draw a curve with variables associated with it. Perhaps contrast x and y (functions on the plane) with s (only defined on a curve).
+- Define how to perform arithmetic on variables. PORTAL:  idea of "pulling back", popular and  much used.
+- Curves as polygons with infinitesimally small sides. [remark: could we comment on the proof of the area of a circle being pi r squred, this was how my elementary school teacher proved it) Equivalently as an infinite series of points (the vertices of the polygon).
+-  Explanation of why we are not going to use infinitesimals (essential to simplify) but a pointer to an infinitesimal story.
+-  Use parametrized curves instead of infinitesimals. Variables are then functions of t the parameter. It is much easier to present the theory as x(t) dx(t) than in any other way, so we need this marker somewhere. Parametrization is really much the same as having really small sides we are just saying that the reals do the job.
+- Delta of a variable gives a difference. Since we are thinking of curves as polygons, delta is well defined.
+- Transition to "dx" in the non-infinitesimal world. It computes x(t + epsilon) -x over epsilon in the limit. This is another function of t. We are using limits - refer to load bearing section on this. Now dx is a function also.
+- Can repeat for df for any "variable".
+- Name: a differential
+- We can do arithmetic (any real maths we like) on differentials (since they are variables) via "pulling back" again.
+- Pulling it together: dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece)
+
+#### step 2 - parameter dependence and order of infinity - how to make sure your expressions are meaningful
 - [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
 - [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL to ? )
+
+#### step 
 - [ ] Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
 - [ ] If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
 - [ ] Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) — status: idea
