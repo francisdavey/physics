@@ -27,7 +27,7 @@ Headline: "dy/dx is a fraction".
 -  Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
 -  Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
 
-#### Step 1 - tell them what dx etc means.
+#### tell them what dx etc means.
 - What do equations mean. Eg what does `y = x²` actually mean?
 -- Sketch (1) Is it just an expression in which we insert y's and x's? No, usually we have a picture in mind. PICTURE (graph of equation) For this curve we can read off values of y for x. This is essentially what a "function" is, when our teachers said "y is a function of x" they had this in mind. "Plotting a graph". 
 -- (2) But we can perfectly well write y^2 + x^2 =1 and we get a circle. We can't just read values off. No function here [Caveat: partial functions are an idea as are "multi-valued" functions]
@@ -48,18 +48,19 @@ Headline: "dy/dx is a fraction".
 - We can do arithmetic (any real maths we like) on differentials (since they are variables) via "pulling back" again.
 - Pulling it together: dy/dx as a genuine ratio of differentials. By way of pulling back we can do maths with dy's and dx's so of course we can take the ratio (the hook / core claim of the whole piece)
 
-#### step 2 - parameter dependence and order of infinity - how to make sure your expressions are meaningful
+####  parameter dependence and order of infinity - how to make sure your expressions are meaningful
 - [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
 - [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL to ? )
 
-#### step 
-- [ ] Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
-- [ ] If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
-- [ ] Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) — status: idea
-- [ ] If we pick the progression of variables / parameter we can simplify expressions, but only to a certain extent.
-- [ ] That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
-- [ ] Conclusion: Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system — status: idea
-- [ ] FORMALISATION: Co-germs, co-germ differentials
+#### Second order
+- Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
+- If only dx^2 was zero. It would be if it was a constant variable. No reason to assume dx is the same throughout (picture). Leibniz also bothered. "Progression of variables"
+- Link this to parameter dependence. Can we do a parameter change for d^2y/dx^2 and discover the correction factor that way.  this is what makes higher order meaningful later) 
+-  If we pick the progression of variables / parameter we can simplify expressions, but only to a certain extent.
+-  That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
+- Conclusion: Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system 
+#### FORMALISATION: Co-germs, co-germ differentials
+- A variable is a co-germ.
 
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
@@ -71,6 +72,11 @@ Headline: "dy/dx is a fraction".
       "what type is y" objection) — status: idea
 
 ## DIGRESSION
+#### Inexact variables
+- Example: s, not defined everyewhere on the plane, but each point on a curve can have s defined.
+- If we don't want to assume a base point, we have a "torsor".
+- d works fine, because we only care about subtraction.
+- Example: W. worse than s because of loops and that it can subtract as well as add. But this is not a problem ina  small enough neighbourhood. Co-germ differentials only care about small neighbourhoods.
 
 - [ ] Why 1-forms don't work (no access to higher derivatives), why forms really don't work (even if integrable, you can make a foliation and then convert all forms to scalars via Hodge duality and then take a d of them, but you need parametrisation for all that - is this true? Can it be fleshed out. Note: it was my original model but it may illustrate why you can't get away from the parameter).
 - [ ] Curvature via second order — hook: "what does the *next* term buy you,
