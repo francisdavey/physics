@@ -60,7 +60,11 @@ Headline: "dy/dx is a fraction".
 -  That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
 - Conclusion: Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system 
 #### FORMALISATION: Co-germs, co-germ differentials
-- A variable is a co-germ. d is an 
+- Explain what a "germ" is. Curves could agree everywhere it matters but technically be different curves. A "germ" is a collection of curves which should be treated the same way.
+- A variable is a co-germ. differentials are co-germ differential 1-forms (REMARK: this is how Toby Bartels defines it. CX => R)
+- df works as advertised, two curves with the same germ will give the same result. REMARK: Bartels assumes f is a global function f:X-R. QUERY: do we need to be using different terminology?
+- REMARK: Bartels treats ds as a cogerm differential form because you can define any phi(forms of the form df) as a cogerm differential form. I.e. ds is a function of dx and dy so it a cogerm differential form, by lifting in the obvious way. I, on the other hand, get to ds more directly. Though the result is the same (is it always the same?)
+- Not 1-forms because they have access to all rates of change of the curve, 1-forms only work with equivalence classes with the same tangent vector.
 
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
