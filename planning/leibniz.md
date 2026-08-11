@@ -157,6 +157,13 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 - Toric Variety => Jet Variety
 - Resulting orbit space (quotienting) is intrinsic geometry.
 
+## Reading List
+- https://mathoverflow.net/questions/65829/de-rham-cohomology-vs-iterated-tangent-bundles
+- P.-A. Meyer, Qu'est ce qu'une différentielle d'ordre  n  , Exposition. Math. 7 (1989), 249–264.
+- Laksov, Dan; Thorup, Anders, These are the differentials of order  n  . Trans. Amer. Math. Soc. 351 (1999), no. 4, 1293–1353. https://www.ams.org/journals/tran/1999-351-04/S0002-9947-99-02120-0/S0002-9947-99-02120-0.pdf
+- https://ncatlab.org/nlab/show/K%C3%A4hler+differential
+- https://math.stackexchange.com/questions/2843918/the-second-differential-versus-the-differential-of-a-differential-form
+
 ## Old Notes
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
 - [ ] Dimensional analysis can be done in more than one way. See Terrence Tao.   Physicists handle dimension differently. Each "dimension" is its own vector space (mass would be 1D). Multiplication is tensor product. Changing units, involves rescaling. You have a scale group and this is what Toric XXX studies. But for us we aren't scaling by numbers but by functions (t), that group is the Jet Group, this gives you a Jet Variety not a Toric variety or a Diffiety. Axes are x, y, dx, dy, d2x etc. Cones are the COntact Ideal, dy=f'(x)dx. In a sense physicists dimension are zeroth order and these are dynamic dimensions.
