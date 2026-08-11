@@ -1,7 +1,7 @@
 # Project: Leibniz / dy-dx Project
 
 ## Document structure
-Working document. Flat list first, sequencing decided later.
+Working document. Flat list first, sequencing decided later. the list has a slightly hierarchical structure, using ### section tags. These are blobs of thought that probably go together within any category. Order of sections is not decided and membership of a section is a soft grouping idea.
 
 Categories:  
 SPINE (must be walked in order, no hand-waving). One test for this is *if you removed this item, does the piece still deliver on its central promise, or does the promise go unfulfilled?* (per Claude)  
@@ -14,7 +14,7 @@ FORMALISES: puts in formal mathematical terms, something that has been introduce
 
 PORTAL: doesn't need to be rigorous at all, often is closer to sociology/history than mathematics ("some people write it this way because...", "traditional to use k here because..."). Cheap to include, low-stakes, but has real independent payoff: it's what lets someone go and open a real paper. Can sometimes be a part of or the same as FORMALISES but often will not be.    
 
-Sketch: is a tag for some text that means we are expanding out an idea. This may be used in the final write-up, but helps feel out what is in my head.
+Sketch: is a tag for some text that means I am expanding out an idea. This may be used in the final write-up, but helps feel out what is in my head.
 
 REMARK: tags tell are things said to myself. Sometimes these will include remarks on formalisation
 
@@ -60,7 +60,7 @@ Headline: "dy/dx is a fraction".
 -  That's why the "chain rule" is more complicated/doesn't work. You can't have two progressions being constant.
 - Conclusion: Why dy/dx can be treated just like a fraction (it is really a fraction from a very defensible point of view) but answers may be less useful if you don't respect the orders of infinity system 
 #### FORMALISATION: Co-germs, co-germ differentials
-- A variable is a co-germ.
+- A variable is a co-germ. d is an 
 
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
@@ -77,10 +77,20 @@ Headline: "dy/dx is a fraction".
 - If we don't want to assume a base point, we have a "torsor".
 - d works fine, because we only care about subtraction.
 - Example: W. worse than s because of loops and that it can subtract as well as add. But this is not a problem ina  small enough neighbourhood. Co-germ differentials only care about small neighbourhoods.
-
+- REMARK: mentioning torsors sometimes would be useful because primitives of functions aka "indefinite integrals" are also torsors.
+### Curvature
+- Curvature via second order — hook: "what does the *next* term buy you,
+- geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically
+- MATH: tan theta = dy / dx
+- d(tan theta) = sec^2 theta d theta; d(dy/dx) = frac(d x d^2 y - d y d ^2 x, d x^2)
+- sec theta = dx / ds
+- d theta = frac(d x d^2 y - d y d ^2 x, d s^2)
+- ds^2 = dx^2 + dy^2
+- d theta = frac(d x d^2 y - d y d ^2 x, dx^2 + dy^2)
+- d theta / d s = 
+### MISC
 - [ ] Why 1-forms don't work (no access to higher derivatives), why forms really don't work (even if integrable, you can make a foliation and then convert all forms to scalars via Hodge duality and then take a d of them, but you need parametrisation for all that - is this true? Can it be fleshed out. Note: it was my original model but it may illustrate why you can't get away from the parameter).
-- [ ] Curvature via second order — hook: "what does the *next* term buy you,
-      geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically — status: idea
+
 - [ ] A bonus point is that things like ds =dx^2 +dy^2 are natural and in SR you can just do tau = (similar) and derive d tau/dt = gamma (or 1/gamma) directly again just using algebra. All type checks nicely.
 
 - [ ] Hardy on growth-rate infinitesimals (early 20th c. calculus texts defining infinitesimals as classes of function by growth rate) — hook: how do we have infinitely short sides without having infinitesimal numbers? "safe," makes minimal ontological demands  — status: idea
