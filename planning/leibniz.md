@@ -24,8 +24,9 @@ Caveat: is a place where what I am saying is not quite true. Those need to be fl
 ## SPINE
 ### Episode  - differentials
 Headline: "dy/dx is a fraction".  
--  Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously*. That using it is a bit dubious in some unspecified way.
+-  Hook: it looks like a fraction and it acts like a fraction. Examples (inversion, chain rule, solving differential equation via differentials to integrate). But we are often told that it isn't. Or that it isn't *rigorously* a fraction. That using it is a bit dubious in some unspecified way.
 -  Promise: we'll explain what dy and dx "really" are and how you can divide them to get dy/dx.
+-  Aims of piece, to give a thorough account of how differentials may be used "in the spirit of Leibniz". Two strategic choices seem sensible: (1) is to give the account in terms of limits rather than infinitesimals; postponing infinitesimals to a follow-on series or post. It may turn out to be sensible to touch on infinitesimals a little, that remains to be seen. (2) Integration above 1D seems to introduce considerable further questions, which may require a separate or careful approach.
 
 #### tell them what dx etc means.
 - What do equations mean. Eg what does `y = x²` actually mean?
@@ -51,6 +52,7 @@ Headline: "dy/dx is a fraction".
 ####  parameter dependence and order of infinity - how to make sure your expressions are meaningful
 - [ ] The parameter was arbitrary. Observe what happens to it in dy/dx. It vanishes. For equations dy =2dx it doesn't vanish but it doesn't matter (same dependency on both sides). (formal proof here or in a note?).
 - [ ] How to make sure that what we end up with has this magic property of not being dependent. Orders of infinity - a dimension system (PORTAL to ? )
+- [ ] Caveats with order of infinity - constrains the kind of expression we can usefully work with, eg log(dx).
 
 #### Second order
 - Second order. use d on dy/dx with the quotient rule. What you get isn't d^2y/dx^2. What went wrong?
@@ -73,33 +75,41 @@ Headline: "dy/dx is a fraction".
 - [ ] Notation: is dy/dx a function of x? How do you indicate applying it —
       dy/dx(1)? dy/dx|_{x=1}? — and why plain dy/dx is fine most of the time
       *because of* the approach being taken (this resolves the friend's
-      "what type is y" objection) — status: idea
+      "what type is y" objection) 
 
 ## DIGRESSION
 #### Inexact variables
 - Example: s, not defined everyewhere on the plane, but each point on a curve can have s defined.
 - If we don't want to assume a base point, we have a "torsor".
 - d works fine, because we only care about subtraction.
-- Example: W. worse than s because of loops and that it can subtract as well as add. But this is not a problem ina  small enough neighbourhood. Co-germ differentials only care about small neighbourhoods.
+- Example: W (work in thermodynamics) is worse than s because of loops and that it can subtract as well as add. But this is not a problem in a small enough neighbourhood. Co-germ differentials only care about small neighbourhoods.
 - REMARK: mentioning torsors sometimes would be useful because primitives of functions aka "indefinite integrals" are also torsors.
 ### Curvature
-- Curvature via second order — hook: "what does the *next* term buy you,
-- geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically
-- MATH: tan theta = dy / dx
-- d(tan theta) = sec^2 theta d theta; d(dy/dx) = frac(d x d^2 y - d y d ^2 x, d x^2)
-- sec theta = dx / ds
-- d theta = frac(d x d^2 y - d y d ^2 x, d s^2)
-- ds^2 = dx^2 + dy^2
-- d theta = frac(d x d^2 y - d y d ^2 x, dx^2 + dy^2)
-- d theta / d s = 
+- Curvature via second order — hook: "what does the *next* term buy you. This is a way of showing how one can manipulate differentials at higher order to get a nice formula without thinking about functions at all.
+- What curvature is in Newtonian tems (intersections of normals)
+- Why that is the same thing as rate of change of angle wrt distance along curve
+- Geometrically?". It can illustrate how pleasant it is to play with d. You can just apply d to tan theta=dy/dx and the rest follows very easily algebraically 
+  - MATH: tan theta = dy / dx
+  - d(tan theta) = sec^2 theta d theta; d(dy/dx) = frac(d x d^2 y - d y d ^2 x, d x^2)
+  - sec theta = dx / ds
+  - d theta = frac(d x d^2 y - d y d ^2 x, d s^2)
+  - ds^2 = dx^2 + dy^2
+  - d theta = frac(d x d^2 y - d y d ^2 x, dx^2 + dy^2)
+  - d theta / d s =
+- Useful to point out that theta and s are have order zero.
+### Infinitessimals
+- hook: how do we have infinitely short sides without having infinitesimal numbers? "safe," makes minimal ontological demands
+- Idea of ininitesimaly small lines making curves polygons (old) v infinitesimally small numbers (newer with Leibniz).
+- Can introduce free infinitesimals. Does not tell you anything beyond polynomials in them(?). If we had a model we could do more.
+-  Hardy on growth-rate infinitesimals (early 20th c. calculus texts defining infinitesimals as classes of function by growth rate) 
+- Robinson / nonstandard analysis — hook: still needed/ Why do we need this?
+- Nilpotents, and Grothendieck's desire for a "double point" — hook: a genuinely motivating picture for why algebraic geometry wants nilpotents at all
 ### MISC
 - [ ] Why 1-forms don't work (no access to higher derivatives), why forms really don't work (even if integrable, you can make a foliation and then convert all forms to scalars via Hodge duality and then take a d of them, but you need parametrisation for all that - is this true? Can it be fleshed out. Note: it was my original model but it may illustrate why you can't get away from the parameter).
 
-- [ ] A bonus point is that things like ds =dx^2 +dy^2 are natural and in SR you can just do tau = (similar) and derive d tau/dt = gamma (or 1/gamma) directly again just using algebra. All type checks nicely.
+- [ ] A bonus point is that things like ds =dx^2 +dy^2 are natural and in SR you can just do tau = (similar) and derive d tau/dt = gamma (or 1/gamma) directly again just using algebra. All type checks nicely (see inexactnes. tau is a famous example of an inexact quantity. See twin paradox (a future physics blog).
 
-- [ ] Hardy on growth-rate infinitesimals (early 20th c. calculus texts defining infinitesimals as classes of function by growth rate) — hook: how do we have infinitely short sides without having infinitesimal numbers? "safe," makes minimal ontological demands  — status: idea
-- [ ] Robinson / nonstandard analysis — hook: still needed — status: idea
-- [ ] Nilpotents, and Grothendieck's desire for a "double point" — hook: a genuinely motivating picture for why algebraic geometry wants nilpotents at all — status: idea
+-
 - [ ] Once we explore "things like ds" we realise we can do inexact differentials, but we didn't know what they were.
 - [ ] Explain exactness simply via thing like potentials and voltage. This leads to small-delta notation
 - [ ] Small-delta notation for inexact differentials → brief discussion of exactness — hook: still needed — status: idea
@@ -107,7 +117,7 @@ Headline: "dy/dx is a fraction".
 - [ ] Exactness → homology (resist going further than a taste) — hook: still 0needed, and a place to explicitly signal "you can stop here" — status: idea
 
 ## OPEN QUESTIONS (mine, not the reader's)
-
+- Does 1D integration belong as part of the main discussion and then 2+D integration belong later?
 - Does the dy/dx(1) notation discussion belong in LOAD-BEARING or is it
   actually a DIGRESSION that just feels urgent because it bugged a real person?
 - Where exactly does "variables in the Leibniz sense" first get said —
