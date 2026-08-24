@@ -173,6 +173,8 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 - Laksov, Dan; Thorup, Anders, These are the differentials of order  n  . Trans. Amer. Math. Soc. 351 (1999), no. 4, 1293–1353. https://www.ams.org/journals/tran/1999-351-04/S0002-9947-99-02120-0/S0002-9947-99-02120-0.pdf
 - https://ncatlab.org/nlab/show/K%C3%A4hler+differential
 - https://math.stackexchange.com/questions/2843918/the-second-differential-versus-the-differential-of-a-differential-form
+- "Total and Partial Differentials as Algebraically Manipulable Entities" https://arxiv.org/pdf/2210.07958 This defines d as an operator in much the same style as in this piece. It uses hyperreals as a model. It assumes all variables depend on some "underlying variable" $q$. This $q$ is our parameter for a curve. There is no connection made between this and the study of curves. Otherwise the discussion is much the same. No discussion of integration, but some discussion of partials.
+
 
 ## Old Notes
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
