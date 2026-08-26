@@ -68,6 +68,9 @@ Headline: "dy/dx is a fraction".
 - REMARK: Bartels treats ds as a cogerm differential form because you can define any phi(forms of the form df) as a cogerm differential form. I.e. ds is a function of dx and dy so it a cogerm differential form, by lifting in the obvious way. I, on the other hand, get to ds more directly. Though the result is the same (is it always the same?)
 - Not 1-forms because they have access to all rates of change of the curve, 1-forms only work with equivalence classes with the same tangent vector.
 
+### Episode: partial differentials
+- Can we do all of the above for partials?
+
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
 - [ ] The Limit approach to delta y/delta x (i.e. with delta x tending to zero). This is the school definition which (we hope) is familiar. It is very close to the epsilon-style definition, but does not absolutely require a functional dependence. It is perhaps more direct than defining df. You can see it on a picture. It is useful (because it explains what is going at school level) — status: idea
@@ -174,7 +177,12 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 - https://ncatlab.org/nlab/show/K%C3%A4hler+differential
 - https://math.stackexchange.com/questions/2843918/the-second-differential-versus-the-differential-of-a-differential-form
 - "Total and Partial Differentials as Algebraically Manipulable Entities" https://arxiv.org/pdf/2210.07958 This defines d as an operator in much the same style as in this piece. It uses hyperreals as a model. It assumes all variables depend on some "underlying variable" $q$. This $q$ is our parameter for a curve. There is no connection made between this and the study of curves. Otherwise the discussion is much the same. No discussion of integration, but some discussion of partials.
-
+### partial derivatives
+- https://math.stackexchange.com/questions/320228/the-notation-for-partial-derivatives
+- https://math.stackexchange.com/questions/2200982/notation-for-partial-derivatives
+- https://math.stackexchange.com/questions/1091097/partial-derivative-notation
+- https://arxiv.org/html/math/9906079v1
+- 
 
 ## Old Notes
 - [ ] Orders of infinity are probably "graded rings" or "graded fields". Or perhaps the homogenous elements of such a graded field. There may be a relationship to Toric Algebras or Tropical Geometry about which I know nothing. A Hady Field captures growth in a similar way but allows the sums of terms of different growth or order. There is a natural valuation with ultrametric inequality (a Krull valuation?) and some interesting structure including a graded algebra core.
