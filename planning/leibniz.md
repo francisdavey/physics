@@ -69,7 +69,12 @@ Headline: "dy/dx is a fraction".
 - Not 1-forms because they have access to all rates of change of the curve, 1-forms only work with equivalence classes with the same tangent vector.
 
 ### Episode: partial differentials
+- PLANNING
 - Can we do all of the above for partials?
+- The ideal would be to have an object "partial y" and another "partial x" so that one can get the partial differential by dividing one by the other. We would have to have a way of "keeping fixed" a variable.
+- You can use a wedge product to perform operations on total differentials to find algebraic identities for partial derivatives: https://johncarlosbaez.wordpress.com/2021/09/13/the-cyclic-identity-for-partial-derivatives/
+- Gordon Plotkin has an equational theory: https://math.ucr.edu/home/baez/mathematical/ACTUCR/Plotkin_Partial_Differentiation.pdf
+- Baez commentary: https://johncarlosbaez.wordpress.com/2020/05/18/a-complete-axiomatisation-of-partial-differentiation/
 
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
@@ -169,6 +174,11 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 - Toric Ideal => contact ideal. Formulas like dy -d'(x)dx
 - Toric Variety => Jet Variety
 - Resulting orbit space (quotienting) is intrinsic geometry.
+### Maxwell's thermodynamics
+- Could be an interesting illustration of several things.
+- Thorough work up of geometry: https://arxiv.org/pdf/1811.04227
+- More informal on graphical methods: https://academicweb.nd.edu/~powers/ame.20231/gibbs1873a.pdf?utm_campaign=redirect&utm_medium=web&utm_source=www3.nd.edu
+- 
 
 ## Reading List
 - https://mathoverflow.net/questions/65829/de-rham-cohomology-vs-iterated-tangent-bundles
