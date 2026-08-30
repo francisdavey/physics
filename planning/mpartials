@@ -1,0 +1,148 @@
+# Foundations of Multi-Variable Differentials via Leibnizian True Ratios
+This document serves as a comprehensive set of permanent study notes capturing a unified, geometric worldview of multi-variable calculus. By pairing **G.W. Leibniz’s original intuition of a curve as an infinitesimal polygon** with modern coordinate-free geometry (**1-forms and co-germs**), we can treat derivatives as **true algebraic fractions** across any number of dimensions. 
+
+This framework provides an intuitive, elegant alternative to modern slot-based notation, offering transparent derivations of coordinate transformations, higher-order grid distortions, the method of characteristics, and Carathéodory’s geometric formulation of thermodynamics.
+---## 1. The 1D Intuition: The Infinitesimal Polygon
+Leibniz's fundamental geometric picture views a smooth curve as a **polygon with infinitesimally small sides**. * **Vertices ($x_i$):** Discrete points tracing out the curve.* **Variables ($f$):** Real-valued functions that assign a single scalar value to every individual vertex $x_i$ on the polygon. Variables stand independently as physical or geometric quantities; they do not "own" or inherently depend on each other.* **First Differential ($dx$):** The literal, discrete difference between adjacent vertices: 
+  $$dx_i = x_{i+1} - x_i$$* **True Ratios:** Because $df$ and $dx$ are tangible, freestanding infinitesimal quantities, derivative notation like $\frac{df}{dx}$ is a **true algebraic fraction** representing the ratio of two side lengths. 
+
+If we choose an arbitrary underlying parameterization $t$ to drive our path along the curve, the parameter perfectly cancels out via basic algebra:
+$$\frac{df/dt}{dx/dt} = \frac{df}{dx}$$
+---## 2. Extending to 2D Surfaces: The Infinitesimal Mesh
+To step from a 1D curve to a 2D surface without defaulting to a rigid, pre-defined coordinate grid, we shift our geometric picture from a network of lines to a **foliation (a stack of curves)**.
+### The Standalone Coordinate ProblemIf we only possess a variable $f$ and a single coordinate $w$, we can construct the level sets (contour lines) where $w$ is held constant. However, we cannot step *between* these lines because we do not know which point on the line $w=1$ matches up with a point on the line $w=2$. There are no horizontal lines linking them.
+```text
+  w = 3.0  ─────────────────────────────────── (A curve of vertices)
+  w = 2.0  ─────────────────────────────────── (A curve of vertices)
+  w = 1.0  ─────────────────────────────────── (A curve of vertices)
+```
+### The Solution: The Leibnizian TransversalTo define a freestanding partial differential $\partial_w f$ without needing a second fixed coordinate axis, we introduce an **arbitrary parameter $t$** (or an arbitrary cross-cutting vector field $T$ ) that slices across the lines of constant $w$. 
+
+This arbitrary choice allows us to temporarily map out an infinitesimal 2D mesh grid:
+```text
+         (w changes, x constant)
+               P_{i, j+1}
+                  ▲
+                  │  dw
+                  │
+               P_{i,j}  ──────►  P_{i+1, j}   (x changes, w constant)
+                           dx
+```
+1. **The $x$-step:** Moving from $P_{i,j}$ to $P_{i+1,j}$ changes $x$ by an infinitesimal amount $dx$, while **$w$ remains strictly constant** ($dw = 0$).2. **The $w$-step:** Moving from $P_{i,j}$ to $P_{i,j+1}$ changes $w$ by an infinitesimal amount $dw$, while **$x$ remains strictly constant** ($dx = 0$).
+### Defining the Freestanding PartialThe partial differential of $f$ keeping $w$ constant is defined along our arbitrary direction $dt$ as:
+$$\partial_w f = \frac{df}{dt} \quad \text{(normalized such that } \frac{dw}{dt} = 1\text{)}$$
+
+When we introduce a second coordinate $x$ and take the ratio of two partials evaluating along the **exact same** arbitrary direction $dt$, the parameter $dt$ cancels completely out of the denominator:
+$$\frac{\partial_w f}{\partial_w x} = \frac{\left(\frac{df}{dt}\right)}{\left(\frac{dx}{dt}\right)} = \frac{df}{dx} \quad \text{(evaluated strictly along the path where } dw = 0\text{)}$$
+
+Thus, the denominator of a partial derivative does not indicate an index slot in a function tuple; it points to a **physical direction of travel** on your mesh.
+### Geometric Interpretation of $df \wedge dw$This explains why the 2-form $df \wedge dw$ is completely independent of a second coordinate $x$. A wedge product is an area-measuring object. It takes two arbitrary directions (a vector $U$ strictly tangent to the constant-$w$ line, and our arbitrary cross-cutting transversal vector $T$). It evaluates the oriented area of the infinitesimal parallelogram face spanned by these vectors, tracking how $f$ and $w$ tilt relative to one another without ever needing an $x$-axis.
+---## 3. First-Order Algebraic Laws
+Because differentials are genuine fractions, standard multivariable identities can be derived using pure algebraic manipulation rather than limit-based proofs.
+### The Total Differential (The Chain Rule)Any absolute change $df$ along an arbitrary path $dt$ is a linear balance of how the coordinates $x$ and $w$ change along that same path:
+$$\frac{df}{dt} = A \frac{dx}{dt} + B \frac{dw}{dt}$$
+
+By forcing $dt$ to temporarily run exclusively along a line of constant $w$ ($dw=0$), the second term collapses, isolating $A = \frac{\partial_w f}{\partial_w x}$. Repeating this along a line of constant $x$ isolates $B = \frac{\partial_x f}{\partial_x w}$. Clearing the $dt$ denominators yields the total differential:
+$$df = \left(\frac{\partial_w f}{\partial_w x}\right) dx + \left(\frac{\partial_x f}{\partial_x w}\right) dw$$
+### The Multivariable Chain RuleTo convert to a new coordinate system $(u, v)$ from $(x, w)$, we expand $df$ and $du$ along an arbitrary path $dt$ chosen to keep $v$ constant ($dv=0$):
+$$\frac{\partial_v f}{\partial_v u} = \frac{\frac{df}{dt}}{\frac{du}{dt}} = \frac{\left(\frac{\partial_w f}{\partial_w x}\right)\frac{dx}{dt} + \left(\frac{\partial_x f}{\partial_x w}\right)\frac{dw}{dt}}{\left(\frac{\partial_w u}{\partial_w x}\right)\frac{dx}{dt} + \left(\frac{\partial_x u}{\partial_x w}\right)\frac{dw}{dt}}$$
+
+Dividing the top and bottom by $\frac{dx}{dt}$ yields the coordinate conversion formula completely via true algebraic fractions:
+$$\frac{\partial_v f}{\partial_v u} = \frac{\left(\frac{\partial_w f}{\partial_w x}\right) + \left(\frac{\partial_x f}{\partial_x w}\right)\left(\frac{\partial_v w}{\partial_v x}\right)}{\left(\frac{\partial_w u}{\partial_w x}\right) + \left(\frac{\partial_x u}{\partial_x w}\right)\left(\frac{\partial_v w}{\partial_v x}\right)}$$
+### The Triple Product Rule (The Mountain-Climbing Paradox)In thermodynamics, the cyclic relationship yields a negative sign that frequently puzzles students:
+$$\left(\frac{\partial f}{\partial x}\right)_w \left(\frac{\partial x}{\partial w}\right)_f \left(\frac{\partial w}{\partial f}\right)_x = -1$$
+
+Using our true-ratio framework, we choose a path running *exclusively* along a contour line where $f$ is constant ($df = 0$). The total differential equation collapses to:
+$$0 = \left(\frac{\partial_w f}{\partial_w x}\right) dx + \left(\frac{\partial_x f}{\partial_x w}\right) dw$$
+
+Isolating the terms on opposite sides of the equals sign forces the negative sign to appear naturally:
+$$-\left(\frac{\partial_x f}{\partial_x w}\right) dw = \left(\frac{\partial_w f}{\partial_w x}\right) dx$$
+
+Dividing by $dw$ and substituting the path constraint ($\frac{dx}{dw} = \left(\frac{\partial_f x}{\partial_f w}\right)$) directly proves the rule. 
+
+**The Mountain Analogy:** Imagine walking along a flat contour line on a mountainside ($df=0$). Taking a step East ($dx > 0$) moves you up the slope. To maintain a net altitude change of zero, your step North ($dw$) **must** move you down the slope. One step must be algebraically negative relative to the other to preserve the balance. The minus sign is the geometric tax you pay for keeping a variable constant on a sloped surface.
+---## 4. Higher-Order Differentials and Curved Grids### The Coordinate Warping TrapIn 1D, Leibniz assumed that the independent variable stepped by flat, perfectly uniform amounts ($d^2x = 0$). On a 2D surface, **it is geometrically impossible to keep the step sizes constant for multiple variables simultaneously.** 
+
+If you force your vertical grid spacing $dw$ to remain perfectly uniform, a curved surface or a non-linear coordinate system will naturally force the horizontal grid steps $dx$ to stretch, compress, or warp as you move across the mesh. Thus, $d^2x \neq 0$ and $d^2w \neq 0$.
+### The Absolute Second Total Differential LawDifferentiating the first total differential along an arbitrary path using the standard product rule yields:
+$$d^2f = \left(\frac{\partial^2 f}{\partial x^2}\right) dx^2 + 2\left(\frac{\partial^2 f}{\partial w \partial x}\right) dx\,dw + \left(\frac{\partial^2 f}{\partial w^2}\right) dw^2 + \left(\frac{\partial_w f}{\partial_w x}\right) d^2x + \left(\frac{\partial_x f}{\partial_x w}\right) d^2w$$
+
+The last two terms represent **geometric correction factors**. They measure the literal warping and bending of your coordinate grid lines across the surface.
+### Concrete Example: Cartesian to Polar CoordinatesIn a flat Cartesian grid, lines are perfectly straight and parallel, meaning $d^2x = 0$ and $d^2y = 0$. If we transform to a Polar grid $(r, \theta)$ and enforce uniform polar steps ($d^2r = 0, d^2\theta = 0$), computing the second differentials of the coordinate maps ($x = r\cos\theta, y = r\sin\theta$) yields:
+$$d^2x = -2\sin\theta \, dr\,d\theta - r \cos\theta \, d\theta^2$$
+$$d^2y = 2\cos\theta \, dr\,d\theta - r \sin\theta \, d\theta^2$$
+
+
+Plugging these non-zero geometric variations back into the absolute second total differential law automatically generates the correct polar transformation terms without using limit-based partial chain rules.
+## Clairaut's Theorem (Mixed Partials Commute)
+The order of partial differentiation commutes ($\frac{\partial^2 f}{\partial w \partial x} = \frac{\partial^2 f}{\partial x \partial w}$) because the calculation is a simple algebraic evaluation of the four fixed scalar values sitting on the corners of an infinitesimal mesh quadrilateral:
+text P_{0,1} ────── P_{1,1} Path East-then-North: (f_11 - f_10) - (f_01 - f_00) │ │ Path North-then-East: (f_11 - f_01) - (f_10 - f_00) │ │ P_{0,0} ────── P_{1,0} Both simplify to: f_11 - f_10 - f_01 + f_00 
+------------------------------
+## 5. Differential Equations: Riding the Characteristic Curves
+The method of characteristics is often taught as an unmotivated change-of-variables trick. In this framework, it is the natural path on a mesh where a multidimensional problem collapses into a simple 1D ratio.
+## 1st-Order Linear Partial Differential Equations
+Take a first-order PDE for a variable $f$ across a surface:
+$$a(x,w) \frac{\partial f}{\partial x} + b(x,w) \frac{\partial f}{\partial w} = c(x,w)$$
+Instead of solving this over the entire 2D mesh simultaneously, we look for a specific family of paths—characteristic curves—running across the mesh. We use our 2D progression freedom to force our step sizes in the $x$ and $w$ directions to match the coefficients of the PDE:
+$$\frac{dx}{dt} = a(x,w) \quad \text{and} \quad \frac{dw}{dt} = b(x,w)$$
+Substituting these velocities into our total differential expression causes the partial derivatives to completely vanish, collapsing the PDE into a system of 1D Ordinary Differential Equations (ODEs):
+
+   1. $\frac{dx}{dt} = a(x,w)$ (Where to walk in the grid)
+   2. $\frac{dw}{dt} = b(x,w)$
+   3. $\frac{df}{dt} = c(x,w)$ (How the variable changes as you walk)
+
+## Sidestepping Higher Orders: The "Jet" Space
+1-forms only know about the first-order "tilt" of a space; they cannot natively see higher orders. Following Vladimir Arnol'd's geometric approach, we solve this by upgrading the slopes to freestanding variables, bringing the problem back down to first order.
+For the 1D linear wave equation ($\frac{\partial^2 u}{\partial t^2} - c^2 \frac{\partial^2 u}{\partial x^2} = 0$), we introduce a velocity variable $v = \frac{\partial_x u}{\partial_x t}$. The equation factors into a first-order PDE:
+$$\frac{\partial v}{\partial t} + c \frac{\partial v}{\partial x} = 0$$
+Applying our path strategy, we step through space and time with velocities matching the coefficients ($\frac{dt}{d\tau} = 1$ and $\frac{dx}{d\tau} = c$), which simplifies to the straight characteristic lines $dx - c,dt = 0$. Traveling along these lines collapses the total differential to $\frac{dv}{dt} = 0$, meaning the wave value $v$ is simply carried along that track like a passenger on a conveyor belt.
+## Non-Linear Grid Warping: Burger's Equation
+In non-linear equations like Burger's Equation ($\frac{\partial v}{\partial t} + v \frac{\partial v}{\partial x} = 0$), the wave speed is the variable $v$ itself.
+Our path equations become $\frac{dt}{d\tau} = 1$ and $\frac{dx}{d\tau} = v$. Along these lines, the total differential still collapses to $dv = 0$, meaning $v$ remains constant along any given path. However, because different paths start with different initial values of $v$, the paths are no longer parallel.
+text High v (Fast) \ \ Medium v ──────► SHOCK WAVE (Paths collide!) / Low v (Slow) / 
+Fast paths actively pivot and collide with slow paths. At the point of intersection, the coordinate tracking terms ($d^2x$ and $d^2t$) skyrocket to infinity, and the mesh quadrilaterals crush down into zero area—marking the exact mathematical birth of a shock wave.
+------------------------------
+## 6. Thermodynamics: Constantin Carathéodory and Reverse Characteristics
+If the method of characteristics is about taking a multidimensional surface and breaking it down into individual 1D tracks, Constantin Carathéodory’s formulation of thermodynamics (1909) is about taking individual 1D tracks and gluing them together to manufacture a multidimensional surface.
+## Manufacturing the Internal Energy Coordinate ($U$)
+In a 2D state space (Pressure $P$ and Volume $V$), work is an inexact differential ($\delta W = -P,dV$). Its cross-derivatives do not match, meaning there is no standalone variable $W$ sitting on the vertices of the mesh.
+By physically insulating the system ($\delta Q = 0$), we restrict our movement to adiabatic paths. Carathéodory observed that moving between states exclusively along these adiabatic tracks makes the work done dependent only on the endpoints, independent of the path taken. Along these submanifolds, $\delta W$ behaves like a total differential.
+Because it behaves predictably along these tracks, we can use it to anchor a brand new, globally exact coordinate variable onto every vertex of our mesh: Internal Energy, $U$. When we leave the adiabatic tracks, the geometric discrepancy between our new exact coordinate $dU$ and the inexact work step $\delta W$ defines heat:
+$$\delta Q = dU - \delta W$$
+## The Frobenius Theorem and Entropy ($S$)
+To scale this to 3 or more variables (e.g., $P$, $V$, and Chemical Potential $\mu$), Carathéodory invoked the Frobenius Theorem.
+## Formal Statement of Frobenius
+Let $\omega$ be a smooth, non-vanishing 1-form (like $\delta Q$) on an $n$-dimensional manifold. The local hyperplanes where $\omega = 0$ can be seamlessly glued together into smooth, nested $(n-1)$-dimensional surfaces (foliations) if and only if:
+$$\omega \wedge d\omega = 0$$
+
+* In 2D Space: $\omega \wedge d\omega$ tries to form a 3-form. Since a 3-form cannot exist in 2D space, it is identically zero. Thus, 2D tracks can always be glued together to find an integrating factor.
+* In 3D Space or Higher: $\omega \wedge d\omega$ measures the local swirl (vorticity) of the tracks. If it is non-zero, the tracks twist like a chaotic whirlpool (a contact structure). A traveler walking strictly along $\omega = 0$ can start at one point and navigate to any nearby point in the room, making it impossible to cleanly glue the lines into separate surfaces.
+
+text IN 2D SPACE: IN 3D SPACE (with high swirl): Tracks are neat, parallel lines. Tracks form a tangled ball of yarn. Can easily glue them to make a surface. Cannot cleanly glue them; lines cross everywhere. 
+Carathéodory stated the Second Law as a geometric axiom: In the immediate neighborhood of any state, there are points that are physically unreachable via adiabatic paths ($\delta Q = 0$).
+By physically outlawing the chaotic, space-filling swirl, this axiom mathematically forces the algebraic Frobenius condition:
+$$\delta Q \wedge d(\delta Q) = 0$$
+This guarantees that the multi-dimensional adiabatic tracks flatten out into neat, parallel layers. It proves the existence of a local integrating factor (Temperature, $T$) that cleanly untwists the geometry, yielding the perfectly exact differential of Entropy, $S$:
+$$\frac{\delta Q}{T} = dS$$
+------------------------------
+## 7. The Invariant $n$-Dimensional Generalization
+This true-ratio framework scales seamlessly to any arbitrary number of variables ($x_1, x_2, \dots, x_n$).
+To isolate a freestanding partial differential like $\left(\frac{\partial f}{\partial x_1}\right)_{x_2, \dots, x_n}$, you use your $n-1$ "held constant" constraints to pin down the other coordinates ($dx_2=0, dx_3=0, \dots$). In an $n$-dimensional space, pinning down $n-1$ independent variables leaves you with exactly one remaining degree of freedom—a 1D wire winding through the space.
+By introducing an arbitrary parameter $dt$ to drive your steps along this isolated wire, the higher-dimensional problem instantly collapses into a simple 1D Leibnizian ratio of two standard 1-forms:
+$$\frac{df/dt}{dx_1/dt} = \frac{df}{dx_1}$$
+The arbitrary parameter $dt$ cancels completely, proving the core invariant of this framework: A partial derivative, in any dimension, is simply a 1D Leibnizian true ratio isolated by forcing all other independent coordinate variations to zero.
+------------------------------
+## Historical Credits & Context for Research Papers
+
+* "Progression of Variables" Terminology: Credit G.W. Leibniz, Johann Bernoulli, and Leonhard Euler. The definitive historical analysis of how 18th-century mathematicians handled these constraints and higher-order differentials is H.J.M. Bos (1974), "Differentials, Higher-Order Differentials and the Derivative in the Leibnizian Calculus".
+* Modern Algebraic Differentials: To connect this to contemporary work pushing to restore differentials as true algebraic fractions, reference the modern "Algebraic Manipulability of Differentials" movement. Extending this explicitly to multi-variable partial differentials and non-linear characteristic grids remains an active open frontier.
+* Geometric/Contact Formulations: Credit Vladimir Arnol'd (Phase spaces, Jet spaces, and contact geometry overrides of standard analysis notation) and Constantin Carathéodory (1909 Pfaffian form formulation of the laws of thermodynamics).
+
+
+<FollowUp>
+Since you mentioned using **Typst**, if you ever prefer to move these notes from GitHub into a formal compiled PDF, I can translate this exact Markdown syntax into **Typst `.typ` syntax** (swapping the markdown formatting and LaTeX equations into Typst's elegant native scripting language). 
+
+Whenever you choose to unpause or expand this project, how would you like to proceed?
+</FollowUp>
+
+
