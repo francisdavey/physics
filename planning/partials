@@ -1,0 +1,119 @@
+# Foundations of Multi-Variable Differentials via Leibnizian True Ratios
+
+This document serves as a comprehensive set of permanent study notes capturing a unified, geometric worldview of multi-variable calculus. By pairing **G.W. Leibniz’s original intuition of a curve as an infinitesimal polygon** with modern coordinate-free geometry (**1-forms and co-germs**), we can treat derivatives as **true algebraic fractions** across any number of dimensions. 
+
+This framework provides an intuitive, elegant alternative to modern slot-based notation, offering transparent derivations of coordinate transformations, higher-order grid distortions, the method of characteristics, and Carathéodory’s geometric formulation of thermodynamics.
+
+---
+
+## 1. The 1D Intuition: The Infinitesimal Polygon
+
+Leibniz's fundamental geometric picture views a smooth curve as a **polygon with infinitesimally small sides**. 
+* **Vertices ($x_i$):** Discrete points tracing out the curve.
+* **Variables ($f$):** Real-valued functions that assign a single scalar value to every individual vertex $x_i$ on the polygon. Variables stand independently as physical or geometric quantities; they do not "own" or inherently depend on each other.
+* **First Differential ($dx$):** The literal, discrete difference between adjacent vertices: 
+  $$dx_i = x_{i+1} - x_i$$
+* **True Ratios:** Because $df$ and $dx$ are tangible, freestanding infinitesimal quantities, derivative notation like $\frac{df}{dx}$ is a **true algebraic fraction** representing the ratio of two side lengths. 
+
+If we choose an arbitrary underlying parameterization $t$ to drive our path along the curve, the parameter perfectly cancels out via basic algebra:
+$$\frac{df/dt}{dx/dt} = \frac{df}{dx}$$
+
+---
+
+## 2. Extending to 2D Surfaces: The Infinitesimal Mesh
+
+To step from a 1D curve to a 2D surface without defaulting to a rigid, pre-defined coordinate grid, we shift our geometric picture from a network of lines to a **foliation (a stack of curves)**.
+
+### The Standalone Coordinate Problem
+If we only possess a variable $f$ and a single coordinate $w$, we can construct the level sets (contour lines) where $w$ is held constant. However, we cannot step *between* these lines because we do not know which point on the line $w=1$ matches up with a point on the line $w=2$. There are no horizontal lines linking them.
+
+```text
+  w = 3.0  ─────────────────────────────────── (A curve of vertices)
+  w = 2.0  ─────────────────────────────────── (A curve of vertices)
+  w = 1.0  ─────────────────────────────────── (A curve of vertices)
+```
+
+### The Solution: The Leibnizian Transversal
+To define a freestanding partial differential $\partial_w f$ without needing a second fixed coordinate axis, we introduce an **arbitrary parameter $t$** (or an arbitrary cross-cutting vector field $T$ ) that slices across the lines of constant $w$. 
+
+This arbitrary choice allows us to temporarily map out an infinitesimal 2D mesh grid:
+
+```text
+         (w changes, x constant)
+               P_{i, j+1}
+                  ▲
+                  │  dw
+                  │
+               P_{i,j}  ──────►  P_{i+1, j}   (x changes, w constant)
+                           dx
+```
+
+1. **The $x$-step:** Moving from $P_{i,j}$ to $P_{i+1,j}$ changes $x$ by an infinitesimal amount $dx$, while **$w$ remains strictly constant** ($dw = 0$).
+2. **The $w$-step:** Moving from $P_{i,j}$ to $P_{i,j+1}$ changes $w$ by an infinitesimal amount $dw$, while **$x$ remains strictly constant** ($dx = 0$).
+
+### Defining the Freestanding Partial
+The partial differential of $f$ keeping $w$ constant is defined along our arbitrary direction $dt$ as:
+$$\partial_w f = \frac{df}{dt} \quad \text{(normalized such that } \frac{dw}{dt} = 1\text{)}$$
+
+When we introduce a second coordinate $x$ and take the ratio of two partials evaluating along the **exact same** arbitrary direction $dt$, the parameter $dt$ cancels completely out of the denominator:
+$$\frac{\partial_w f}{\partial_w x} = \frac{\left(\frac{df}{dt}\right)}{\left(\frac{dx}{dt}\right)} = \frac{df}{dx} \quad \text{(evaluated strictly along the path where } dw = 0\text{)}$$
+
+Thus, the denominator of a partial derivative does not indicate an index slot in a function tuple; it points to a **physical direction of travel** on your mesh.
+
+### Geometric Interpretation of $df \wedge dw$
+This explains why the 2-form $df \wedge dw$ is completely independent of a second coordinate $x$. A wedge product is an area-measuring object. It takes two arbitrary directions (a vector $U$ strictly tangent to the constant-$w$ line, and our arbitrary cross-cutting transversal vector $T$). It evaluates the oriented area of the infinitesimal parallelogram face spanned by these vectors, tracking how $f$ and $w$ tilt relative to one another without ever needing an $x$-axis.
+
+---
+
+## 3. First-Order Algebraic Laws
+
+Because differentials are genuine fractions, standard multivariable identities can be derived using pure algebraic manipulation rather than limit-based proofs.
+
+### The Total Differential (The Chain Rule)
+Any absolute change $df$ along an arbitrary path $dt$ is a linear balance of how the coordinates $x$ and $w$ change along that same path:
+$$\frac{df}{dt} = A \frac{dx}{dt} + B \frac{dw}{dt}$$
+
+By forcing $dt$ to temporarily run exclusively along a line of constant $w$ ($dw=0$), the second term collapses, isolating $A = \frac{\partial_w f}{\partial_w x}$. Repeating this along a line of constant $x$ isolates $B = \frac{\partial_x f}{\partial_x w}$. Clearing the $dt$ denominators yields the total differential:
+$$df = \left(\frac{\partial_w f}{\partial_w x}\right) dx + \left(\frac{\partial_x f}{\partial_x w}\right) dw$$
+
+### The Multivariable Chain Rule
+To convert to a new coordinate system $(u, v)$ from $(x, w)$, we expand $df$ and $du$ along an arbitrary path $dt$ chosen to keep $v$ constant ($dv=0$):
+$$\frac{\partial_v f}{\partial_v u} = \frac{\frac{df}{dt}}{\frac{du}{dt}} = \frac{\left(\frac{\partial_w f}{\partial_w x}\right)\frac{dx}{dt} + \left(\frac{\partial_x f}{\partial_x w}\right)\frac{dw}{dt}}{\left(\frac{\partial_w u}{\partial_w x}\right)\frac{dx}{dt} + \left(\frac{\partial_x u}{\partial_x w}\right)\frac{dw}{dt}}$$
+
+Dividing the top and bottom by $\frac{dx}{dt}$ yields the coordinate conversion formula completely via true algebraic fractions:
+$$\frac{\partial_v f}{\partial_v u} = \frac{\left(\frac{\partial_w f}{\partial_w x}\right) + \left(\frac{\partial_x f}{\partial_x w}\right)\left(\frac{\partial_v w}{\partial_v x}\right)}{\left(\frac{\partial_w u}{\partial_w x}\right) + \left(\frac{\partial_x u}{\partial_x w}\right)\left(\frac{\partial_v w}{\partial_v x}\right)}$$
+
+### The Triple Product Rule (The Mountain-Climbing Paradox)
+In thermodynamics, the cyclic relationship yields a negative sign that frequently puzzles students:
+$$\left(\frac{\partial f}{\partial x}\right)_w \left(\frac{\partial x}{\partial w}\right)_f \left(\frac{\partial w}{\partial f}\right)_x = -1$$
+
+Using our true-ratio framework, we choose a path running *exclusively* along a contour line where $f$ is constant ($df = 0$). The total differential equation collapses to:
+$$0 = \left(\frac{\partial_w f}{\partial_w x}\right) dx + \left(\frac{\partial_x f}{\partial_x w}\right) dw$$
+
+Isolating the terms on opposite sides of the equals sign forces the negative sign to appear naturally:
+$$-\left(\frac{\partial_x f}{\partial_x w}\right) dw = \left(\frac{\partial_w f}{\partial_w x}\right) dx$$
+
+Dividing by $dw$ and substituting the path constraint ($\frac{dx}{dw} = \left(\frac{\partial_f x}{\partial_f w}\right)$) directly proves the rule. 
+
+**The Mountain Analogy:** Imagine walking along a flat contour line on a mountainside ($df=0$). Taking a step East ($dx > 0$) moves you up the slope. To maintain a net altitude change of zero, your step North ($dw$) **must** move you down the slope. One step must be algebraically negative relative to the other to preserve the balance. The minus sign is the geometric tax you pay for keeping a variable constant on a sloped surface.
+
+---
+
+## 4. Higher-Order Differentials and Curved Grids
+
+### The Coordinate Warping Trap
+In 1D, Leibniz assumed that the independent variable stepped by flat, perfectly uniform amounts ($d^2x = 0$). On a 2D surface, **it is geometrically impossible to keep the step sizes constant for multiple variables simultaneously.** 
+
+If you force your vertical grid spacing $dw$ to remain perfectly uniform, a curved surface or a non-linear coordinate system will naturally force the horizontal grid steps $dx$ to stretch, compress, or warp as you move across the mesh. Thus, $d^2x \neq 0$ and $d^2w \neq 0$.
+
+### The Absolute Second Total Differential Law
+Differentiating the first total differential along an arbitrary path using the standard product rule yields:
+$$d^2f = \left(\frac{\partial^2 f}{\partial x^2}\right) dx^2 + 2\left(\frac{\partial^2 f}{\partial w \partial x}\right) dx\,dw + \left(\frac{\partial^2 f}{\partial w^2}\right) dw^2 + \left(\frac{\partial_w f}{\partial_w x}\right) d^2x + \left(\frac{\partial_x f}{\partial_x w}\right) d^2w$$
+
+The last two terms represent **geometric correction factors**. They measure the literal warping and bending of your coordinate grid lines across the surface.
+
+### Concrete Example: Cartesian to Polar Coordinates
+In a flat Cartesian grid, lines are perfectly straight and parallel, meaning $d^2x = 0$ and $d^2y = 0$. If we transform to a Polar grid $(r, \theta)$ and enforce uniform polar steps ($d^2r = 0, d^2\theta = 0$), computing the second differentials of the coordinate maps ($x = r\cos\theta, y = r\sin\theta$) yields:
+$$d^2x = -2\sin\theta \, dr\,d\theta - r \cos\theta \, d\theta^2$$
+$$d^2y = 2\cos\theta \, dr\,d\theta - r \sin\theta \, d\theta^2$$
+
