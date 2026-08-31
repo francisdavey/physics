@@ -75,6 +75,20 @@ Headline: "dy/dx is a fraction".
 - You can use a wedge product to perform operations on total differentials to find algebraic identities for partial derivatives: https://johncarlosbaez.wordpress.com/2021/09/13/the-cyclic-identity-for-partial-derivatives/
 - Gordon Plotkin has an equational theory: https://math.ucr.edu/home/baez/mathematical/ACTUCR/Plotkin_Partial_Differentiation.pdf
 - Baez commentary: https://johncarlosbaez.wordpress.com/2020/05/18/a-complete-axiomatisation-of-partial-differentiation/
+#### Complaints and ambiguities
+- Arnol'd's complaint
+- Functional view
+- Lots of "reform" ideas (detail put off to later)
+#### In the spirit of Leibniz
+- Let's try to do someting in the Leibniz spirit as much as we can. We would like partial f to be a standalone thing which we can take a ratio of.
+- Suppose we have f is a function of x and y, an expression in f and its differentials probably defines a surface not a curve. This is not the only possibility (can we perhaps always have surfaces if f is just a variable).
+- On a surface there are lots of different directions we could differentiate in, unlike with 1D, where all we didn't know what the parameter's rate. Now we don't know which direction that parameter might be taking us.
+- Pro tem, let us try defining partial(f, w). w defines lines of constant w. We would like to be able to differentiate across w (why?) but we can't step between them.
+- So assume we have a vector field T of curves parametrised by t that runs across them. Now they are linked up.
+- partial(f, w)= pick an arbitrary foliation of curves with parameter t that is not colinear to w lines call it gamma_w(t) and pass that to df (which acts on curves). We get df/dt along gamma.
+- This obviously depends on the T foliation. Oh no! But it cancels out just as for total differentials.
+- partial(f,w)/partial(f,x) has no such dependency and is a ratio of the two.
+- Notationally we can lift partial f so that it is a function on arbitrary gammas, then partial f/partial x (restricted to w) = partial(f,w)/partial(f,x)
 
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
