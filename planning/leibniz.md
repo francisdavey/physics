@@ -198,6 +198,10 @@ Needed or useful for dimensional analysis. Unclear whether we need it.
 - "Total and Partial Differentials as Algebraically Manipulable Entities" https://arxiv.org/pdf/2210.07958 This defines d as an operator in much the same style as in this piece. It uses hyperreals as a model. It assumes all variables depend on some "underlying variable" $q$. This $q$ is our parameter for a curve. There is no connection made between this and the study of curves. Otherwise the discussion is much the same. No discussion of integration, but some discussion of partials.
 ### partial derivatives
 - https://math.stackexchange.com/questions/320228/the-notation-for-partial-derivatives
+-- Here the question is why can't i divide through z=5x + 3y and get dz/dx = 5. the simple answer for differentials is that dz=5dx+4dy so that dz/dx=5+4dy/dx.
+ user14972's answer complains about the "suggestive form of Leibniz notation", because /partial x does not mean (and can't really mean) hold y constant.
+  We get the triple identity - the hidden assumption is that terms cancel, which is hidden by the notation.
+  On this answer Calmarius comments that partial z does not mean anything by itself, but it can be made to means something if we know which variable changes.
 - https://math.stackexchange.com/questions/2200982/notation-for-partial-derivatives
 - https://math.stackexchange.com/questions/1091097/partial-derivative-notation
 - https://arxiv.org/html/math/9906079v1
