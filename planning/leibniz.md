@@ -83,8 +83,16 @@ Headline: "dy/dx is a fraction".
 - Let's try to do someting in the Leibniz spirit as much as we can. We would like partial f to be a standalone thing which we can take a ratio of.
 - Suppose we have f is a function of x and y, an expression in f and its differentials probably defines a surface not a curve. This is not the only possibility (can we perhaps always have surfaces if f is just a variable).
 - On a surface there are lots of different directions we could differentiate in, unlike with 1D, where all we didn't know what the parameter's rate. Now we don't know which direction that parameter might be taking us.
-- Pro tem, let us try defining partial(f, w). w defines lines of constant w. 
-
+- Pro tem, let us try defining partial(f, w). w defines lines of constant w. partial(f,w) = df(W(t)) some W: t=> M parametrising w.
+- Now partial(f,w) is dependent on t, but partial(f,w)/partial(x,w) the parametrisation cancels out (just as it did for d's and for the same reason) and is just our partial. Everything to the left of !w can handled just as any differential that we are used to.
+- We can now prove all sorts of things.
+- **Inversion** 1/ a partial is obviously just turning the fraction the other way around.
+- total differential in terms of partials
+- Chain rule will be more complex because using different curves. start with (x, w) coord system and transform to (u,v). Let us pick a path along which v is constant. SO dv=0.
+- df = P(f,x,w) dx + P(f,w,x)dw and du=P(u,x, w)dx + P(u,w,x) dw
+- P(f,u,v)=(df/dt)/(du/dt) = (P(f,x,w) dx/dt + P(f,w,x)dw/dy)/(P(u,x, w)dx/dt + P(u,w,x) dw/dt) now divide by dx/dt to get
+- P(f,u,v)=(P(f,x,w)  + P(f,w,x)dw/dx)/(P(u,x, w) + P(u,w,x) dw/dx)
+- Triple product rule (mountain climbing analogy)
 ## LOAD-BEARING
 - [ ] Epsilon-style definition of derivative, Lim epsilon->0 of 1/epsilon( f(x+ε) − f(x)) — it or something like it is needed no later than the definition of df, which will involve some kind of limit. We also need it if we want to contrast differentials v derivatives  — status: idea
 - [ ] The Limit approach to delta y/delta x (i.e. with delta x tending to zero). This is the school definition which (we hope) is familiar. It is very close to the epsilon-style definition, but does not absolutely require a functional dependence. It is perhaps more direct than defining df. You can see it on a picture. It is useful (because it explains what is going at school level) — status: idea
