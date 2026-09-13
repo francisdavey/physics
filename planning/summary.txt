@@ -1,0 +1,13 @@
+My key points:
+(1) In the spirit of Leibniz, a "variable" is a function from point on a parametrised curve and that curve to the reals.
+(2) Examples: x, y, but also s (distance along a curve from a point), "variables" need not be everywhere defined - a plus point.
+(3) We don''t use infinitesimals (contra Leibniz) but limits, because infinitesimals bring in a lot more considerations I think are orthogonal.
+(4) Variables inherit any real function by pulling back. x+y is meaningful.
+(5) Given a variable v, dv is the variable that maps a curve gamma(t) and a point on it at t to the differential (defined using limits) of v at that point along gamma. 
+(6) This is essentially the co-germ differential framework. Nothing original. Just setting it out clearly.
+(7) The parametrisation disappears in ratios like dy/dx.
+(8) We can (if we want) make sure that what we write tracks that dependency by assigning a "dimension" to our expressions. a variable has dimension 0, d adds 1, multiplication sums the dimensions and you can only add expressions of the same dimension. This is essentially Leibniz's "order of infinity". We do limit the class of expressions available.
+(9) A highlight is to explain "progression of variables". We can choose one variable (but only one) so that ddv =0. This explains why the chain rule for second order differentials looks so odd. ddx/dxdx is only the second derivative if we pick dx so that ddx is zero.
+(10) we don't use forms, because they don't have access to higher derivatives.
+
+So, my question is, this is all very nice, but can anything be done with surfaces? Can we have a co-surface type object like A or S and then give meaning to dA or dS? There must be a 2D analogue of cogerm differentials, I wonder what they are like.
