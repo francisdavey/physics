@@ -1,6 +1,8 @@
 I have been thinking about how to give a principled account of Leibniz differential notation directed at students of many levels who have not thought about it or become confused about how they may be manipulated.
 Key inspirations are: Leibniz's work. nLab's discussion on cogerm differentials.
-
+Plan is to do a nice blog, with lots of applications to show how nice it can be to use the algebra freely and dive deeply into intersting issues touched along the way ("smell the flowers" philosophy).
+Current thinking, posts would be: (1) the framework for differentials; (2) partials; (3) integrals and maybe (4) infinitessimals as an extension.
+Progresss: (1) is done I think and (2), (3) work in progress. (4) not the same line of wor really.
 My key points:
 (1) In the spirit of Leibniz, a "variable" is a function from point on a parametrised curve and that curve to the reals.
 (2) Examples: x, y, but also s (distance along a curve from a point), "variables" need not be everywhere defined - a plus point.
