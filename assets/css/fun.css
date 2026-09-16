@@ -1,0 +1,73 @@
+/* Define theme colors globally for easy maintenance */
+:root {
+    --b1b-bg: #111111;
+    --b1b-fg: #E3E3E3;
+    --b1b-blue: #58C4DD;
+    --b1b-yellow: #F3D147;
+    --b1b-green: #83C167;
+    
+    /* Layout boundaries */
+    --text-width: 65ch;       /* Ideal line-length for comfortable reading */
+    --breakout-width: 900px;  /* Canvas size for beautiful diagrams/matrices */
+}
+
+body {
+    background-color: var(--b1b-bg);
+    color: var(--b1b-fg);
+    font-family: 'Liberation Sans', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 2rem 1rem;
+    
+    /* Create a modern layout system that controls paragraph width effortlessly */
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, var(--text-width)) minmax(1rem, 1fr);
+}
+
+/* Push all standard content into the middle, readable reading column */
+body > * {
+    grid-column: 2;
+}
+
+/* Tell math equations, code blocks, and diagrams to break out wider */
+math-block, 
+.equation-block, 
+figure, 
+svg {
+    grid-column: 1 / -1; /* Tells the element to span full width if needed */
+    justify-self: center;
+    width: 100%;
+    max-width: var(--breakout-width);
+    
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-sizing: border-box;
+}
+
+/* Beautiful accent styling headers */
+h1, h2, h3 {
+    color: #ffffff;
+    margin-top: 2.5rem;
+    font-weight: 600;
+}
+
+h1 {
+    border-bottom: 2px solid var(--b1b-blue);
+    padding-bottom: 0.3rem;
+}
+
+/* Subtle link formatting that matches the aesthetic */
+a {
+    color: var(--b1b-blue);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--b1b-blue);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--b1b-yellow);
+    border-bottom-color: var(--b1b-yellow);
+}
