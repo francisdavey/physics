@@ -13,11 +13,12 @@ My key points:
 (7) The parametrisation disappears in ratios like dy/dx.
 (8) We can (if we want) make sure that what we write tracks that dependency by assigning a "dimension" to our expressions. a variable has dimension 0, d adds 1, multiplication sums the dimensions and you can only add expressions of the same dimension. This is essentially Leibniz's "order of infinity". We do limit the class of expressions available.
 (9) A highlight is to explain "progression of variables". We can choose one variable (but only one) so that ddv =0. This explains why the chain rule for second order differentials looks so odd. ddx/dxdx is only the second derivative if we pick dx so that ddx is zero.
-(10) we don't use forms, because they don't have access to higher derivatives.
+(10) Although dx and dy are in fact 1-forms, "d" here is not the "d" of exerior algebra. We need to be able to write ddx etc in order to access higher derivativers. Forms d only know the tangent space and so cannot be influnced by higher derivatives.
 
 Partial:
 (1) These are straightforward. We realise that "differentiate in the direction of x" does not make sense without knowing what is being held constant.
-(2) We use the notation | to indicate restriction to a curve, as follows: if u is a differential in our framework, and w is a "co-ordinate" (something well enough behaved, so not any variable) then u | w means (take a parametrised curve along which w is constant at every point, and hand that to u. I.e. df | w = df(w(t)), but note that here the parametrisation is arbitrary.
+(2) We use the notation | to indicate restriction to a curve, as follows: if u is any variable (typically a cogerm differential) and c any contact element at p (i.e. a direction at p). Then u | c is restricted to curves tangent to c. 
+(2b) by abuse of notatoin (or overloading) if x is a variable, u|x means u|X where X is in the irection of x 
 (3) thus "partial y" means exactly the same thing as "dy" except that it provides a hint that we need to supply a direction. (to do: whether it is useful to impose some kind of type system/dimension on top of this to enforce this constraint).
 (4) | is linear and pulls function back from R nicely, so that (partial f/partial x)| y = (partial f|y)/(partial x|y). The arbitrary parametrisaton of the y line cancels out.
 (5) This allows immediate proof of the inverse of a partial, also makes proof of identities easy and algebraic.
