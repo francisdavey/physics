@@ -1,0 +1,10 @@
+
+Leibniz, lex homogeneorum (law of homogeneity) is the rule that you do not add terms of different infinitesimal order. This is what we are doing.
+
+In our terms, order is parametrization relative.
+
+What we can do is normal multivariable calculus. What we can't do is exotic things like $sqrt(d x)$. We can give this meaning via pulling back, but we can't make it fit into our order based approach. That approach is too rigid. To do so, we may need to look at infinitesimals (?). We can't do just any numeric things to our differentials.
+
+If you want (say) $log(d x)$, you could choose some kind of factor (constant thing), say $d x_0$ and then work out $log(frac(d x, d x_0))$. If we choose $d x_0=d t$ which is nice and easy then $log(frac(d x, d y))$ which is just $log(x'(t))$ nothing new to see here. this is just a value on the curve. We just picked a parameter to make it work.
+
+You might need it for singular perturbation theory. Logarithmic switchback terms.
