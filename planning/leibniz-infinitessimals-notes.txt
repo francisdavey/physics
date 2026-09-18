@@ -1,0 +1,28 @@
+
+= Infinitesimals
+Leibniz: orders of infinity. 
+
+In the 19th centry is is developed so that $a$ is infinitesimal is defined to mean that  $ a arrow 0 $ under whatever limiting process we have in mind. $b$ is a higher order than $a$ if $b/a arrow 0$ same order if not. This is dub Bois-Raymond's "calculus of infinities". Developed to deal with growth rates of functions. Worked on by Hasdorff and Hardy
+
+Orders of Infinity: the "Infinitärcalcül" of Paul du Bois-Reymond in 1910.
+
+A Hardy field is
+Rosenlicht and Boshernitzan
+Aschenbrenner–van den Dries–van der Hoeven
+H-fields
+Conway's surreal numbers
+
+Technical name for this is "valuation" on an ordered field $v(a)$ equals the relevant equivalent class. Krull valuation theory applied to an ordered field.
+
+Levi-Civita field. Formal power series - i.e. we don't care about convergence, we just have an infinite sequence associated with rational powers and real coefficients. We hae some core element $epsilon$ which is the variable we take the power series over. Lexicographic ordering. Can do analysis in this field.
+
+David Tall - "superreals" is Levi-Civita power series. Used to teach calculus.
+
+Robinson does not have a field intrinsic form of grading. I.e. where do we start with "order 1"
+Useful for automatic differentiation.
+
+Generalise: Hahn field. 
+
+Giordano's "Fermat reals" are nilpotent with order. 
+
+Perhaps if we quotient germs up to Levi-Civita style equivalent? ??
