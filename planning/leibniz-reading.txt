@@ -1,0 +1,53 @@
+
+=== Arxiv
+
+[Extending the Algebraic Manipulability of Differentials](https://arxiv.org/abs/1801.09553)
+They say that for the first derivative "few practical problems in treating differentials
+algebraically". They point out that you cannot manipulate higher order differentials and assume that d2x/dt2 or whatever is the second derivative (we agree on this, and it is an essential point). They do give the algebra of differentials and show that there is no need for functional dependence. They give formulas for higher derivatives by repeated application of d. Using that approach one ends up with very complicated expressions (?? are they parameter free)? This account eventually alludes to Leibniz's "progression of variables" but misses out any meaning for individual differentials and focuses on the derivatives of functions (a bit obsessively). It also fails to highlight why progression is different in first and then in higher differentials. Nothing about integration etc.
+
+See later: https://arxiv.org/abs/2210.07958
+https://arxiv.org/abs/1811.03459
+Leibniz Vindicated: Calculating Reliably with Differentials
+
+
+
+https://arxiv.org/abs/2210.07958 
+---
+
+==== Infinitesimals 
+An alternative way to deal with $d x$ etc is to treat them as infinitesimals. The very informal idea of an infinitesimal is that it is something so small it can be ignored. There are two main approaches that have been developed rigorously.
+
+- Robinson's non-standard analysis
+- Smooth infinitesimal analysis
+
+Robinson's non-standard analysis adds to the reals "infinitesimals". An infinitesimal is smaller than every positive real number but bigger than zero. In other words if $epsilon$ is an infinitesimal, for every real number $r$: $0 < epsilon < r$
+
+You can't have a number that is smaller than every positive number and greater than zero. There are always more numbers between it and zero. You can, for example, halve it. But infinitesimals are not numbers so that's OK. You can then work with infinitesimals as much as you like. There is a useful operator "st" which takes the nearest real or "standard part" of a hyperreal so we can think of every hyperreal as standard plus infinitesimals. ...
+
+Smooth infinitesimal analysis....
+
+==== Stackexchange references
+
+- [Is d y/d x not a ratio?](https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio) is our main story. The answer by isomorphisms is the right one :-).
+-- Thomas's Calculus says d y/d x is not a ratio. Can it be interpreted as a ratio?
+-- Russell thought not.
+-- Much confusion follows
+-- First answer talks about infinitesimal quantities being abandoned so what we have now is a limit (though the limit he gives is for f') and a limit of a quotient isn't the quotient of two limits. SO not a ratio. But it is "very suggestive". They behave as if they were. Differentials aren't d y and d x in d y/d x and we can get around this with infinitesimals.
+-- One comment asks about problems - answer is the second derivative.
+-- Jesse Madnick's answer may be on to something (#2 answer). Reference to pushforward map.
+-- Another answer - best to think of d/d x as an operator.
+- [Failure of differential notation](https://github.com/francisdavey/physics/edit/main/posts/2024-04-06-leibniz.md) use of $d$ in the product rule, one answer discusses Robinson and smooth infinitesimals quite well.
+- [What is the practical difference between a differential and a derivative?](https://math.stackexchange.com/questions/23902/what-is-the-practical-difference-between-a-differential-and-a-derivative) the top answer concedes that one can use infinitesimals to make the use of differentials rigorous, but offers a further "suggestive" approach valid "under mild assumptions" (not mentioned) that one can define an operator $d$ but only with an implicit functional dependence on $ Delta x$.
+
+Basically, we want the "differential" of $y$ to be the infinitesimal change in $y$; this change will be closely approximated to the change along the tangent to $y$; the tangent has slope $y'(a)$. But because we don't have infinitesimals, we have to say *how much* we've changed the argument. So we define "the differential in $y$ at $a$ when $x$ changes by $ Delta x$", $d(y, Delta x , a)$, as $d(y, Delta x , a) = y'(a) Delta x$. This is exactly the change along the tangent, rather than along the graph of the function.  If you take the limit of $d(y, Delta x)$ over $ Delta x$ as $ Delta x\to 0$, you just get $y'$. But we tend to think of the limit of $ Delta x\to 0$ as being $d x$, so abuse of notation leads to "$d y = frac(d y , d x)\,d x$"; this is *suggestive*, but not quite true literally; instead, one then can show that arguments that treat differentials as functions tend to give the right answer under mild assumptions. Note that under this definition, you get $d(x, Delta x) = 1  Delta x$, leading to $d x = d x$.
+
+The problem here is belief that you need implicit functional dependence.
+
+Second answer gives us derivatives = Jacobians and differentials = differential forms. Another answer uses very advanced linear algebra to try to address what $d$ means. I am not sure if tis works 9?).
+
+<!---
+https://arxiv.org/abs/2210.07958 Total and Partial Differentials as Algebraically Manipulable Entities
+Isabelle_Fite_2023
+
+https://arxiv.org/abs/1811.03459 Simplifying and Refactoring Introductory Calculus
+
