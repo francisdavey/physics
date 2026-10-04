@@ -4,10 +4,15 @@ Plan is to do a nice blog, with lots of applications to show how nice it can be 
 Current thinking, posts would be: (1) the framework for differentials; (2) partials; (3) integrals and maybe (4) infinitessimals as an extension.
 Progresss: (1) is done I think and (2), (3) work in progress. (4) not the same line of wor really.
 My key points:
-(1) In the spirit of Leibniz, a "variable" is a function from point on a parametrised curve and that curve to the reals.
-(2) Examples: x, y, but also s (distance along a curve from a point), "variables" need not be everywhere defined - a plus point.
-(3) We don''t use infinitesimals (contra Leibniz) but limits, because infinitesimals bring in a lot more considerations I think are orthogonal.
-(4) Variables inherit any real function by pulling back. x+y is meaningful.
+
+(1) In the spirit of Leibniz, a "variable" is a function taking a point p on a paramatrised curve $gamma$ an returns a real. 
+(1A) For simplicty we can write a variable v as a function of t the curve paramater so v(t) (for an implied $gamma$ means v(gamma(t), gamma).
+(2) Examples: x, y, but also s (distance along a curve from a point)
+(2A) Note that global functions like x and y are just examples of variables. Nonexact values like Q and s are OK because they are defined along a curve.
+(2B) There is a complete algebra of variables by pulling back all real functions, so v+w or v^w are entirely valid.
+(3) For a variable v, dv(t) =f'(t), i.e. we differentiate v along the curve to find the value of dv. dQ and ds aree defined in the obvious way.
+(3A) For clarity of treatment, I will not use an idea of infinitessimals here. For various reasons: readers will be familiar with limits, so f'(x) will be understood. Also there is lots of scholarly argument about what Leibniz meant by infinitesimals and lots of approaches to infinitesimals (many of which are surefly not what he wanted).
+
 (5) Given a variable v, dv is the variable that maps a curve gamma(t) and a point on it at t to the differential (defined using limits) of v at that point along gamma. 
 (6) This is essentially the co-germ differential framework. Nothing original. Just setting it out clearly.
 (7) The parametrisation disappears in ratios like dy/dx.
