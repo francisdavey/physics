@@ -11,12 +11,11 @@ My key points:
 (2A) Note that global functions like x and y are just examples of variables. Nonexact values like Q and s are OK because they are defined along a curve.
 (2B) There is a complete algebra of variables by pulling back all real functions, so v+w or v^w are entirely valid.
 (3) For a variable v, dv(t) =f'(t), i.e. we differentiate v along the curve to find the value of dv. dQ and ds aree defined in the obvious way.
-(3A) For clarity of treatment, I will not use an idea of infinitessimals here. For various reasons: readers will be familiar with limits, so f'(x) will be understood. Also there is lots of scholarly argument about what Leibniz meant by infinitesimals and lots of approaches to infinitesimals (many of which are surefly not what he wanted).
-
-(5) Given a variable v, dv is the variable that maps a curve gamma(t) and a point on it at t to the differential (defined using limits) of v at that point along gamma. 
-(6) This is essentially the co-germ differential framework. Nothing original. Just setting it out clearly.
-(7) The parametrisation disappears in ratios like dy/dx.
+(3A) For clarity of treatment, I will not use an idea of infinitessimals here. For various reasons: readers will be familiar with limits, so f'(x) will be understood. Also there is lots of scholarly argument about what Leibniz meant by infinitesimals and lots of approaches to infinitesimals (many of which are surely not what he wanted).
+(6) This is essentially the co-germ differential framework primarily devised by Toby Bartels, but for didactic purposes the notion of a germ is not necessary where a fairly well behave family of curves is being discussed. A map from a curve is sufficient. Cogerm differentials can be defined and discussed in the end notes.
+(7) The parametrisation of the curve disappears in ratios like dy/dx or in equations like dy = 2dx, which is equivalent (in its definition of curves) to dy/dx=2 
 (8) We can (if we want) make sure that what we write tracks that dependency by assigning a "dimension" to our expressions. a variable has dimension 0, d adds 1, multiplication sums the dimensions and you can only add expressions of the same dimension. This is essentially Leibniz's "order of infinity". We do limit the class of expressions available.
+(8A) Where only *first order* differentials appear, having dimension 0 is enough for the expression to be parameter independent.
 (9) A highlight is to explain "progression of variables". We can choose one variable (but only one) so that ddv =0. This explains why the chain rule for second order differentials looks so odd. ddx/dxdx is only the second derivative if we pick dx so that ddx is zero.
 (10) Although dx and dy are in fact 1-forms, "d" here is not the "d" of exerior algebra. We need to be able to write ddx etc in order to access higher derivativers. Forms d only know the tangent space and so cannot be influnced by higher derivatives.
 
