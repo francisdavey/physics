@@ -16,8 +16,22 @@ My key points:
 (7) The parametrisation of the curve disappears in ratios like dy/dx or in equations like dy = 2dx, which is equivalent (in its definition of curves) to dy/dx=2 
 (8) We can (if we want) make sure that what we write tracks that dependency by assigning a "dimension" to our expressions. a variable has dimension 0, d adds 1, multiplication sums the dimensions and you can only add expressions of the same dimension. This is essentially Leibniz's "order of infinity". We do limit the class of expressions available.
 (8A) Where only *first order* differentials appear, having dimension 0 is enough for the expression to be parameter independent.
-(9) A highlight is to explain "progression of variables". We can choose one variable (but only one) so that ddv =0. This explains why the chain rule for second order differentials looks so odd. ddx/dxdx is only the second derivative if we pick dx so that ddx is zero.
-(10) Although dx and dy are in fact 1-forms, "d" here is not the "d" of exerior algebra. We need to be able to write ddx etc in order to access higher derivativers. Forms d only know the tangent space and so cannot be influnced by higher derivatives.
+(9) Expressions invoving higher order differentials such as ddx, may not be parameter independent even if they have dimension 0. Eg ddx/dxdx is not parameter independent.
+(9A) This leads to a highlight: Leibniz's "progression of variables". We can choose one variable (but only one) so that ddv =0. 
+(9B) This explains why the chain rule for second order differentials looks so odd. ddx/dxdx is only the second derivative if we pick dx so that ddx is zero.
+(10) Choice of v such that ddv=0, i.e. choice of the progression of variables, will simplify some expressions. 
+(11) This allows some algebra to be simplified by judicial choice. That choice is not limited to ddx=0.
+
+Notes:
+(10) All of (1)-(8) could have been repeated using 1-forms. Indeed this is the approach suggested by Arnol'd and many comments on the internet.
+(11) I do not do so because I want to treat higher order differentials, for which the 1-form framwework is inadepate, because they only have available to them the tangent space and so know nothing of curvature etc.
+(10A) Hence. "d" here is not the "d" of exerior algebra. 
+
+Integration:
+(1) Single integrals of dimension 0 expressions is straightforward. For a co-germ differential, Integral omega over a curve gamma(t) is just Integral omega(t)dt. This is what Bartels calls "naive integration".
+
+Notes:
+(2) Multiple integration etc is a work in progress. Exactly how to express it is being thought through.
 
 Partial:
 (1) These are straightforward. We realise that "differentiate in the direction of x" does not make sense without knowing what is being held constant.
